@@ -7,280 +7,387 @@
 <title>StoryVerse Bank</title>
 
 <style>
-
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
-font-family:Arial,sans-serif;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
 }
 
 body{
-background:#f4f7fb;
-color:#222;
+    background:#f4f7fb;
+    color:#222;
 }
 
 header{
-background:#123b73;
-color:white;
-padding:22px;
-text-align:center;
+    background:#123b73;
+    color:white;
+    padding:22px;
+    text-align:center;
 }
 
 header h1{
-font-size:27px;
-margin-bottom:6px;
+    font-size:27px;
+    margin-bottom:6px;
 }
 
 .container{
-width:92%;
-max-width:520px;
-margin:25px auto;
+    width:92%;
+    max-width:520px;
+    margin:25px auto;
 }
 
 .card{
-background:white;
-padding:20px;
-border-radius:15px;
-margin-bottom:20px;
-box-shadow:0 4px 15px rgba(0,0,0,.08);
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
 h2{
-color:#123b73;
-margin-bottom:15px;
+    color:#123b73;
+    margin-bottom:15px;
+}
+
+h3{
+    color:#123b73;
+    margin-bottom:12px;
 }
 
 input{
-width:100%;
-padding:14px;
-margin:7px 0;
-border:1px solid #ccc;
-border-radius:8px;
-font-size:15px;
+    width:100%;
+    padding:14px;
+    margin:7px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
 }
 
 button{
-width:100%;
-padding:14px;
-margin-top:9px;
-border:none;
-border-radius:8px;
-background:#123b73;
-color:white;
-font-size:16px;
-cursor:pointer;
+    width:100%;
+    padding:14px;
+    margin-top:9px;
+    border:none;
+    border-radius:8px;
+    background:#123b73;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
 }
 
 button:hover{
-opacity:.9;
+    opacity:.9;
 }
 
 .hidden{
-display:none;
+    display:none !important;
 }
 
 .balance{
-background:#123b73;
-color:white;
-padding:25px;
-border-radius:15px;
-margin-bottom:20px;
+    background:#123b73;
+    color:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
 }
 
 .balance p{
-font-size:14px;
-margin-bottom:8px;
+    font-size:14px;
+    margin-bottom:8px;
 }
 
 .balance strong{
-font-size:30px;
+    font-size:30px;
+}
+
+.account-box{
+    background:#eef3f9;
+    padding:15px;
+    border-radius:10px;
+    margin-top:15px;
+}
+
+.account-box p{
+    margin:7px 0;
 }
 
 .actions{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
 }
 
 .actions button{
-margin:0;
+    margin:0;
 }
 
 .message{
-margin-top:15px;
-padding:15px;
-border-radius:10px;
-background:#eef3f9;
-font-size:14px;
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
+    background:#eef3f9;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.google{
+    background:#ffffff;
+    color:#333;
+    border:1px solid #ccc;
 }
 
 .cancel{
-background:#777;
+    background:#777;
 }
 
 .logout{
-background:#c62828;
+    background:#c62828;
 }
 
 .small{
-font-size:13px;
-color:#666;
-text-align:center;
-margin-top:10px;
+    font-size:13px;
+    color:#666;
+    text-align:center;
+    margin-top:10px;
+    line-height:1.5;
+}
+
+.transaction{
+    border-bottom:1px solid #eee;
+    padding:14px 0;
+}
+
+.transaction:last-child{
+    border-bottom:none;
+}
+
+.transaction-top{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.credit{
+    color:#16834a;
+    font-weight:bold;
+}
+
+.debit{
+    color:#c62828;
+    font-weight:bold;
+}
+
+.pending{
+    color:#d17a00;
+    font-weight:bold;
 }
 
 footer{
-text-align:center;
-padding:25px;
-color:#777;
-font-size:13px;
+    text-align:center;
+    padding:25px;
+    color:#777;
+    font-size:13px;
 }
 
+.loading{
+    text-align:center;
+    padding:20px;
+    color:#666;
+}
+
+@media(max-width:450px){
+
+    .actions{
+        grid-template-columns:1fr;
+    }
+
+    header h1{
+        font-size:23px;
+    }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-
-<h1>🏦 StoryVerse Bank</h1>
-
-<p>Simple • Convenient • Connected</p>
-
+    <h1>🏦 StoryVerse Bank</h1>
+    <p>Simple • Convenient • Connected</p>
 </header>
 
 
 <div class="container">
 
 
-<!-- LOGIN / REGISTER -->
+<!-- ========================= -->
+<!-- AUTHENTICATION -->
+<!-- ========================= -->
 
 <div id="authSection">
 
+    <div class="card">
 
-<div class="card">
+        <h2>🔐 Customer Login</h2>
 
-<h2>🔐 Customer Login</h2>
+        <input
+            type="email"
+            id="loginEmail"
+            placeholder="Email address"
+        >
 
-<input
-type="email"
-id="loginEmail"
-placeholder="Email address"
->
+        <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+        >
 
-<input
-type="password"
-id="loginPassword"
-placeholder="Password"
->
+        <button onclick="loginUser()">
+            Login
+        </button>
 
-<button onclick="loginUser()">
-Login
-</button>
+        <button class="google" onclick="googleLogin()">
+            🔵 Continue with Google
+        </button>
 
-<div id="loginMessage" class="message hidden"></div>
+        <div id="loginMessage" class="message hidden"></div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>📝 Create Account</h2>
+
+        <input
+            type="email"
+            id="registerEmail"
+            placeholder="Email address"
+        >
+
+        <input
+            type="password"
+            id="registerPassword"
+            placeholder="Password (minimum 6 characters)"
+        >
+
+        <button onclick="registerUser()">
+            Create Account
+        </button>
+
+        <button class="google" onclick="googleRegister()">
+            🔵 Register with Google
+        </button>
+
+        <div id="registerMessage" class="message hidden"></div>
+
+    </div>
 
 </div>
 
 
-<div class="card">
-
-<h2>📝 Create Account</h2>
-
-<input
-type="email"
-id="registerEmail"
-placeholder="Email address"
->
-
-<input
-type="password"
-id="registerPassword"
-placeholder="Password (minimum 6 characters)"
->
-
-<button onclick="registerUser()">
-Create Account
-</button>
-
-<div id="registerMessage" class="message hidden"></div>
-
-</div>
-
-
-</div>
-
-
+<!-- ========================= -->
 <!-- DASHBOARD -->
+<!-- ========================= -->
 
 <div id="dashboard" class="hidden">
 
+    <div class="balance">
 
-<div class="balance">
+        <p>Available Balance</p>
 
-<p>Available Balance</p>
+        <strong id="balanceAmount">
+            ₦0.00
+        </strong>
 
-<strong id="balanceAmount">
-₦0.00
-</strong>
-
-</div>
-
-
-<div class="card">
-
-<h2>👤 My Account</h2>
-
-<p>
-Logged in as:
-<strong id="userEmail">
-Loading...
-</strong>
-</p>
-
-<button
-class="logout"
-onclick="logout()"
->
-Logout
-</button>
-
-</div>
+    </div>
 
 
-<div class="card">
+    <div class="card">
 
-<h2>🏦 Banking Services</h2>
+        <h2>👤 My Account</h2>
 
-<div class="actions">
+        <p>
+            Email:
+            <strong id="userEmail">
+                Loading...
+            </strong>
+        </p>
 
-<button onclick="deposit()">
-💰 Deposit
-</button>
+        <div class="account-box">
 
-<button onclick="withdraw()">
-💸 Withdraw
-</button>
+            <p>
+                <strong>Account Number:</strong>
+                <span id="accountNumber">
+                    Loading...
+                </span>
+            </p>
 
-<button onclick="transfer()">
-🔄 Transfer
-</button>
+            <p>
+                <strong>Account Status:</strong>
+                <span id="accountStatus">
+                    Active
+                </span>
+            </p>
 
-<button onclick="transactions()">
-📜 Transactions
-</button>
+        </div>
 
-</div>
+        <button
+            class="logout"
+            onclick="logout()"
+        >
+            Logout
+        </button>
 
-</div>
+    </div>
 
 
-<div
-id="serviceMessage"
-class="message hidden"
-></div>
+    <div class="card">
 
+        <h2>🏦 Banking Services</h2>
+
+        <div class="actions">
+
+            <button onclick="deposit()">
+                💰 Deposit
+            </button>
+
+            <button onclick="withdraw()">
+                💸 Withdraw
+            </button>
+
+            <button onclick="transfer()">
+                🔄 Transfer
+            </button>
+
+            <button onclick="transactions()">
+                📜 Transactions
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="serviceMessage"
+        class="message hidden">
+    </div>
+
+
+    <div class="card">
+
+        <h2>📜 Recent Transactions</h2>
+
+        <div id="transactionList">
+
+            <div class="loading">
+                Loading transactions...
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
@@ -288,741 +395,1354 @@ class="message hidden"
 
 
 <footer>
-
-© 2026 StoryVerse Bank. All rights reserved.
-
+    © 2026 StoryVerse Bank. All rights reserved.
 </footer>
 
 
-<!-- =============================== -->
+
+<!-- ===================================== -->
 <!-- FIREBASE -->
-<!-- =============================== -->
+<!-- ===================================== -->
 
 <script type="module">
 
 import { initializeApp }
-
 from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
 import {
 
-getAuth,
-
-createUserWithEmailAndPassword,
-
-signInWithEmailAndPassword,
-
-signOut,
-
-onAuthStateChanged
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    GoogleAuthProvider,
+    signOut,
+    onAuthStateChanged
 
 }
-
 from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
-/* ===============================
+import {
+
+    getFirestore,
+    doc,
+    setDoc,
+    getDoc,
+    collection,
+    query,
+    where,
+    orderBy,
+    getDocs,
+    serverTimestamp,
+    addDoc
+
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+
+/* =====================================
 FIREBASE CONFIGURATION
-=============================== */
+===================================== */
 
 const firebaseConfig = {
 
-apiKey:"AIzaSyBbjVL5TMW8mjtqxxo9fxn7BCEl_872vW8",
+    apiKey:
+    "AIzaSyBbjVL5TMW8mjtqxxo9fxn7BCEl_872vW8",
 
-authDomain:"story-verse-bank.firebaseapp.com",
+    authDomain:
+    "story-verse-bank.firebaseapp.com",
 
-projectId:"story-verse-bank",
+    projectId:
+    "story-verse-bank",
 
-storageBucket:"story-verse-bank.firebasestorage.app",
+    storageBucket:
+    "story-verse-bank.firebasestorage.app",
 
-messagingSenderId:"6469827233",
+    messagingSenderId:
+    "6469827233",
 
-appId:"1:6469827233:web:475887acf29097e3cd0ee0",
+    appId:
+    "1:6469827233:web:475887acf29097e3cd0ee0",
 
-measurementId:"G-ZB8VQDSW3L"
-
+    measurementId:
+    "G-ZB8VQDSW3L"
 };
 
 
-const app = initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
+/* =====================================
+INITIALIZE FIREBASE
+===================================== */
+
+const app =
+initializeApp(firebaseConfig);
+
+const auth =
+getAuth(app);
+
+const db =
+getFirestore(app);
+
+const googleProvider =
+new GoogleAuthProvider();
 
 
-/* ===============================
-MESSAGE FUNCTION
-=============================== */
+
+/* =====================================
+MESSAGE
+===================================== */
 
 function showMessage(id,text){
 
-const element=document.getElementById(id);
+    const element =
+    document.getElementById(id);
 
-if(!element)return;
+    if(!element){
+        return;
+    }
 
-element.textContent=text;
+    element.textContent = text;
 
-element.classList.remove("hidden");
-
+    element.classList.remove("hidden");
 }
 
 
-/* ===============================
-REGISTER
-=============================== */
+
+/* =====================================
+REGISTER WITH EMAIL
+===================================== */
 
 window.registerUser = async function(){
 
-const email=
-document.getElementById("registerEmail").value.trim();
+    const email =
+    document
+    .getElementById("registerEmail")
+    .value
+    .trim();
 
-const password=
-document.getElementById("registerPassword").value;
-
-
-if(!email||!password){
-
-showMessage(
-"registerMessage",
-"Please enter your email and password."
-);
-
-return;
-
-}
+    const password =
+    document
+    .getElementById("registerPassword")
+    .value;
 
 
-if(password.length<6){
+    if(!email || !password){
 
-showMessage(
-"registerMessage",
-"Password must contain at least 6 characters."
-);
+        showMessage(
+            "registerMessage",
+            "Please enter your email and password."
+        );
 
-return;
-
-}
-
-
-try{
-
-await createUserWithEmailAndPassword(
-auth,
-email,
-password
-);
+        return;
+    }
 
 
-showMessage(
-"registerMessage",
-"Account created successfully!"
-);
+    if(password.length < 6){
+
+        showMessage(
+            "registerMessage",
+            "Password must contain at least 6 characters."
+        );
+
+        return;
+    }
 
 
-}catch(error){
+    try{
 
-showMessage(
-"registerMessage",
-"Registration failed: "+error.message
-);
+        const userCredential =
+        await createUserWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
 
-}
+
+        await createCustomerRecord(
+            userCredential.user
+        );
+
+
+        showMessage(
+            "registerMessage",
+            "Account created successfully."
+        );
+
+
+    }catch(error){
+
+        console.error(error);
+
+        showMessage(
+            "registerMessage",
+            "Registration failed: " +
+            friendlyError(error)
+        );
+
+    }
 
 };
 
 
-/* ===============================
+
+/* =====================================
+GOOGLE REGISTER
+===================================== */
+
+window.googleRegister = async function(){
+
+    try{
+
+        const result =
+        await signInWithPopup(
+            auth,
+            googleProvider
+        );
+
+
+        await createCustomerRecord(
+            result.user
+        );
+
+
+    }catch(error){
+
+        console.error(error);
+
+        showMessage(
+            "registerMessage",
+            "Google registration failed: " +
+            friendlyError(error)
+        );
+
+    }
+
+};
+
+
+
+/* =====================================
+CREATE CUSTOMER RECORD
+===================================== */
+
+async function createCustomerRecord(user){
+
+    const customerRef =
+    doc(
+        db,
+        "customers",
+        user.uid
+    );
+
+
+    const existing =
+    await getDoc(customerRef);
+
+
+    if(existing.exists()){
+
+        return;
+
+    }
+
+
+    const accountNumber =
+    generateAccountNumber();
+
+
+    await setDoc(
+        customerRef,
+        {
+
+            uid:user.uid,
+
+            email:user.email || "",
+
+            accountNumber:
+            accountNumber,
+
+            balance:0,
+
+            status:"Active",
+
+            createdAt:
+            serverTimestamp()
+
+        }
+    );
+
+}
+
+
+
+/* =====================================
+ACCOUNT NUMBER
+===================================== */
+
+function generateAccountNumber(){
+
+    const random =
+    Math.floor(
+        10000000 +
+        Math.random() * 90000000
+    );
+
+    return "SVB" + random;
+
+}
+
+
+
+/* =====================================
 LOGIN
-=============================== */
+===================================== */
 
 window.loginUser = async function(){
 
-const email=
-document.getElementById("loginEmail").value.trim();
+    const email =
+    document
+    .getElementById("loginEmail")
+    .value
+    .trim();
 
-const password=
-document.getElementById("loginPassword").value;
-
-
-if(!email||!password){
-
-showMessage(
-"loginMessage",
-"Please enter your email and password."
-);
-
-return;
-
-}
+    const password =
+    document
+    .getElementById("loginPassword")
+    .value;
 
 
-try{
+    if(!email || !password){
 
-await signInWithEmailAndPassword(
-auth,
-email,
-password
-);
+        showMessage(
+            "loginMessage",
+            "Please enter your email and password."
+        );
 
-
-showMessage(
-"loginMessage",
-"Login successful!"
-);
+        return;
+    }
 
 
-}catch(error){
+    try{
 
-showMessage(
-"loginMessage",
-"Login failed: "+error.message
-);
+        await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
 
-}
+
+    }catch(error){
+
+        console.error(error);
+
+        showMessage(
+            "loginMessage",
+            "Login failed: " +
+            friendlyError(error)
+        );
+
+    }
 
 };
 
 
-/* ===============================
+
+/* =====================================
+GOOGLE LOGIN
+===================================== */
+
+window.googleLogin = async function(){
+
+    try{
+
+        const result =
+        await signInWithPopup(
+            auth,
+            googleProvider
+        );
+
+
+        await createCustomerRecord(
+            result.user
+        );
+
+
+    }catch(error){
+
+        console.error(error);
+
+        showMessage(
+            "loginMessage",
+            "Google login failed: " +
+            friendlyError(error)
+        );
+
+    }
+
+};
+
+
+
+/* =====================================
 LOGOUT
-=============================== */
+===================================== */
 
 window.logout = async function(){
 
-try{
+    try{
 
-await signOut(auth);
+        await signOut(auth);
 
-}catch(error){
+    }catch(error){
 
-alert(
-"Logout failed: "+error.message
-);
+        alert(
+            "Logout failed."
+        );
 
-}
+    }
 
 };
 
 
-/* ===============================
+
+/* =====================================
 AUTH STATE
-=============================== */
+===================================== */
 
-onAuthStateChanged(auth,function(user){
+onAuthStateChanged(
+    auth,
+    async function(user){
 
-const authSection=
-document.getElementById("authSection");
+        const authSection =
+        document.getElementById(
+            "authSection"
+        );
 
-const dashboard=
-document.getElementById("dashboard");
+        const dashboard =
+        document.getElementById(
+            "dashboard"
+        );
 
-const userEmail=
-document.getElementById("userEmail");
+
+        if(user){
+
+            authSection
+            .classList
+            .add("hidden");
 
 
-if(user){
+            dashboard
+            .classList
+            .remove("hidden");
 
-authSection.classList.add("hidden");
 
-dashboard.classList.remove("hidden");
+            document
+            .getElementById("userEmail")
+            .textContent =
+            user.email || "Google User";
 
-userEmail.textContent=user.email;
 
-}else{
+            await loadCustomerData(user);
 
-authSection.classList.remove("hidden");
+            await loadTransactions(user);
 
-dashboard.classList.add("hidden");
+
+        }else{
+
+            authSection
+            .classList
+            .remove("hidden");
+
+
+            dashboard
+            .classList
+            .add("hidden");
+
+        }
+
+    }
+);
+
+
+
+/* =====================================
+LOAD CUSTOMER DATA
+===================================== */
+
+async function loadCustomerData(user){
+
+    try{
+
+        const customerRef =
+        doc(
+            db,
+            "customers",
+            user.uid
+        );
+
+
+        const customerSnap =
+        await getDoc(customerRef);
+
+
+        if(!customerSnap.exists()){
+
+            await createCustomerRecord(user);
+
+            return loadCustomerData(user);
+
+        }
+
+
+        const data =
+        customerSnap.data();
+
+
+        document
+        .getElementById("accountNumber")
+        .textContent =
+        data.accountNumber || "Not assigned";
+
+
+        document
+        .getElementById("accountStatus")
+        .textContent =
+        data.status || "Active";
+
+
+        const balance =
+        Number(data.balance || 0);
+
+
+        document
+        .getElementById("balanceAmount")
+        .textContent =
+        "₦" +
+        balance.toLocaleString(
+            "en-NG",
+            {
+                minimumFractionDigits:2,
+                maximumFractionDigits:2
+            }
+        );
+
+
+    }catch(error){
+
+        console.error(
+            "Could not load customer:",
+            error
+        );
+
+        document
+        .getElementById("accountNumber")
+        .textContent =
+        "Unable to load";
+
+    }
 
 }
 
-});
 
 
-/* ===============================
-DEPOSIT
-=============================== */
+/* =====================================
+DEPOSIT REQUEST
+===================================== */
 
-window.deposit=function(){
+window.deposit = function(){
 
-const message=
-document.getElementById("serviceMessage");
+    const message =
+    document.getElementById(
+        "serviceMessage"
+    );
 
 
-message.classList.remove("hidden");
+    message.classList.remove(
+        "hidden"
+    );
 
 
-message.innerHTML=`
+    message.innerHTML = `
 
-<div style="
-background:white;
-padding:18px;
-border-radius:12px;
-">
+        <div>
 
-<h3 style="color:#123b73;margin-bottom:12px;">
-💰 Make a Deposit
-</h3>
+            <h3>💰 Deposit Funds</h3>
 
-<p>
-Enter the amount you want to deposit.
-</p>
+            <p>
+                Enter the amount you want to deposit.
+            </p>
 
-<input
-type="number"
-id="depositAmount"
-placeholder="Amount in ₦"
-min="100"
->
+            <input
+                type="number"
+                id="depositAmount"
+                placeholder="Amount in ₦"
+                min="100"
+            >
 
-<input
-type="text"
-id="depositReference"
-placeholder="Payment reference (optional)"
->
+            <button
+                onclick="submitDeposit()">
+                Submit Deposit Request
+            </button>
 
-<button onclick="submitDeposit()">
-Submit Deposit Request
-</button>
+            <button
+                onclick="closeService()"
+                class="cancel">
+                Cancel
+            </button>
 
-<button
-onclick="closeService()"
-class="cancel"
->
-Cancel
-</button>
+            <p class="small">
+                This creates a deposit request.
+                Your balance is not increased until
+                the payment is independently verified.
+            </p>
 
-<p style="
-font-size:12px;
-color:#666;
-margin-top:10px;
-">
+        </div>
 
-Your balance will only be updated after the deposit has been verified.
-
-</p>
-
-</div>
-
-`;
+    `;
 
 };
 
 
-/* ===============================
+
+/* =====================================
 SUBMIT DEPOSIT
-=============================== */
+===================================== */
 
-window.submitDeposit=function(){
+window.submitDeposit = async function(){
 
-const amount=
-Number(
-document.getElementById("depositAmount").value
-);
+    const user =
+    auth.currentUser;
 
 
-if(!amount||amount<100){
+    if(!user){
 
-alert(
-"Please enter a deposit amount of at least ₦100."
-);
+        alert(
+            "Please log in first."
+        );
 
-return;
+        return;
 
-}
-
-
-alert(
-
-"Deposit request submitted successfully.\n\n"+
-
-"Amount: ₦"+
-amount.toLocaleString()+
-
-"\n\nYour deposit will be verified before your balance is updated."
-
-);
+    }
 
 
-closeService();
+    const amount =
+    Number(
+        document
+        .getElementById(
+            "depositAmount"
+        )
+        .value
+    );
+
+
+    if(!amount || amount < 100){
+
+        alert(
+            "Minimum deposit request is ₦100."
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        await addDoc(
+            collection(
+                db,
+                "depositRequests"
+            ),
+            {
+
+                userId:user.uid,
+
+                email:user.email,
+
+                amount:amount,
+
+                status:"Pending",
+
+                createdAt:
+                serverTimestamp()
+
+            }
+        );
+
+
+        alert(
+            "Deposit request submitted successfully."
+        );
+
+
+        closeService();
+
+
+    }catch(error){
+
+        console.error(error);
+
+        alert(
+            "Unable to submit deposit request."
+        );
+
+    }
 
 };
 
 
-/* ===============================
+
+/* =====================================
 WITHDRAWAL
-=============================== */
+===================================== */
 
-window.withdraw=function(){
+window.withdraw = function(){
 
-const message=
-document.getElementById("serviceMessage");
+    const message =
+    document.getElementById(
+        "serviceMessage"
+    );
 
 
-message.classList.remove("hidden");
+    message.classList.remove(
+        "hidden"
+    );
 
 
-message.innerHTML=`
+    message.innerHTML = `
 
-<div style="
-background:white;
-padding:18px;
-border-radius:12px;
-">
+        <div>
 
-<h3 style="color:#123b73;margin-bottom:12px;">
-💸 Request Withdrawal
-</h3>
+            <h3>💸 Withdrawal Request</h3>
 
-<p>
-Enter your withdrawal details.
-</p>
+            <input
+                type="number"
+                id="withdrawAmount"
+                placeholder="Amount in ₦"
+                min="100"
+            >
 
-<input
-type="number"
-id="withdrawAmount"
-placeholder="Amount in ₦"
-min="100"
->
+            <input
+                type="text"
+                id="bankName"
+                placeholder="Bank name"
+            >
 
-<input
-type="text"
-id="bankName"
-placeholder="Bank name"
->
+            <input
+                type="text"
+                id="accountNumberInput"
+                placeholder="10-digit account number"
+                maxlength="10"
+                inputmode="numeric"
+            >
 
-<input
-type="text"
-id="accountNumber"
-placeholder="10-digit account number"
-maxlength="10"
-inputmode="numeric"
->
+            <input
+                type="text"
+                id="accountName"
+                placeholder="Account name"
+            >
 
-<input
-type="text"
-id="accountName"
-placeholder="Account name"
->
+            <button
+                onclick="submitWithdrawal()">
+                Submit Withdrawal Request
+            </button>
 
-<button onclick="submitWithdrawal()">
-Submit Withdrawal Request
-</button>
+            <button
+                onclick="closeService()"
+                class="cancel">
+                Cancel
+            </button>
 
-<button
-onclick="closeService()"
-class="cancel"
->
-Cancel
-</button>
+        </div>
 
-<p style="
-font-size:12px;
-color:#666;
-margin-top:10px;
-">
-
-Withdrawal requests must be verified before payment.
-
-</p>
-
-</div>
-
-`;
+    `;
 
 };
 
 
-/* ===============================
+
+/* =====================================
 SUBMIT WITHDRAWAL
-=============================== */
+===================================== */
 
-window.submitWithdrawal=function(){
+window.submitWithdrawal =
+async function(){
 
-const amount=
-Number(
-document.getElementById("withdrawAmount").value
-);
-
-const bank=
-document.getElementById("bankName").value.trim();
-
-const accountNumber=
-document.getElementById("accountNumber").value.trim();
-
-const accountName=
-document.getElementById("accountName").value.trim();
+    const user =
+    auth.currentUser;
 
 
-if(!amount||amount<100){
+    if(!user){
 
-alert(
-"Please enter a withdrawal amount of at least ₦100."
-);
+        alert(
+            "Please log in first."
+        );
 
-return;
+        return;
 
-}
-
-
-if(!bank){
-
-alert("Please enter your bank name.");
-
-return;
-
-}
+    }
 
 
-if(!/^\d{10}$/.test(accountNumber)){
-
-alert(
-"Please enter a valid 10-digit account number."
-);
-
-return;
-
-}
-
-
-if(!accountName){
-
-alert(
-"Please enter the account name."
-);
-
-return;
-
-}
+    const amount =
+    Number(
+        document
+        .getElementById(
+            "withdrawAmount"
+        )
+        .value
+    );
 
 
-alert(
-
-"Withdrawal request submitted successfully.\n\n"+
-
-"Amount: ₦"+
-amount.toLocaleString()+
-
-"\nBank: "+bank+
-
-"\nAccount: "+accountNumber+
-
-"\nAccount Name: "+accountName+
-
-"\n\nYour request will be verified before payment."
-
-);
+    const bank =
+    document
+    .getElementById(
+        "bankName"
+    )
+    .value
+    .trim();
 
 
-closeService();
+    const accountNumber =
+    document
+    .getElementById(
+        "accountNumberInput"
+    )
+    .value
+    .trim();
+
+
+    const accountName =
+    document
+    .getElementById(
+        "accountName"
+    )
+    .value
+    .trim();
+
+
+    if(!amount || amount < 100){
+
+        alert(
+            "Minimum withdrawal request is ₦100."
+        );
+
+        return;
+
+    }
+
+
+    if(!bank ||
+       !accountName ||
+       !/^\d{10}$/.test(accountNumber)){
+
+        alert(
+            "Please enter valid bank details."
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        await addDoc(
+            collection(
+                db,
+                "withdrawalRequests"
+            ),
+            {
+
+                userId:user.uid,
+
+                email:user.email,
+
+                amount:amount,
+
+                bankName:bank,
+
+                accountNumber:
+                accountNumber,
+
+                accountName:
+                accountName,
+
+                status:"Pending",
+
+                createdAt:
+                serverTimestamp()
+
+            }
+        );
+
+
+        alert(
+            "Withdrawal request submitted successfully."
+        );
+
+
+        closeService();
+
+
+    }catch(error){
+
+        console.error(error);
+
+        alert(
+            "Unable to submit withdrawal request."
+        );
+
+    }
 
 };
 
 
-/* ===============================
+
+/* =====================================
 TRANSFER
-=============================== */
+===================================== */
 
-window.transfer=function(){
+window.transfer = function(){
 
-const message=
-document.getElementById("serviceMessage");
+    const message =
+    document.getElementById(
+        "serviceMessage"
+    );
 
 
-message.classList.remove("hidden");
+    message.classList.remove(
+        "hidden"
+    );
 
 
-message.innerHTML=`
+    message.innerHTML = `
 
-<div style="
-background:white;
-padding:18px;
-border-radius:12px;
-">
+        <div>
 
-<h3 style="color:#123b73;margin-bottom:12px;">
-🔄 Transfer Money
-</h3>
+            <h3>🔄 Transfer Request</h3>
 
-<p>
-Enter the recipient details.
-</p>
+            <input
+                type="text"
+                id="recipientAccount"
+                placeholder="Recipient account number"
+            >
 
-<input
-type="email"
-id="recipientEmail"
-placeholder="Recipient email"
->
+            <input
+                type="number"
+                id="transferAmount"
+                placeholder="Amount in ₦"
+                min="100"
+            >
 
-<input
-type="number"
-id="transferAmount"
-placeholder="Amount in ₦"
-min="100"
->
+            <input
+                type="text"
+                id="transferNote"
+                placeholder="Transfer note (optional)"
+            >
 
-<input
-type="text"
-id="transferNote"
-placeholder="Transfer note (optional)"
->
+            <button
+                onclick="submitTransfer()">
+                Submit Transfer Request
+            </button>
 
-<button onclick="submitTransfer()">
-Submit Transfer Request
-</button>
+            <button
+                onclick="closeService()"
+                class="cancel">
+                Cancel
+            </button>
 
-<button
-onclick="closeService()"
-class="cancel"
->
-Cancel
-</button>
+        </div>
 
-<p style="
-font-size:12px;
-color:#666;
-margin-top:10px;
-">
-
-Transfers will require verification before money is moved.
-
-</p>
-
-</div>
-
-`;
+    `;
 
 };
 
 
-/* ===============================
+
+/* =====================================
 SUBMIT TRANSFER
-=============================== */
+===================================== */
 
-window.submitTransfer=function(){
+window.submitTransfer =
+async function(){
 
-const recipient=
-document.getElementById("recipientEmail").value.trim();
-
-const amount=
-Number(
-document.getElementById("transferAmount").value
-);
+    const user =
+    auth.currentUser;
 
 
-if(!recipient){
+    if(!user){
 
-alert(
-"Please enter the recipient email."
-);
+        alert(
+            "Please log in first."
+        );
 
-return;
+        return;
 
-}
-
-
-if(!amount||amount<100){
-
-alert(
-"Please enter a transfer amount of at least ₦100."
-);
-
-return;
-
-}
+    }
 
 
-alert(
-
-"Transfer request submitted.\n\n"+
-
-"Recipient: "+recipient+
-
-"\nAmount: ₦"+
-amount.toLocaleString()+
-
-"\n\nThe transfer will be verified before money is moved."
-
-);
+    const recipient =
+    document
+    .getElementById(
+        "recipientAccount"
+    )
+    .value
+    .trim();
 
 
-closeService();
+    const amount =
+    Number(
+        document
+        .getElementById(
+            "transferAmount"
+        )
+        .value
+    );
+
+
+    const note =
+    document
+    .getElementById(
+        "transferNote"
+    )
+    .value
+    .trim();
+
+
+    if(!recipient){
+
+        alert(
+            "Enter the recipient account number."
+        );
+
+        return;
+
+    }
+
+
+    if(!amount || amount < 100){
+
+        alert(
+            "Minimum transfer request is ₦100."
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        await addDoc(
+            collection(
+                db,
+                "transferRequests"
+            ),
+            {
+
+                senderId:user.uid,
+
+                senderEmail:
+                user.email,
+
+                recipientAccount:
+                recipient,
+
+                amount:amount,
+
+                note:note,
+
+                status:"Pending",
+
+                createdAt:
+                serverTimestamp()
+
+            }
+        );
+
+
+        alert(
+            "Transfer request submitted successfully."
+        );
+
+
+        closeService();
+
+
+    }catch(error){
+
+        console.error(error);
+
+        alert(
+            "Unable to submit transfer request."
+        );
+
+    }
 
 };
 
 
-/* ===============================
+
+/* =====================================
 TRANSACTIONS
-=============================== */
+===================================== */
 
-window.transactions=function(){
+window.transactions =
+async function(){
 
-const message=
-document.getElementById("serviceMessage");
-
-
-message.classList.remove("hidden");
+    const user =
+    auth.currentUser;
 
 
-message.innerHTML=`
+    if(!user){
 
-<div style="
-background:white;
-padding:18px;
-border-radius:12px;
-">
+        return;
 
-<h3 style="color:#123b73;margin-bottom:12px;">
-📜 Transaction History
-</h3>
+    }
 
-<p>
-No transactions have been recorded yet.
-</p>
 
-<p style="
-font-size:12px;
-color:#666;
-margin-top:10px;
-">
+    await loadTransactions(user);
 
-Your verified deposits, withdrawals and transfers will appear here after the transaction database is connected.
 
-</p>
-
-<button
-onclick="closeService()"
-class="cancel"
->
-Close
-</button>
-
-</div>
-
-`;
+    document
+    .getElementById(
+        "transactionList"
+    )
+    .scrollIntoView({
+        behavior:"smooth"
+    });
 
 };
 
 
-/* ===============================
-CLOSE SERVICE
-=============================== */
 
-window.closeService=function(){
+/* =====================================
+LOAD TRANSACTIONS
+===================================== */
 
-const message=
-document.getElementById("serviceMessage");
+async function loadTransactions(user){
+
+    const list =
+    document.getElementById(
+        "transactionList"
+    );
 
 
-if(message){
+    list.innerHTML =
+    `<div class="loading">
+        Loading transactions...
+    </div>`;
 
-message.classList.add("hidden");
 
-message.innerHTML="";
+    try{
+
+        const q =
+        query(
+            collection(
+                db,
+                "transactions"
+            ),
+            where(
+                "userId",
+                "==",
+                user.uid
+            ),
+            orderBy(
+                "createdAt",
+                "desc"
+            )
+        );
+
+
+        const snapshot =
+        await getDocs(q);
+
+
+        if(snapshot.empty){
+
+            list.innerHTML =
+            `<div class="loading">
+                No transactions yet.
+            </div>`;
+
+            return;
+
+        }
+
+
+        list.innerHTML = "";
+
+
+        snapshot.forEach(
+            function(documentSnapshot){
+
+                const data =
+                documentSnapshot.data();
+
+
+                const amount =
+                Number(
+                    data.amount || 0
+                );
+
+
+                const type =
+                data.type || "Transaction";
+
+
+                const status =
+                data.status || "Pending";
+
+
+                const div =
+                document.createElement(
+                    "div"
+                );
+
+
+                div.className =
+                "transaction";
+
+
+                div.innerHTML = `
+
+                    <div class="transaction-top">
+
+                        <strong>
+                            ${escapeHtml(type)}
+                        </strong>
+
+                        <span class="pending">
+                            ${escapeHtml(status)}
+                        </span>
+
+                    </div>
+
+                    <div>
+                        ₦${amount.toLocaleString(
+                            "en-NG",
+                            {
+                                minimumFractionDigits:2
+                            }
+                        )}
+                    </div>
+
+                `;
+
+
+                list.appendChild(div);
+
+            }
+        );
+
+
+    }catch(error){
+
+        console.error(error);
+
+        list.innerHTML =
+        `<div class="loading">
+            Transaction history is not available yet.
+        </div>`;
+
+    }
 
 }
 
+
+
+/* =====================================
+CLOSE SERVICE
+===================================== */
+
+window.closeService =
+function(){
+
+    const message =
+    document.getElementById(
+        "serviceMessage"
+    );
+
+
+    message.classList.add(
+        "hidden"
+    );
+
+
+    message.innerHTML = "";
+
 };
+
+
+
+/* =====================================
+ERROR MESSAGES
+===================================== */
+
+function friendlyError(error){
+
+    const code =
+    error.code || "";
+
+
+    if(code.includes(
+        "auth/email-already-in-use"
+    )){
+        return "This email is already registered.";
+    }
+
+
+    if(code.includes(
+        "auth/invalid-email"
+    )){
+        return "Please enter a valid email address.";
+    }
+
+
+    if(code.includes(
+        "auth/weak-password"
+    )){
+        return "Password is too weak.";
+    }
+
+
+    if(code.includes(
+        "auth/invalid-credential"
+    )){
+        return "Incorrect email or password.";
+    }
+
+
+    if(code.includes(
+        "auth/popup-closed-by-user"
+    )){
+        return "Google sign-in was cancelled.";
+    }
+
+
+    return "Please try again.";
+
+}
+
+
+
+/* =====================================
+HTML SAFETY
+===================================== */
+
+function escapeHtml(value){
+
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
 
 </script>
 
