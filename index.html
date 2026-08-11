@@ -1,551 +1,518 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StoryVerse Bank</title>
 
-<title>StoryVerse Bank</title>
-
-<style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:Arial,sans-serif;
-}
-
-body{
-    background:#f4f7fb;
-    color:#172033;
-}
-
-header{
-    background:#08203b;
-    color:white;
-    padding:18px 6%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-size:23px;
-    font-weight:bold;
-}
-
-.logo span{
-    color:#20c997;
-}
-
-.login-btn{
-    border:0;
-    background:#20c997;
-    color:white;
-    padding:11px 20px;
-    border-radius:8px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.hero{
-    background:#08203b;
-    color:white;
-    padding:65px 7%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:30px;
-}
-
-.hero-text{
-    max-width:600px;
-}
-
-.hero h1{
-    font-size:44px;
-    line-height:1.1;
-    margin-bottom:18px;
-}
-
-.hero p{
-    color:#d7e1ed;
-    line-height:1.7;
-}
-
-.hero-button{
-    margin-top:25px;
-    padding:14px 22px;
-    border:0;
-    border-radius:8px;
-    background:#20c997;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.bank-card{
-    background:white;
-    color:#172033;
-    padding:28px;
-    width:320px;
-    border-radius:18px;
-    box-shadow:0 15px 40px rgba(0,0,0,.25);
-}
-
-.bank-card p{
-    color:#777;
-    margin-bottom:10px;
-}
-
-.bank-card h2{
-    font-size:32px;
-    margin-bottom:20px;
-}
-
-.services{
-    padding:55px 7%;
-    text-align:center;
-}
-
-.services h2{
-    margin-bottom:30px;
-}
-
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.service{
-    background:white;
-    padding:30px 20px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,.06);
-}
-
-.service-icon{
-    font-size:35px;
-    margin-bottom:15px;
-}
-
-.dashboard{
-    display:none;
-    padding:35px 7%;
-}
-
-.dashboard-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:25px;
-}
-
-.logout{
-    border:0;
-    background:#dc3545;
-    color:white;
-    padding:10px 17px;
-    border-radius:7px;
-    cursor:pointer;
-}
-
-.balance-card{
-    background:#08203b;
-    color:white;
-    padding:30px;
-    border-radius:18px;
-    margin-bottom:25px;
-}
-
-.balance-card small{
-    color:#b9c7d9;
-}
-
-.balance{
-    font-size:38px;
-    font-weight:bold;
-    margin:10px 0;
-}
-
-.actions{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-}
-
-.action{
-    background:white;
-    border:0;
-    padding:22px;
-    border-radius:12px;
-    box-shadow:0 4px 15px rgba(0,0,0,.06);
-    cursor:pointer;
-    font-size:16px;
-}
-
-.transactions{
-    background:white;
-    margin-top:25px;
-    padding:25px;
-    border-radius:15px;
-}
-
-.transaction{
-    display:flex;
-    justify-content:space-between;
-    padding:15px 0;
-    border-bottom:1px solid #eee;
-}
-
-.credit{
-    color:#159957;
-}
-
-.debit{
-    color:#dc3545;
-}
-
-.login-overlay{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.65);
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-    z-index:100;
-}
-
-.login-box{
-    background:white;
-    width:100%;
-    max-width:390px;
-    padding:30px;
-    border-radius:15px;
-}
-
-.close{
-    text-align:right;
-    font-size:22px;
-    cursor:pointer;
-    margin-bottom:10px;
-}
-
-.login-box h2{
-    margin-bottom:20px;
-}
-
-.login-box input{
-    width:100%;
-    padding:13px;
-    margin-bottom:15px;
-    border:1px solid #ddd;
-    border-radius:7px;
-}
-
-.login-submit{
-    width:100%;
-    padding:13px;
-    border:0;
-    border-radius:7px;
-    background:#08203b;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-footer{
-    margin-top:40px;
-    background:#08203b;
-    color:white;
-    text-align:center;
-    padding:25px;
-}
-
-@media(max-width:800px){
-
-    .hero{
-        flex-direction:column;
-        text-align:center;
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
     }
 
-    .hero h1{
-        font-size:35px;
+    body {
+      background: #f4f7fb;
+      color: #222;
     }
 
-    .bank-card{
-        width:100%;
-        max-width:340px;
+    header {
+      background: #123b73;
+      color: white;
+      padding: 20px;
+      text-align: center;
     }
 
-    .service-grid{
-        grid-template-columns:1fr;
+    header h1 {
+      font-size: 26px;
     }
 
-    .actions{
-        grid-template-columns:1fr;
+    .container {
+      width: 92%;
+      max-width: 500px;
+      margin: 25px auto;
     }
-}
-</style>
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: #123b73;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #123b73;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .secondary {
+      background: #555;
+    }
+
+    .danger {
+      background: #c62828;
+    }
+
+    .balance {
+      background: #123b73;
+      color: white;
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+
+    .balance h3 {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .balance strong {
+      font-size: 30px;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .actions button {
+      margin-top: 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .message {
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      background: #eef3f9;
+      font-size: 14px;
+    }
+
+    .small {
+      font-size: 13px;
+      color: #666;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #777;
+      font-size: 13px;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-
-    <div class="logo">
-        StoryVerse<span>Bank</span>
-    </div>
-
-    <button class="login-btn" onclick="openLogin()">
-        Login
-    </button>
-
+  <h1>🏦 StoryVerse Bank</h1>
+  <p>Simple • Secure • Convenient</p>
 </header>
 
+<div class="container">
 
-<section class="hero">
+  <!-- AUTHENTICATION -->
+  <div id="authSection">
 
-    <div class="hero-text">
+    <div class="card">
+      <h2>🔐 Customer Login</h2>
 
-        <h1>
-            Simple. Secure.<br>
-            Digital Banking.
-        </h1>
+      <input
+        type="email"
+        id="loginEmail"
+        placeholder="Email address"
+      >
 
-        <p>
-            Welcome to StoryVerse Bank. Manage your account,
-            view your balance and keep track of your transactions
-            from one convenient dashboard.
-        </p>
+      <input
+        type="password"
+        id="loginPassword"
+        placeholder="Password"
+      >
 
-        <button class="hero-button" onclick="openLogin()">
-            Get Started
+      <button onclick="loginUser()">Login</button>
+
+      <div id="loginMessage" class="message hidden"></div>
+
+      <p class="small">
+        Don't have an account? Register below.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>📝 Create Account</h2>
+
+      <input
+        type="email"
+        id="registerEmail"
+        placeholder="Email address"
+      >
+
+      <input
+        type="password"
+        id="registerPassword"
+        placeholder="Password (minimum 6 characters)"
+      >
+
+      <button onclick="registerUser()">Create Account</button>
+
+      <div id="registerMessage" class="message hidden"></div>
+    </div>
+
+  </div>
+
+
+  <!-- DASHBOARD -->
+  <div id="dashboard" class="hidden">
+
+    <div class="balance">
+      <h3>Available Balance</h3>
+      <strong id="balanceAmount">₦0.00</strong>
+    </div>
+
+    <div class="card">
+      <h2>👤 My Account</h2>
+
+      <p>
+        Logged in as:
+        <strong id="userEmail">Loading...</strong>
+      </p>
+
+      <button class="danger" onclick="logout()">
+        Logout
+      </button>
+    </div>
+
+
+    <div class="card">
+      <h2>💳 Banking Services</h2>
+
+      <div class="actions">
+
+        <button onclick="deposit()">
+          💰 Deposit
         </button>
 
-    </div>
-
-
-    <div class="bank-card">
-
-        <p>Available Balance</p>
-
-        <h2>₦0.00</h2>
-
-        <p>StoryVerse Bank Account</p>
-
-    </div>
-
-</section>
-
-
-<section class="services">
-
-    <h2>Our Services</h2>
-
-    <div class="service-grid">
-
-        <div class="service">
-            <div class="service-icon">💰</div>
-            <h3>Account</h3>
-            <p>Manage your digital account.</p>
-        </div>
-
-        <div class="service">
-            <div class="service-icon">🔄</div>
-            <h3>Transfers</h3>
-            <p>Transfer funds between supported accounts.</p>
-        </div>
-
-        <div class="service">
-            <div class="service-icon">📊</div>
-            <h3>Transactions</h3>
-            <p>View your recent account activity.</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="dashboard" id="dashboard">
-
-    <div class="dashboard-top">
-
-        <div>
-            <h2>Hello, <span id="customerName">Customer</span> 👋</h2>
-            <p>Welcome to your dashboard</p>
-        </div>
-
-        <button class="logout" onclick="logout()">
-            Logout
+        <button onclick="withdraw()">
+          💸 Withdraw
         </button>
 
-    </div>
-
-
-    <div class="balance-card">
-
-        <small>Available Balance</small>
-
-        <div class="balance">
-            ₦<span id="balance">0.00</span>
-        </div>
-
-        <small>StoryVerse Bank</small>
-
-    </div>
-
-
-    <div class="actions">
-
-        <button class="action" onclick="deposit()">
-            📥<br><br>
-            Deposit
+        <button onclick="transfer()">
+          🔄 Transfer
         </button>
 
-        <button class="action" onclick="withdraw()">
-            📤<br><br>
-            Withdraw
+        <button onclick="transactions()">
+          📜 Transactions
         </button>
 
-        <button class="action" onclick="transfer()">
-            🔄<br><br>
-            Transfer
-        </button>
-
+      </div>
     </div>
 
 
-    <div class="transactions">
+    <div id="serviceMessage" class="message hidden"></div>
 
-        <h3>Recent Transactions</h3>
-
-        <div class="transaction">
-            <span>Account opened</span>
-            <span class="credit">₦0.00</span>
-        </div>
-
-    </div>
-
-</section>
-
-
-<div class="login-overlay" id="loginOverlay">
-
-    <div class="login-box">
-
-        <div class="close" onclick="closeLogin()">
-            ✕
-        </div>
-
-        <h2>Customer Login</h2>
-
-        <input
-            type="text"
-            id="name"
-            placeholder="Enter your name"
-        >
-
-        <input
-            type="password"
-            id="password"
-            placeholder="Enter password"
-        >
-
-        <button class="login-submit" onclick="login()">
-            Login
-        </button>
-
-    </div>
+  </div>
 
 </div>
 
 
 <footer>
-
-    <p>
-        © 2026 StoryVerse Bank. All rights reserved.
-    </p>
-
+  © 2026 StoryVerse Bank. All rights reserved.
 </footer>
 
 
-<script>
+<!-- FIREBASE -->
+<script type="module">
 
-function openLogin(){
+  import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
-    document.getElementById("loginOverlay").style.display="flex";
-
-}
-
-
-function closeLogin(){
-
-    document.getElementById("loginOverlay").style.display="none";
-
-}
+  import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged
+  }
+  from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
-function login(){
+  // YOUR FIREBASE CONFIGURATION
 
-    let name=document.getElementById("name").value;
+  const firebaseConfig = {
 
-    let password=document.getElementById("password").value;
+    apiKey: "AIzaSyBbjVL5TMW8mjtqxxo9fxn7BCEl_872vW8",
 
-    if(name==="" || password===""){
+    authDomain: "story-verse-bank.firebaseapp.com",
 
-        alert("Please enter your name and password.");
+    projectId: "story-verse-bank",
 
-        return;
+    storageBucket: "story-verse-bank.firebasestorage.app",
+
+    messagingSenderId: "6469827233",
+
+    appId: "1:6469827233:web:475887acf29097e3cd0ee0",
+
+    measurementId: "G-ZB8VQDSW3L"
+
+  };
+
+
+  const app = initializeApp(firebaseConfig);
+
+  const auth = getAuth(app);
+
+
+  // SHOW MESSAGE
+
+  function showMessage(elementId, text) {
+
+    const element = document.getElementById(elementId);
+
+    if (!element) return;
+
+    element.textContent = text;
+
+    element.classList.remove("hidden");
+
+  }
+
+
+  // REGISTER
+
+  window.registerUser = async function() {
+
+    const email =
+      document.getElementById("registerEmail").value.trim();
+
+    const password =
+      document.getElementById("registerPassword").value;
+
+
+    if (!email || !password) {
+
+      showMessage(
+        "registerMessage",
+        "Please enter your email and password."
+      );
+
+      return;
+
     }
 
-    document.getElementById("customerName").innerText=name;
 
-    closeLogin();
+    if (password.length < 6) {
 
-    document.getElementById("dashboard").style.display="block";
+      showMessage(
+        "registerMessage",
+        "Password must contain at least 6 characters."
+      );
 
-    document.getElementById("dashboard")
-    .scrollIntoView({behavior:"smooth"});
+      return;
 
-}
-
-
-function logout(){
-
-    document.getElementById("dashboard").style.display="none";
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-}
+    }
 
 
-function deposit(){
+    try {
 
-    alert("Deposit feature will be connected later.");
+      await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
 
-}
+      showMessage(
+        "registerMessage",
+        "Account created successfully!"
+      );
+
+    } catch (error) {
+
+      showMessage(
+        "registerMessage",
+        "Registration failed: " + error.message
+      );
+
+    }
+
+  };
 
 
-function withdraw(){
+  // LOGIN
 
-    alert("Withdrawal feature will be connected later.");
+  window.loginUser = async function() {
 
-}
+    const email =
+      document.getElementById("loginEmail").value.trim();
+
+    const password =
+      document.getElementById("loginPassword").value;
 
 
-function transfer(){
+    if (!email || !password) {
 
-    alert("Transfer feature will be connected later.");
+      showMessage(
+        "loginMessage",
+        "Please enter your email and password."
+      );
 
-}
+      return;
+
+    }
+
+
+    try {
+
+      await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      showMessage(
+        "loginMessage",
+        "Login successful!"
+      );
+
+    } catch (error) {
+
+      showMessage(
+        "loginMessage",
+        "Login failed: " + error.message
+      );
+
+    }
+
+  };
+
+
+  // LOGOUT
+
+  window.logout = async function() {
+
+    try {
+
+      await signOut(auth);
+
+    } catch (error) {
+
+      alert("Logout failed: " + error.message);
+
+    }
+
+  };
+
+
+  // AUTH STATE
+
+  onAuthStateChanged(auth, function(user) {
+
+    const authSection =
+      document.getElementById("authSection");
+
+    const dashboard =
+      document.getElementById("dashboard");
+
+    const userEmail =
+      document.getElementById("userEmail");
+
+
+    if (user) {
+
+      authSection.classList.add("hidden");
+
+      dashboard.classList.remove("hidden");
+
+      userEmail.textContent = user.email;
+
+    } else {
+
+      authSection.classList.remove("hidden");
+
+      dashboard.classList.add("hidden");
+
+    }
+
+  });
+
+
+  // DEMO BANK FUNCTIONS
+
+  window.deposit = function() {
+
+    showMessage(
+      "serviceMessage",
+      "Deposit feature will be connected to the banking database next."
+    );
+
+  };
+
+
+  window.withdraw = function() {
+
+    showMessage(
+      "serviceMessage",
+      "Withdrawal feature will be connected to the banking database next."
+    );
+
+  };
+
+
+  window.transfer = function() {
+
+    showMessage(
+      "serviceMessage",
+      "Transfer feature will be connected to the banking database next."
+    );
+
+  };
+
+
+  window.transactions = function() {
+
+    showMessage(
+      "serviceMessage",
+      "Transaction history will be connected next."
+    );
+
+  };
 
 </script>
 
 </body>
-  </html>
+    </html>
+        
+
