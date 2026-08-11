@@ -469,50 +469,459 @@
   });
 
 
-  // DEMO BANK FUNCTIONS
+// ===============================
+// DEPOSIT SECTION
+// ===============================
 
-  window.deposit = function() {
+window.deposit = function () {
 
-    showMessage(
-      "serviceMessage",
-      "Deposit feature will be connected to the banking database next."
-    );
+  const message = document.getElementById("serviceMessage");
 
-  };
+  if (!message) {
+    alert("Deposit section is not available.");
+    return;
+  }
+
+  message.classList.remove("hidden");
+
+  message.innerHTML = `
+    <div style="
+      background:white;
+      padding:18px;
+      border-radius:12px;
+      margin-top:10px;
+    ">
+
+      <h3 style="color:#123b73; margin-bottom:12px;">
+        💰 Make a Deposit
+      </h3>
+
+      <p style="margin-bottom:12px;">
+        Enter the amount you want to deposit.
+      </p>
+
+      <input
+        type="number"
+        id="depositAmount"
+        placeholder="Amount in ₦"
+        min="100"
+        style="
+          width:100%;
+          padding:13px;
+          margin-bottom:10px;
+          border:1px solid #ccc;
+          border-radius:8px;
+        "
+      >
+
+      <input
+        type="text"
+        id="depositReference"
+        placeholder="Payment reference (optional)"
+        style="
+          width:100%;
+          padding:13px;
+          margin-bottom:10px;
+          border:1px solid #ccc;
+          border-radius:8px;
+        "
+      >
+
+      <button onclick="submitDeposit()">
+        Submit Deposit Request
+      </button>
+
+      <button onclick="closeDeposit()" style="background:#777;">
+        Cancel
+      </button>
+
+      <p style="font-size:12px;color:#666;margin-top:12px;">
+        Your balance will only be updated after the deposit has been verified.
+      </p>
+
+    </div>
+  `;
+};
+
+window.submitDeposit = function () {
+
+  const amountInput = document.getElementById("depositAmount");
+
+  if (!amountInput) {
+    alert("Deposit form is not available.");
+    return;
+  }
+
+  const amount = Number(amountInput.value);
+
+  if (!amount || amount < 100) {
+    alert("Please enter a deposit amount of at least ₦100.");
+    return;
+  }
+
+  alert(
+    "Deposit request submitted successfully.\n\n" +
+    "Amount: ₦" +
+    amount.toLocaleString() +
+    "\n\nYour deposit will be verified before your balance is updated."
+  );
+
+  closeDeposit();
+};
+
+window.closeDeposit = function () {
+
+  const message = document.getElementById("serviceMessage");
+
+  if (message) {
+    message.classList.add("hidden");
+    message.innerHTML = "";
+  }
+
+};
+
+  // ===============================
+// WITHDRAWAL SECTION
+// ===============================
+
+window.withdraw = function () {
+
+  const message = document.getElementById("serviceMessage");
+
+  if (!message) {
+    alert("Withdrawal section is not available.");
+    return;
+  }
+
+  message.classList.remove("hidden");
+
+  message.innerHTML = `
+    <div style="
+      background:white;
+      padding:18px;
+      border-radius:12px;
+      margin-top:10px;
+    ">
+
+      <h3 style="color:#123b73; margin-bottom:12px;">
+        💸 Request Withdrawal
+      </h3>
+
+      <p style="margin-bottom:12px;">
+        Enter the amount and your bank details.
+      </p>
+
+      <input
+        type="number"
+        id="withdrawAmount"
+        placeholder="Amount in ₦"
+        min="100"
+        style="
+          width:100%;
+          padding:13px;
+          margin-bottom:10px;
+          border:1px solid #ccc;
+          border-radius:8px;
+        "
+      >
+
+      <input
+        type="text"
+        id="bankName"
+        placeholder="Bank name"
+        style="
+          width:100%;
+          padding:13px;
+          margin-bottom:10px;
+          border:1px solid #ccc;
+          border-radius:8px;
+        "
+      >
+
+      <input
+        type="text"
+        id="accountNumber"
+        placeholder="Account number"
+        maxlength="10"
+        inputmode="numeric"
+        style="
+          width:100%;
+          padding:13px;
+          margin-bottom:10px;
+          border:1px solid #ccc;
+          border-radius:8px;
+        "
+      >
+
+      <input
+        type="text"
+        id="accountName"
+        placeholder="Account name"
+        style="
+          width:100%;
+          padding:13px;
+          margin-bottom:10px;
+          border:1px solid #ccc;
+          border-radius:8px;
+        "
+      >
+
+      <button onclick="submitWithdrawal()">
+        Submit Withdrawal Request
+      </button>
+
+      <button
+        onclick="closeWithdrawal()"
+        style="background:#777;"
+      >
+        Cancel
+      </button>
+
+      <p style="
+        font-size:12px;
+        color:#666;
+        margin-top:12px;
+      ">
+        Withdrawal requests must be verified before payment is made.
+      </p>
+
+    </div>
+  `;
+};
 
 
-  window.withdraw = function() {
+// SUBMIT WITHDRAWAL
 
-    showMessage(
-      "serviceMessage",
-      "Withdrawal feature will be connected to the banking database next."
-    );
+window.submitWithdrawal = function () {
 
-  };
+  const amount =
+    Number(document.getElementById("withdrawAmount").value);
 
+  const bankName =
+    document.getElementById("bankName").value.trim();
 
-  window.transfer = function() {
+  const accountNumber =
+    document.getElementById("accountNumber").value.trim();
 
-    showMessage(
-      "serviceMessage",
-      "Transfer feature will be connected to the banking database next."
-    );
-
-  };
+  const accountName =
+    document.getElementById("accountName").value.trim();
 
 
-  window.transactions = function() {
+  if (!amount || amount < 100) {
+    alert("Please enter a withdrawal amount of at least ₦100.");
+    return;
+  }
 
-    showMessage(
-      "serviceMessage",
-      "Transaction history will be connected next."
-    );
+  if (!bankName) {
+    alert("Please enter your bank name.");
+    return;
+  }
 
-  };
+  if (!/^\d{10}$/.test(accountNumber)) {
+    alert("Please enter a valid 10-digit Nigerian account number.");
+    return;
+  }
 
-</script>
+  if (!accountName) {
+    alert("Please enter the account name.");
+    return;
+  }
 
-</body>
-    </html>
-        
 
+  alert(
+    "Withdrawal request submitted successfully.\n\n" +
+    "Amount: ₦" +
+    amount.toLocaleString() +
+    "\nBank: " +
+    bankName +
+    "\nAccount: " +
+    accountNumber +
+    "\nAccount Name: " +
+    accountName +
+    "\n\nYour request will be verified before payment."
+  );
+
+
+  closeWithdrawal();
+
+};
+
+
+// CLOSE WITHDRAWAL
+
+window.closeWithdrawal = function () {
+
+  const message =
+    document.getElementById("serviceMessage");
+
+  if (message) {
+
+    message.classList.add("hidden");
+
+    message.innerHTML = "";
+
+  }
+
+};
+
+
+
+  // ===============================
+// TRANSFER SECTION
+// ===============================
+
+window.transfer = function () {
+
+  const message = document.getElementById("serviceMessage");
+
+  if (!message) {
+    alert("Transfer section is not available.");
+    return;
+  }
+
+  message.innerHTML = `
+    <div style="
+      background:#ffffff;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    ">
+
+      <h3>💸 Transfer Money</h3>
+
+      <input
+        type="text"
+        id="transferAccount"
+        placeholder="Recipient account number"
+        style="width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:8px;"
+      >
+
+      <input
+        type="text"
+        id="transferName"
+        placeholder="Recipient name"
+        style="width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:8px;"
+      >
+
+      <input
+        type="number"
+        id="transferAmount"
+        placeholder="Amount (₦)"
+        style="width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:8px;"
+      >
+
+      <button
+        onclick="processTransfer()"
+        style="
+          width:100%;
+          padding:13px;
+          margin-top:10px;
+          background:#0d6efd;
+          color:white;
+          border:none;
+          border-radius:8px;
+          font-size:16px;
+        "
+      >
+        Transfer Now
+      </button>
+
+      <p id="transferResult" style="margin-top:12px;"></p>
+
+    </div>
+  `;
+};
+
+
+// ===============================
+// PROCESS TRANSFER
+// ===============================
+
+window.processTransfer = function () {
+
+  const account = document.getElementById("transferAccount").value.trim();
+  const name = document.getElementById("transferName").value.trim();
+  const amount = Number(document.getElementById("transferAmount").value);
+  const result = document.getElementById("transferResult");
+
+  if (!account || !name || !amount) {
+    result.innerHTML = "❌ Please fill in all transfer details.";
+    result.style.color = "red";
+    return;
+  }
+
+  if (amount <= 0) {
+    result.innerHTML = "❌ Enter a valid transfer amount.";
+    result.style.color = "red";
+    return;
+  }
+
+  result.innerHTML = `
+    ⏳ Transfer request submitted...<br>
+    Recipient: ${name}<br>
+    Account: ${account}<br>
+    Amount: ₦${amount.toLocaleString()}
+  `;
+
+  result.style.color = "#0d6efd";
+
+  // Firebase transfer processing will be connected here next.
+};
+
+
+  // ===============================
+// TRANSACTION HISTORY
+// ===============================
+
+window.transactionHistory = function () {
+
+  const message = document.getElementById("serviceMessage");
+
+  if (!message) {
+    alert("Transaction history section is not available.");
+    return;
+  }
+
+  message.innerHTML = `
+    <div style="
+      background:#ffffff;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    ">
+
+      <h3>📜 Transaction History</h3>
+
+      <div id="transactionList">
+
+        <div style="
+          padding:12px;
+          margin:8px 0;
+          border-bottom:1px solid #eee;
+        ">
+          <strong>💸 Transfer</strong><br>
+          <small>Transaction details will appear here.</small>
+        </div>
+
+        <div style="
+          padding:12px;
+          margin:8px 0;
+          border-bottom:1px solid #eee;
+        ">
+          <strong>💰 Deposit</strong><br>
+          <small>Transaction details will appear here.</small>
+        </div>
+
+      </div>
+
+      <p style="
+        text-align:center;
+        color:#777;
+        margin-top:15px;
+      ">
+        Your latest transactions will be displayed here.
+      </p>
+
+    </div>
+  `;
+};
