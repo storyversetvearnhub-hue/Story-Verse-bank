@@ -1,927 +1,1030 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StoryVerse Bank</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+<title>StoryVerse Bank</title>
 
-    body {
-      background: #f4f7fb;
-      color: #222;
-    }
+<style>
 
-    header {
-      background: #123b73;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:Arial,sans-serif;
+}
 
-    header h1 {
-      font-size: 26px;
-    }
+body{
+background:#f4f7fb;
+color:#222;
+}
 
-    .container {
-      width: 92%;
-      max-width: 500px;
-      margin: 25px auto;
-    }
+header{
+background:#123b73;
+color:white;
+padding:22px;
+text-align:center;
+}
 
-    .card {
-      background: white;
-      padding: 22px;
-      border-radius: 15px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    }
+header h1{
+font-size:27px;
+margin-bottom:6px;
+}
 
-    h2 {
-      margin-bottom: 15px;
-      color: #123b73;
-    }
+.container{
+width:92%;
+max-width:520px;
+margin:25px auto;
+}
 
-    input {
-      width: 100%;
-      padding: 14px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 15px;
-    }
+.card{
+background:white;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
 
-    button {
-      width: 100%;
-      padding: 14px;
-      margin-top: 10px;
-      border: none;
-      border-radius: 8px;
-      background: #123b73;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
+h2{
+color:#123b73;
+margin-bottom:15px;
+}
 
-    button:hover {
-      opacity: 0.9;
-    }
+input{
+width:100%;
+padding:14px;
+margin:7px 0;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:15px;
+}
 
-    .secondary {
-      background: #555;
-    }
+button{
+width:100%;
+padding:14px;
+margin-top:9px;
+border:none;
+border-radius:8px;
+background:#123b73;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
 
-    .danger {
-      background: #c62828;
-    }
+button:hover{
+opacity:.9;
+}
 
-    .balance {
-      background: #123b73;
-      color: white;
-      padding: 25px;
-      border-radius: 15px;
-      margin-bottom: 20px;
-    }
+.hidden{
+display:none;
+}
 
-    .balance h3 {
-      font-size: 15px;
-      margin-bottom: 8px;
-    }
+.balance{
+background:#123b73;
+color:white;
+padding:25px;
+border-radius:15px;
+margin-bottom:20px;
+}
 
-    .balance strong {
-      font-size: 30px;
-    }
+.balance p{
+font-size:14px;
+margin-bottom:8px;
+}
 
-    .actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
+.balance strong{
+font-size:30px;
+}
 
-    .actions button {
-      margin-top: 0;
-    }
+.actions{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
 
-    .hidden {
-      display: none;
-    }
+.actions button{
+margin:0;
+}
 
-    .message {
-      margin-top: 12px;
-      padding: 10px;
-      border-radius: 8px;
-      background: #eef3f9;
-      font-size: 14px;
-    }
+.message{
+margin-top:15px;
+padding:15px;
+border-radius:10px;
+background:#eef3f9;
+font-size:14px;
+}
 
-    .small {
-      font-size: 13px;
-      color: #666;
-      margin-top: 10px;
-      text-align: center;
-    }
+.cancel{
+background:#777;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #777;
-      font-size: 13px;
-    }
-  </style>
+.logout{
+background:#c62828;
+}
+
+.small{
+font-size:13px;
+color:#666;
+text-align:center;
+margin-top:10px;
+}
+
+footer{
+text-align:center;
+padding:25px;
+color:#777;
+font-size:13px;
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>🏦 StoryVerse Bank</h1>
-  <p>Simple • Secure • Convenient</p>
+
+<h1>🏦 StoryVerse Bank</h1>
+
+<p>Simple • Convenient • Connected</p>
+
 </header>
+
 
 <div class="container">
 
-  <!-- AUTHENTICATION -->
-  <div id="authSection">
 
-    <div class="card">
-      <h2>🔐 Customer Login</h2>
+<!-- LOGIN / REGISTER -->
 
-      <input
-        type="email"
-        id="loginEmail"
-        placeholder="Email address"
-      >
-
-      <input
-        type="password"
-        id="loginPassword"
-        placeholder="Password"
-      >
-
-      <button onclick="loginUser()">Login</button>
-
-      <div id="loginMessage" class="message hidden"></div>
-
-      <p class="small">
-        Don't have an account? Register below.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>📝 Create Account</h2>
-
-      <input
-        type="email"
-        id="registerEmail"
-        placeholder="Email address"
-      >
-
-      <input
-        type="password"
-        id="registerPassword"
-        placeholder="Password (minimum 6 characters)"
-      >
-
-      <button onclick="registerUser()">Create Account</button>
-
-      <div id="registerMessage" class="message hidden"></div>
-    </div>
-
-  </div>
+<div id="authSection">
 
 
-  <!-- DASHBOARD -->
-  <div id="dashboard" class="hidden">
+<div class="card">
 
-    <div class="balance">
-      <h3>Available Balance</h3>
-      <strong id="balanceAmount">₦0.00</strong>
-    </div>
+<h2>🔐 Customer Login</h2>
 
-    <div class="card">
-      <h2>👤 My Account</h2>
+<input
+type="email"
+id="loginEmail"
+placeholder="Email address"
+>
 
-      <p>
-        Logged in as:
-        <strong id="userEmail">Loading...</strong>
-      </p>
+<input
+type="password"
+id="loginPassword"
+placeholder="Password"
+>
 
-      <button class="danger" onclick="logout()">
-        Logout
-      </button>
-    </div>
+<button onclick="loginUser()">
+Login
+</button>
 
+<div id="loginMessage" class="message hidden"></div>
 
-    <div class="card">
-      <h2>💳 Banking Services</h2>
-
-      <div class="actions">
-
-        <button onclick="deposit()">
-          💰 Deposit
-        </button>
-
-        <button onclick="withdraw()">
-          💸 Withdraw
-        </button>
-
-        <button onclick="transfer()">
-          🔄 Transfer
-        </button>
-
-        <button onclick="transactions()">
-          📜 Transactions
-        </button>
-
-      </div>
-    </div>
+</div>
 
 
-    <div id="serviceMessage" class="message hidden"></div>
+<div class="card">
 
-  </div>
+<h2>📝 Create Account</h2>
+
+<input
+type="email"
+id="registerEmail"
+placeholder="Email address"
+>
+
+<input
+type="password"
+id="registerPassword"
+placeholder="Password (minimum 6 characters)"
+>
+
+<button onclick="registerUser()">
+Create Account
+</button>
+
+<div id="registerMessage" class="message hidden"></div>
+
+</div>
+
+
+</div>
+
+
+<!-- DASHBOARD -->
+
+<div id="dashboard" class="hidden">
+
+
+<div class="balance">
+
+<p>Available Balance</p>
+
+<strong id="balanceAmount">
+₦0.00
+</strong>
+
+</div>
+
+
+<div class="card">
+
+<h2>👤 My Account</h2>
+
+<p>
+Logged in as:
+<strong id="userEmail">
+Loading...
+</strong>
+</p>
+
+<button
+class="logout"
+onclick="logout()"
+>
+Logout
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h2>🏦 Banking Services</h2>
+
+<div class="actions">
+
+<button onclick="deposit()">
+💰 Deposit
+</button>
+
+<button onclick="withdraw()">
+💸 Withdraw
+</button>
+
+<button onclick="transfer()">
+🔄 Transfer
+</button>
+
+<button onclick="transactions()">
+📜 Transactions
+</button>
+
+</div>
+
+</div>
+
+
+<div
+id="serviceMessage"
+class="message hidden"
+></div>
+
+
+</div>
 
 </div>
 
 
 <footer>
-  © 2026 StoryVerse Bank. All rights reserved.
+
+© 2026 StoryVerse Bank. All rights reserved.
+
 </footer>
 
 
+<!-- =============================== -->
 <!-- FIREBASE -->
+<!-- =============================== -->
+
 <script type="module">
 
-  import { initializeApp }
-    from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+import { initializeApp }
 
-  import {
-    getAuth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    signOut,
-    onAuthStateChanged
-  }
-  from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
-  // YOUR FIREBASE CONFIGURATION
+import {
 
-  const firebaseConfig = {
+getAuth,
 
-    apiKey: "AIzaSyBbjVL5TMW8mjtqxxo9fxn7BCEl_872vW8",
+createUserWithEmailAndPassword,
 
-    authDomain: "story-verse-bank.firebaseapp.com",
+signInWithEmailAndPassword,
 
-    projectId: "story-verse-bank",
+signOut,
 
-    storageBucket: "story-verse-bank.firebasestorage.app",
+onAuthStateChanged
 
-    messagingSenderId: "6469827233",
+}
 
-    appId: "1:6469827233:web:475887acf29097e3cd0ee0",
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
-    measurementId: "G-ZB8VQDSW3L"
 
-  };
+/* ===============================
+FIREBASE CONFIGURATION
+=============================== */
 
+const firebaseConfig = {
 
-  const app = initializeApp(firebaseConfig);
+apiKey:"AIzaSyBbjVL5TMW8mjtqxxo9fxn7BCEl_872vW8",
 
-  const auth = getAuth(app);
+authDomain:"story-verse-bank.firebaseapp.com",
 
+projectId:"story-verse-bank",
 
-  // SHOW MESSAGE
+storageBucket:"story-verse-bank.firebasestorage.app",
 
-  function showMessage(elementId, text) {
+messagingSenderId:"6469827233",
 
-    const element = document.getElementById(elementId);
+appId:"1:6469827233:web:475887acf29097e3cd0ee0",
 
-    if (!element) return;
-
-    element.textContent = text;
-
-    element.classList.remove("hidden");
-
-  }
-
-
-  // REGISTER
-
-  window.registerUser = async function() {
-
-    const email =
-      document.getElementById("registerEmail").value.trim();
-
-    const password =
-      document.getElementById("registerPassword").value;
-
-
-    if (!email || !password) {
-
-      showMessage(
-        "registerMessage",
-        "Please enter your email and password."
-      );
-
-      return;
-
-    }
-
-
-    if (password.length < 6) {
-
-      showMessage(
-        "registerMessage",
-        "Password must contain at least 6 characters."
-      );
-
-      return;
-
-    }
-
-
-    try {
-
-      await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-
-      showMessage(
-        "registerMessage",
-        "Account created successfully!"
-      );
-
-    } catch (error) {
-
-      showMessage(
-        "registerMessage",
-        "Registration failed: " + error.message
-      );
-
-    }
-
-  };
-
-
-  // LOGIN
-
-  window.loginUser = async function() {
-
-    const email =
-      document.getElementById("loginEmail").value.trim();
-
-    const password =
-      document.getElementById("loginPassword").value;
-
-
-    if (!email || !password) {
-
-      showMessage(
-        "loginMessage",
-        "Please enter your email and password."
-      );
-
-      return;
-
-    }
-
-
-    try {
-
-      await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-
-      showMessage(
-        "loginMessage",
-        "Login successful!"
-      );
-
-    } catch (error) {
-
-      showMessage(
-        "loginMessage",
-        "Login failed: " + error.message
-      );
-
-    }
-
-  };
-
-
-  // LOGOUT
-
-  window.logout = async function() {
-
-    try {
-
-      await signOut(auth);
-
-    } catch (error) {
-
-      alert("Logout failed: " + error.message);
-
-    }
-
-  };
-
-
-  // AUTH STATE
-
-  onAuthStateChanged(auth, function(user) {
-
-    const authSection =
-      document.getElementById("authSection");
-
-    const dashboard =
-      document.getElementById("dashboard");
-
-    const userEmail =
-      document.getElementById("userEmail");
-
-
-    if (user) {
-
-      authSection.classList.add("hidden");
-
-      dashboard.classList.remove("hidden");
-
-      userEmail.textContent = user.email;
-
-    } else {
-
-      authSection.classList.remove("hidden");
-
-      dashboard.classList.add("hidden");
-
-    }
-
-  });
-
-
-// ===============================
-// DEPOSIT SECTION
-// ===============================
-
-window.deposit = function () {
-
-  const message = document.getElementById("serviceMessage");
-
-  if (!message) {
-    alert("Deposit section is not available.");
-    return;
-  }
-
-  message.classList.remove("hidden");
-
-  message.innerHTML = `
-    <div style="
-      background:white;
-      padding:18px;
-      border-radius:12px;
-      margin-top:10px;
-    ">
-
-      <h3 style="color:#123b73; margin-bottom:12px;">
-        💰 Make a Deposit
-      </h3>
-
-      <p style="margin-bottom:12px;">
-        Enter the amount you want to deposit.
-      </p>
-
-      <input
-        type="number"
-        id="depositAmount"
-        placeholder="Amount in ₦"
-        min="100"
-        style="
-          width:100%;
-          padding:13px;
-          margin-bottom:10px;
-          border:1px solid #ccc;
-          border-radius:8px;
-        "
-      >
-
-      <input
-        type="text"
-        id="depositReference"
-        placeholder="Payment reference (optional)"
-        style="
-          width:100%;
-          padding:13px;
-          margin-bottom:10px;
-          border:1px solid #ccc;
-          border-radius:8px;
-        "
-      >
-
-      <button onclick="submitDeposit()">
-        Submit Deposit Request
-      </button>
-
-      <button onclick="closeDeposit()" style="background:#777;">
-        Cancel
-      </button>
-
-      <p style="font-size:12px;color:#666;margin-top:12px;">
-        Your balance will only be updated after the deposit has been verified.
-      </p>
-
-    </div>
-  `;
-};
-
-window.submitDeposit = function () {
-
-  const amountInput = document.getElementById("depositAmount");
-
-  if (!amountInput) {
-    alert("Deposit form is not available.");
-    return;
-  }
-
-  const amount = Number(amountInput.value);
-
-  if (!amount || amount < 100) {
-    alert("Please enter a deposit amount of at least ₦100.");
-    return;
-  }
-
-  alert(
-    "Deposit request submitted successfully.\n\n" +
-    "Amount: ₦" +
-    amount.toLocaleString() +
-    "\n\nYour deposit will be verified before your balance is updated."
-  );
-
-  closeDeposit();
-};
-
-window.closeDeposit = function () {
-
-  const message = document.getElementById("serviceMessage");
-
-  if (message) {
-    message.classList.add("hidden");
-    message.innerHTML = "";
-  }
-
-};
-
-  // ===============================
-// WITHDRAWAL SECTION
-// ===============================
-
-window.withdraw = function () {
-
-  const message = document.getElementById("serviceMessage");
-
-  if (!message) {
-    alert("Withdrawal section is not available.");
-    return;
-  }
-
-  message.classList.remove("hidden");
-
-  message.innerHTML = `
-    <div style="
-      background:white;
-      padding:18px;
-      border-radius:12px;
-      margin-top:10px;
-    ">
-
-      <h3 style="color:#123b73; margin-bottom:12px;">
-        💸 Request Withdrawal
-      </h3>
-
-      <p style="margin-bottom:12px;">
-        Enter the amount and your bank details.
-      </p>
-
-      <input
-        type="number"
-        id="withdrawAmount"
-        placeholder="Amount in ₦"
-        min="100"
-        style="
-          width:100%;
-          padding:13px;
-          margin-bottom:10px;
-          border:1px solid #ccc;
-          border-radius:8px;
-        "
-      >
-
-      <input
-        type="text"
-        id="bankName"
-        placeholder="Bank name"
-        style="
-          width:100%;
-          padding:13px;
-          margin-bottom:10px;
-          border:1px solid #ccc;
-          border-radius:8px;
-        "
-      >
-
-      <input
-        type="text"
-        id="accountNumber"
-        placeholder="Account number"
-        maxlength="10"
-        inputmode="numeric"
-        style="
-          width:100%;
-          padding:13px;
-          margin-bottom:10px;
-          border:1px solid #ccc;
-          border-radius:8px;
-        "
-      >
-
-      <input
-        type="text"
-        id="accountName"
-        placeholder="Account name"
-        style="
-          width:100%;
-          padding:13px;
-          margin-bottom:10px;
-          border:1px solid #ccc;
-          border-radius:8px;
-        "
-      >
-
-      <button onclick="submitWithdrawal()">
-        Submit Withdrawal Request
-      </button>
-
-      <button
-        onclick="closeWithdrawal()"
-        style="background:#777;"
-      >
-        Cancel
-      </button>
-
-      <p style="
-        font-size:12px;
-        color:#666;
-        margin-top:12px;
-      ">
-        Withdrawal requests must be verified before payment is made.
-      </p>
-
-    </div>
-  `;
-};
-
-
-// SUBMIT WITHDRAWAL
-
-window.submitWithdrawal = function () {
-
-  const amount =
-    Number(document.getElementById("withdrawAmount").value);
-
-  const bankName =
-    document.getElementById("bankName").value.trim();
-
-  const accountNumber =
-    document.getElementById("accountNumber").value.trim();
-
-  const accountName =
-    document.getElementById("accountName").value.trim();
-
-
-  if (!amount || amount < 100) {
-    alert("Please enter a withdrawal amount of at least ₦100.");
-    return;
-  }
-
-  if (!bankName) {
-    alert("Please enter your bank name.");
-    return;
-  }
-
-  if (!/^\d{10}$/.test(accountNumber)) {
-    alert("Please enter a valid 10-digit Nigerian account number.");
-    return;
-  }
-
-  if (!accountName) {
-    alert("Please enter the account name.");
-    return;
-  }
-
-
-  alert(
-    "Withdrawal request submitted successfully.\n\n" +
-    "Amount: ₦" +
-    amount.toLocaleString() +
-    "\nBank: " +
-    bankName +
-    "\nAccount: " +
-    accountNumber +
-    "\nAccount Name: " +
-    accountName +
-    "\n\nYour request will be verified before payment."
-  );
-
-
-  closeWithdrawal();
+measurementId:"G-ZB8VQDSW3L"
 
 };
 
 
-// CLOSE WITHDRAWAL
+const app = initializeApp(firebaseConfig);
 
-window.closeWithdrawal = function () {
+const auth = getAuth(app);
 
-  const message =
-    document.getElementById("serviceMessage");
 
-  if (message) {
+/* ===============================
+MESSAGE FUNCTION
+=============================== */
 
-    message.classList.add("hidden");
+function showMessage(id,text){
 
-    message.innerHTML = "";
+const element=document.getElementById(id);
 
-  }
+if(!element)return;
+
+element.textContent=text;
+
+element.classList.remove("hidden");
+
+}
+
+
+/* ===============================
+REGISTER
+=============================== */
+
+window.registerUser = async function(){
+
+const email=
+document.getElementById("registerEmail").value.trim();
+
+const password=
+document.getElementById("registerPassword").value;
+
+
+if(!email||!password){
+
+showMessage(
+"registerMessage",
+"Please enter your email and password."
+);
+
+return;
+
+}
+
+
+if(password.length<6){
+
+showMessage(
+"registerMessage",
+"Password must contain at least 6 characters."
+);
+
+return;
+
+}
+
+
+try{
+
+await createUserWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+
+showMessage(
+"registerMessage",
+"Account created successfully!"
+);
+
+
+}catch(error){
+
+showMessage(
+"registerMessage",
+"Registration failed: "+error.message
+);
+
+}
 
 };
 
 
+/* ===============================
+LOGIN
+=============================== */
 
-  // ===============================
-// TRANSFER SECTION
-// ===============================
+window.loginUser = async function(){
 
-window.transfer = function () {
+const email=
+document.getElementById("loginEmail").value.trim();
 
-  const message = document.getElementById("serviceMessage");
+const password=
+document.getElementById("loginPassword").value;
 
-  if (!message) {
-    alert("Transfer section is not available.");
-    return;
-  }
 
-  message.innerHTML = `
-    <div style="
-      background:#ffffff;
-      padding:20px;
-      border-radius:12px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.1);
-    ">
+if(!email||!password){
 
-      <h3>💸 Transfer Money</h3>
+showMessage(
+"loginMessage",
+"Please enter your email and password."
+);
 
-      <input
-        type="text"
-        id="transferAccount"
-        placeholder="Recipient account number"
-        style="width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:8px;"
-      >
+return;
 
-      <input
-        type="text"
-        id="transferName"
-        placeholder="Recipient name"
-        style="width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:8px;"
-      >
+}
 
-      <input
-        type="number"
-        id="transferAmount"
-        placeholder="Amount (₦)"
-        style="width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:8px;"
-      >
 
-      <button
-        onclick="processTransfer()"
-        style="
-          width:100%;
-          padding:13px;
-          margin-top:10px;
-          background:#0d6efd;
-          color:white;
-          border:none;
-          border-radius:8px;
-          font-size:16px;
-        "
-      >
-        Transfer Now
-      </button>
+try{
 
-      <p id="transferResult" style="margin-top:12px;"></p>
+await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
 
-    </div>
-  `;
+
+showMessage(
+"loginMessage",
+"Login successful!"
+);
+
+
+}catch(error){
+
+showMessage(
+"loginMessage",
+"Login failed: "+error.message
+);
+
+}
+
 };
 
 
-// ===============================
-// PROCESS TRANSFER
-// ===============================
+/* ===============================
+LOGOUT
+=============================== */
 
-window.processTransfer = function () {
+window.logout = async function(){
 
-  const account = document.getElementById("transferAccount").value.trim();
-  const name = document.getElementById("transferName").value.trim();
-  const amount = Number(document.getElementById("transferAmount").value);
-  const result = document.getElementById("transferResult");
+try{
 
-  if (!account || !name || !amount) {
-    result.innerHTML = "❌ Please fill in all transfer details.";
-    result.style.color = "red";
-    return;
-  }
+await signOut(auth);
 
-  if (amount <= 0) {
-    result.innerHTML = "❌ Enter a valid transfer amount.";
-    result.style.color = "red";
-    return;
-  }
+}catch(error){
 
-  result.innerHTML = `
-    ⏳ Transfer request submitted...<br>
-    Recipient: ${name}<br>
-    Account: ${account}<br>
-    Amount: ₦${amount.toLocaleString()}
-  `;
+alert(
+"Logout failed: "+error.message
+);
 
-  result.style.color = "#0d6efd";
+}
 
-  // Firebase transfer processing will be connected here next.
 };
 
 
-  // ===============================
-// TRANSACTION HISTORY
-// ===============================
+/* ===============================
+AUTH STATE
+=============================== */
 
-window.transactionHistory = function () {
+onAuthStateChanged(auth,function(user){
 
-  const message = document.getElementById("serviceMessage");
+const authSection=
+document.getElementById("authSection");
 
-  if (!message) {
-    alert("Transaction history section is not available.");
-    return;
-  }
+const dashboard=
+document.getElementById("dashboard");
 
-  message.innerHTML = `
-    <div style="
-      background:#ffffff;
-      padding:20px;
-      border-radius:12px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.1);
-    ">
+const userEmail=
+document.getElementById("userEmail");
 
-      <h3>📜 Transaction History</h3>
 
-      <div id="transactionList">
+if(user){
 
-        <div style="
-          padding:12px;
-          margin:8px 0;
-          border-bottom:1px solid #eee;
-        ">
-          <strong>💸 Transfer</strong><br>
-          <small>Transaction details will appear here.</small>
-        </div>
+authSection.classList.add("hidden");
 
-        <div style="
-          padding:12px;
-          margin:8px 0;
-          border-bottom:1px solid #eee;
-        ">
-          <strong>💰 Deposit</strong><br>
-          <small>Transaction details will appear here.</small>
-        </div>
+dashboard.classList.remove("hidden");
 
-      </div>
+userEmail.textContent=user.email;
 
-      <p style="
-        text-align:center;
-        color:#777;
-        margin-top:15px;
-      ">
-        Your latest transactions will be displayed here.
-      </p>
+}else{
 
-    </div>
-  `;
+authSection.classList.remove("hidden");
+
+dashboard.classList.add("hidden");
+
+}
+
+});
+
+
+/* ===============================
+DEPOSIT
+=============================== */
+
+window.deposit=function(){
+
+const message=
+document.getElementById("serviceMessage");
+
+
+message.classList.remove("hidden");
+
+
+message.innerHTML=`
+
+<div style="
+background:white;
+padding:18px;
+border-radius:12px;
+">
+
+<h3 style="color:#123b73;margin-bottom:12px;">
+💰 Make a Deposit
+</h3>
+
+<p>
+Enter the amount you want to deposit.
+</p>
+
+<input
+type="number"
+id="depositAmount"
+placeholder="Amount in ₦"
+min="100"
+>
+
+<input
+type="text"
+id="depositReference"
+placeholder="Payment reference (optional)"
+>
+
+<button onclick="submitDeposit()">
+Submit Deposit Request
+</button>
+
+<button
+onclick="closeService()"
+class="cancel"
+>
+Cancel
+</button>
+
+<p style="
+font-size:12px;
+color:#666;
+margin-top:10px;
+">
+
+Your balance will only be updated after the deposit has been verified.
+
+</p>
+
+</div>
+
+`;
+
 };
+
+
+/* ===============================
+SUBMIT DEPOSIT
+=============================== */
+
+window.submitDeposit=function(){
+
+const amount=
+Number(
+document.getElementById("depositAmount").value
+);
+
+
+if(!amount||amount<100){
+
+alert(
+"Please enter a deposit amount of at least ₦100."
+);
+
+return;
+
+}
+
+
+alert(
+
+"Deposit request submitted successfully.\n\n"+
+
+"Amount: ₦"+
+amount.toLocaleString()+
+
+"\n\nYour deposit will be verified before your balance is updated."
+
+);
+
+
+closeService();
+
+};
+
+
+/* ===============================
+WITHDRAWAL
+=============================== */
+
+window.withdraw=function(){
+
+const message=
+document.getElementById("serviceMessage");
+
+
+message.classList.remove("hidden");
+
+
+message.innerHTML=`
+
+<div style="
+background:white;
+padding:18px;
+border-radius:12px;
+">
+
+<h3 style="color:#123b73;margin-bottom:12px;">
+💸 Request Withdrawal
+</h3>
+
+<p>
+Enter your withdrawal details.
+</p>
+
+<input
+type="number"
+id="withdrawAmount"
+placeholder="Amount in ₦"
+min="100"
+>
+
+<input
+type="text"
+id="bankName"
+placeholder="Bank name"
+>
+
+<input
+type="text"
+id="accountNumber"
+placeholder="10-digit account number"
+maxlength="10"
+inputmode="numeric"
+>
+
+<input
+type="text"
+id="accountName"
+placeholder="Account name"
+>
+
+<button onclick="submitWithdrawal()">
+Submit Withdrawal Request
+</button>
+
+<button
+onclick="closeService()"
+class="cancel"
+>
+Cancel
+</button>
+
+<p style="
+font-size:12px;
+color:#666;
+margin-top:10px;
+">
+
+Withdrawal requests must be verified before payment.
+
+</p>
+
+</div>
+
+`;
+
+};
+
+
+/* ===============================
+SUBMIT WITHDRAWAL
+=============================== */
+
+window.submitWithdrawal=function(){
+
+const amount=
+Number(
+document.getElementById("withdrawAmount").value
+);
+
+const bank=
+document.getElementById("bankName").value.trim();
+
+const accountNumber=
+document.getElementById("accountNumber").value.trim();
+
+const accountName=
+document.getElementById("accountName").value.trim();
+
+
+if(!amount||amount<100){
+
+alert(
+"Please enter a withdrawal amount of at least ₦100."
+);
+
+return;
+
+}
+
+
+if(!bank){
+
+alert("Please enter your bank name.");
+
+return;
+
+}
+
+
+if(!/^\d{10}$/.test(accountNumber)){
+
+alert(
+"Please enter a valid 10-digit account number."
+);
+
+return;
+
+}
+
+
+if(!accountName){
+
+alert(
+"Please enter the account name."
+);
+
+return;
+
+}
+
+
+alert(
+
+"Withdrawal request submitted successfully.\n\n"+
+
+"Amount: ₦"+
+amount.toLocaleString()+
+
+"\nBank: "+bank+
+
+"\nAccount: "+accountNumber+
+
+"\nAccount Name: "+accountName+
+
+"\n\nYour request will be verified before payment."
+
+);
+
+
+closeService();
+
+};
+
+
+/* ===============================
+TRANSFER
+=============================== */
+
+window.transfer=function(){
+
+const message=
+document.getElementById("serviceMessage");
+
+
+message.classList.remove("hidden");
+
+
+message.innerHTML=`
+
+<div style="
+background:white;
+padding:18px;
+border-radius:12px;
+">
+
+<h3 style="color:#123b73;margin-bottom:12px;">
+🔄 Transfer Money
+</h3>
+
+<p>
+Enter the recipient details.
+</p>
+
+<input
+type="email"
+id="recipientEmail"
+placeholder="Recipient email"
+>
+
+<input
+type="number"
+id="transferAmount"
+placeholder="Amount in ₦"
+min="100"
+>
+
+<input
+type="text"
+id="transferNote"
+placeholder="Transfer note (optional)"
+>
+
+<button onclick="submitTransfer()">
+Submit Transfer Request
+</button>
+
+<button
+onclick="closeService()"
+class="cancel"
+>
+Cancel
+</button>
+
+<p style="
+font-size:12px;
+color:#666;
+margin-top:10px;
+">
+
+Transfers will require verification before money is moved.
+
+</p>
+
+</div>
+
+`;
+
+};
+
+
+/* ===============================
+SUBMIT TRANSFER
+=============================== */
+
+window.submitTransfer=function(){
+
+const recipient=
+document.getElementById("recipientEmail").value.trim();
+
+const amount=
+Number(
+document.getElementById("transferAmount").value
+);
+
+
+if(!recipient){
+
+alert(
+"Please enter the recipient email."
+);
+
+return;
+
+}
+
+
+if(!amount||amount<100){
+
+alert(
+"Please enter a transfer amount of at least ₦100."
+);
+
+return;
+
+}
+
+
+alert(
+
+"Transfer request submitted.\n\n"+
+
+"Recipient: "+recipient+
+
+"\nAmount: ₦"+
+amount.toLocaleString()+
+
+"\n\nThe transfer will be verified before money is moved."
+
+);
+
+
+closeService();
+
+};
+
+
+/* ===============================
+TRANSACTIONS
+=============================== */
+
+window.transactions=function(){
+
+const message=
+document.getElementById("serviceMessage");
+
+
+message.classList.remove("hidden");
+
+
+message.innerHTML=`
+
+<div style="
+background:white;
+padding:18px;
+border-radius:12px;
+">
+
+<h3 style="color:#123b73;margin-bottom:12px;">
+📜 Transaction History
+</h3>
+
+<p>
+No transactions have been recorded yet.
+</p>
+
+<p style="
+font-size:12px;
+color:#666;
+margin-top:10px;
+">
+
+Your verified deposits, withdrawals and transfers will appear here after the transaction database is connected.
+
+</p>
+
+<button
+onclick="closeService()"
+class="cancel"
+>
+Close
+</button>
+
+</div>
+
+`;
+
+};
+
+
+/* ===============================
+CLOSE SERVICE
+=============================== */
+
+window.closeService=function(){
+
+const message=
+document.getElementById("serviceMessage");
+
+
+if(message){
+
+message.classList.add("hidden");
+
+message.innerHTML="";
+
+}
+
+};
+
+</script>
+
+</body>
+  </html>
