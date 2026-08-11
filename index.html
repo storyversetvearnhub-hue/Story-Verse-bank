@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StoryVerse Bank</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#172033;
+}
+
+header{
+    background:#08203b;
+    color:white;
+    padding:18px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#20c997;
+}
+
+.login-btn{
+    border:0;
+    background:#20c997;
+    color:white;
+    padding:11px 20px;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.hero{
+    background:#08203b;
+    color:white;
+    padding:65px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.hero-text{
+    max-width:600px;
+}
+
+.hero h1{
+    font-size:44px;
+    line-height:1.1;
+    margin-bottom:18px;
+}
+
+.hero p{
+    color:#d7e1ed;
+    line-height:1.7;
+}
+
+.hero-button{
+    margin-top:25px;
+    padding:14px 22px;
+    border:0;
+    border-radius:8px;
+    background:#20c997;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.bank-card{
+    background:white;
+    color:#172033;
+    padding:28px;
+    width:320px;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.bank-card p{
+    color:#777;
+    margin-bottom:10px;
+}
+
+.bank-card h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.services{
+    padding:55px 7%;
+    text-align:center;
+}
+
+.services h2{
+    margin-bottom:30px;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.service{
+    background:white;
+    padding:30px 20px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+}
+
+.service-icon{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.dashboard{
+    display:none;
+    padding:35px 7%;
+}
+
+.dashboard-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.logout{
+    border:0;
+    background:#dc3545;
+    color:white;
+    padding:10px 17px;
+    border-radius:7px;
+    cursor:pointer;
+}
+
+.balance-card{
+    background:#08203b;
+    color:white;
+    padding:30px;
+    border-radius:18px;
+    margin-bottom:25px;
+}
+
+.balance-card small{
+    color:#b9c7d9;
+}
+
+.balance{
+    font-size:38px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.actions{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.action{
+    background:white;
+    border:0;
+    padding:22px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.06);
+    cursor:pointer;
+    font-size:16px;
+}
+
+.transactions{
+    background:white;
+    margin-top:25px;
+    padding:25px;
+    border-radius:15px;
+}
+
+.transaction{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid #eee;
+}
+
+.credit{
+    color:#159957;
+}
+
+.debit{
+    color:#dc3545;
+}
+
+.login-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:100;
+}
+
+.login-box{
+    background:white;
+    width:100%;
+    max-width:390px;
+    padding:30px;
+    border-radius:15px;
+}
+
+.close{
+    text-align:right;
+    font-size:22px;
+    cursor:pointer;
+    margin-bottom:10px;
+}
+
+.login-box h2{
+    margin-bottom:20px;
+}
+
+.login-box input{
+    width:100%;
+    padding:13px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:7px;
+}
+
+.login-submit{
+    width:100%;
+    padding:13px;
+    border:0;
+    border-radius:7px;
+    background:#08203b;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+footer{
+    margin-top:40px;
+    background:#08203b;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+@media(max-width:800px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .bank-card{
+        width:100%;
+        max-width:340px;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr;
+    }
+
+    .actions{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        StoryVerse<span>Bank</span>
+    </div>
+
+    <button class="login-btn" onclick="openLogin()">
+        Login
+    </button>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <h1>
+            Simple. Secure.<br>
+            Digital Banking.
+        </h1>
+
+        <p>
+            Welcome to StoryVerse Bank. Manage your account,
+            view your balance and keep track of your transactions
+            from one convenient dashboard.
+        </p>
+
+        <button class="hero-button" onclick="openLogin()">
+            Get Started
+        </button>
+
+    </div>
+
+
+    <div class="bank-card">
+
+        <p>Available Balance</p>
+
+        <h2>₦0.00</h2>
+
+        <p>StoryVerse Bank Account</p>
+
+    </div>
+
+</section>
+
+
+<section class="services">
+
+    <h2>Our Services</h2>
+
+    <div class="service-grid">
+
+        <div class="service">
+            <div class="service-icon">💰</div>
+            <h3>Account</h3>
+            <p>Manage your digital account.</p>
+        </div>
+
+        <div class="service">
+            <div class="service-icon">🔄</div>
+            <h3>Transfers</h3>
+            <p>Transfer funds between supported accounts.</p>
+        </div>
+
+        <div class="service">
+            <div class="service-icon">📊</div>
+            <h3>Transactions</h3>
+            <p>View your recent account activity.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="dashboard" id="dashboard">
+
+    <div class="dashboard-top">
+
+        <div>
+            <h2>Hello, <span id="customerName">Customer</span> 👋</h2>
+            <p>Welcome to your dashboard</p>
+        </div>
+
+        <button class="logout" onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+
+    <div class="balance-card">
+
+        <small>Available Balance</small>
+
+        <div class="balance">
+            ₦<span id="balance">0.00</span>
+        </div>
+
+        <small>StoryVerse Bank</small>
+
+    </div>
+
+
+    <div class="actions">
+
+        <button class="action" onclick="deposit()">
+            📥<br><br>
+            Deposit
+        </button>
+
+        <button class="action" onclick="withdraw()">
+            📤<br><br>
+            Withdraw
+        </button>
+
+        <button class="action" onclick="transfer()">
+            🔄<br><br>
+            Transfer
+        </button>
+
+    </div>
+
+
+    <div class="transactions">
+
+        <h3>Recent Transactions</h3>
+
+        <div class="transaction">
+            <span>Account opened</span>
+            <span class="credit">₦0.00</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="login-overlay" id="loginOverlay">
+
+    <div class="login-box">
+
+        <div class="close" onclick="closeLogin()">
+            ✕
+        </div>
+
+        <h2>Customer Login</h2>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter password"
+        >
+
+        <button class="login-submit" onclick="login()">
+            Login
+        </button>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 StoryVerse Bank. All rights reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+function openLogin(){
+
+    document.getElementById("loginOverlay").style.display="flex";
+
+}
+
+
+function closeLogin(){
+
+    document.getElementById("loginOverlay").style.display="none";
+
+}
+
+
+function login(){
+
+    let name=document.getElementById("name").value;
+
+    let password=document.getElementById("password").value;
+
+    if(name==="" || password===""){
+
+        alert("Please enter your name and password.");
+
+        return;
+    }
+
+    document.getElementById("customerName").innerText=name;
+
+    closeLogin();
+
+    document.getElementById("dashboard").style.display="block";
+
+    document.getElementById("dashboard")
+    .scrollIntoView({behavior:"smooth"});
+
+}
+
+
+function logout(){
+
+    document.getElementById("dashboard").style.display="none";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+function deposit(){
+
+    alert("Deposit feature will be connected later.");
+
+}
+
+
+function withdraw(){
+
+    alert("Withdrawal feature will be connected later.");
+
+}
+
+
+function transfer(){
+
+    alert("Transfer feature will be connected later.");
+
+}
+
+</script>
+
+</body>
+  </html>
