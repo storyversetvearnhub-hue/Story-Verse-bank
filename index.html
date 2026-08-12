@@ -8,203 +8,268 @@
 
 <style>
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:Arial,sans-serif;
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:Arial,sans-serif;
 }
 
 body{
-    background:#f4f7fb;
-    color:#222;
+background:#f4f7fb;
+color:#222;
 }
 
 header{
-    background:#123b73;
-    color:white;
-    padding:22px;
-    text-align:center;
+background:#123b73;
+color:white;
+padding:22px;
+text-align:center;
 }
 
 header h1{
-    font-size:27px;
-    margin-bottom:6px;
+font-size:27px;
+margin-bottom:6px;
 }
 
 .container{
-    width:92%;
-    max-width:520px;
-    margin:25px auto;
+width:92%;
+max-width:560px;
+margin:25px auto;
 }
 
 .card{
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:20px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
+background:white;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
 h2{
-    color:#123b73;
-    margin-bottom:15px;
+color:#123b73;
+margin-bottom:15px;
 }
 
 h3{
-    color:#123b73;
-    margin-bottom:12px;
+color:#123b73;
+margin-bottom:12px;
 }
 
 input{
-    width:100%;
-    padding:14px;
-    margin:7px 0;
-    border:1px solid #ccc;
-    border-radius:8px;
-    font-size:15px;
+width:100%;
+padding:14px;
+margin:7px 0;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:15px;
 }
 
 button{
-    width:100%;
-    padding:14px;
-    margin-top:9px;
-    border:none;
-    border-radius:8px;
-    background:#123b73;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
+width:100%;
+padding:14px;
+margin-top:9px;
+border:none;
+border-radius:8px;
+background:#123b73;
+color:white;
+font-size:16px;
+cursor:pointer;
 }
 
 button:hover{
-    opacity:.9;
+opacity:.9;
 }
 
 .hidden{
-    display:none !important;
+display:none !important;
 }
 
 .balance{
-    background:#123b73;
-    color:white;
-    padding:25px;
-    border-radius:15px;
-    margin-bottom:20px;
+background:#123b73;
+color:white;
+padding:25px;
+border-radius:15px;
+margin-bottom:20px;
 }
 
 .balance p{
-    font-size:14px;
-    margin-bottom:8px;
+font-size:14px;
+margin-bottom:8px;
 }
 
 .balance strong{
-    font-size:30px;
+font-size:30px;
 }
 
 .account-box{
-    background:#eef3f9;
-    padding:15px;
-    border-radius:10px;
-    margin-top:15px;
+background:#eef3f9;
+padding:15px;
+border-radius:10px;
+margin-top:15px;
 }
 
 .account-box p{
-    margin:7px 0;
+margin:7px 0;
+word-break:break-word;
 }
 
 .actions{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
 }
 
 .actions button{
-    margin:0;
+margin:0;
 }
 
 .message{
-    margin-top:15px;
-    padding:15px;
-    border-radius:10px;
-    background:#eef3f9;
-    font-size:14px;
-    line-height:1.5;
+margin-top:15px;
+padding:15px;
+border-radius:10px;
+background:#eef3f9;
+font-size:14px;
+line-height:1.5;
 }
 
 .google{
-    background:#ffffff;
-    color:#333;
-    border:1px solid #ccc;
+background:#fff;
+color:#333;
+border:1px solid #ccc;
 }
 
 .cancel{
-    background:#777;
+background:#777;
 }
 
 .logout{
-    background:#c62828;
+background:#c62828;
 }
 
 .small{
-    font-size:13px;
-    color:#666;
-    text-align:center;
-    margin-top:10px;
-    line-height:1.5;
-}
-
-.transaction{
-    border-bottom:1px solid #eee;
-    padding:14px 0;
-}
-
-.transaction:last-child{
-    border-bottom:none;
-}
-
-.transaction-top{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-}
-
-.credit{
-    color:#16834a;
-    font-weight:bold;
-}
-
-.debit{
-    color:#c62828;
-    font-weight:bold;
-}
-
-.pending{
-    color:#d17a00;
-    font-weight:bold;
+font-size:13px;
+color:#666;
+text-align:center;
+margin-top:10px;
+line-height:1.5;
 }
 
 footer{
-    text-align:center;
-    padding:25px;
-    color:#777;
-    font-size:13px;
+text-align:center;
+padding:25px;
+color:#777;
+font-size:13px;
 }
 
 .loading{
-    text-align:center;
-    padding:20px;
-    color:#666;
+text-align:center;
+padding:20px;
+color:#666;
+}
+
+.request{
+border:1px solid #e5e5e5;
+border-radius:12px;
+padding:15px;
+margin-bottom:12px;
+background:#fafafa;
+}
+
+.request:last-child{
+margin-bottom:0;
+}
+
+.request-title{
+font-weight:bold;
+color:#123b73;
+font-size:16px;
+margin-bottom:8px;
+}
+
+.request-row{
+display:flex;
+justify-content:space-between;
+gap:10px;
+padding:5px 0;
+font-size:14px;
+}
+
+.request-row span:first-child{
+color:#666;
+}
+
+.status{
+display:inline-block;
+padding:5px 10px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+}
+
+.status-pending{
+background:#fff1d6;
+color:#a66300;
+}
+
+.status-approved{
+background:#dff5e7;
+color:#137333;
+}
+
+.status-rejected{
+background:#ffe1e1;
+color:#b00020;
+}
+
+.status-processing{
+background:#e1edff;
+color:#1558a6;
+}
+
+.transaction{
+border-bottom:1px solid #eee;
+padding:14px 0;
+}
+
+.transaction:last-child{
+border-bottom:none;
+}
+
+.transaction-top{
+display:flex;
+justify-content:space-between;
+gap:10px;
+margin-bottom:5px;
+}
+
+.credit{
+color:#16834a;
+font-weight:bold;
+}
+
+.debit{
+color:#c62828;
+font-weight:bold;
 }
 
 @media(max-width:450px){
 
-    .actions{
-        grid-template-columns:1fr;
-    }
+.actions{
+grid-template-columns:1fr;
+}
 
-    header h1{
-        font-size:23px;
-    }
+header h1{
+font-size:23px;
+}
+
+.request-row{
+display:block;
+}
+
+.request-row span{
+display:block;
+margin-bottom:3px;
+}
 }
 </style>
 </head>
@@ -212,182 +277,189 @@ footer{
 <body>
 
 <header>
-    <h1>🏦 StoryVerse Bank</h1>
-    <p>Simple • Convenient • Connected</p>
+<h1>🏦 StoryVerse Bank</h1>
+<p>Simple • Convenient • Connected</p>
 </header>
-
 
 <div class="container">
 
-
-<!-- ========================= -->
-<!-- AUTHENTICATION -->
-<!-- ========================= -->
+<!-- AUTH -->
 
 <div id="authSection">
 
-    <div class="card">
+<div class="card">
 
-        <h2>🔐 Customer Login</h2>
+<h2>🔐 Customer Login</h2>
 
-        <input
-            type="email"
-            id="loginEmail"
-            placeholder="Email address"
-        >
+<input
+type="email"
+id="loginEmail"
+placeholder="Email address">
 
-        <input
-            type="password"
-            id="loginPassword"
-            placeholder="Password"
-        >
+<input
+type="password"
+id="loginPassword"
+placeholder="Password">
 
-        <button onclick="loginUser()">
-            Login
-        </button>
+<button onclick="loginUser()">
+Login
+</button>
 
-        <button class="google" onclick="googleLogin()">
-            🔵 Continue with Google
-        </button>
+<button class="google" onclick="googleLogin()">
+🔵 Continue with Google
+</button>
 
-        <div id="loginMessage" class="message hidden"></div>
+<div id="loginMessage" class="message hidden"></div>
 
-    </div>
+</div>
 
+<div class="card">
 
-    <div class="card">
+<h2>📝 Create Account</h2>
 
-        <h2>📝 Create Account</h2>
+<input
+type="email"
+id="registerEmail"
+placeholder="Email address">
 
-        <input
-            type="email"
-            id="registerEmail"
-            placeholder="Email address"
-        >
+<input
+type="password"
+id="registerPassword"
+placeholder="Password (minimum 6 characters)">
 
-        <input
-            type="password"
-            id="registerPassword"
-            placeholder="Password (minimum 6 characters)"
-        >
+<button onclick="registerUser()">
+Create Account
+</button>
 
-        <button onclick="registerUser()">
-            Create Account
-        </button>
+<button class="google" onclick="googleRegister()">
+🔵 Register with Google
+</button>
 
-        <button class="google" onclick="googleRegister()">
-            🔵 Register with Google
-        </button>
+<div id="registerMessage" class="message hidden"></div>
 
-        <div id="registerMessage" class="message hidden"></div>
-
-    </div>
+</div>
 
 </div>
 
 
-<!-- ========================= -->
 <!-- DASHBOARD -->
-<!-- ========================= -->
 
 <div id="dashboard" class="hidden">
 
-    <div class="balance">
+<div class="balance">
 
-        <p>Available Balance</p>
+<p>Available Balance</p>
 
-        <strong id="balanceAmount">
-            ₦0.00
-        </strong>
+<strong id="balanceAmount">
+₦0.00
+</strong>
 
-    </div>
-
-
-    <div class="card">
-
-        <h2>👤 My Account</h2>
-
-        <p>
-            Email:
-            <strong id="userEmail">
-                Loading...
-            </strong>
-        </p>
-
-        <div class="account-box">
-
-            <p>
-                <strong>Account Number:</strong>
-                <span id="accountNumber">
-                    Loading...
-                </span>
-            </p>
-
-            <p>
-                <strong>Account Status:</strong>
-                <span id="accountStatus">
-                    Active
-                </span>
-            </p>
-
-        </div>
-
-        <button
-            class="logout"
-            onclick="logout()"
-        >
-            Logout
-        </button>
-
-    </div>
+</div>
 
 
-    <div class="card">
+<!-- ACCOUNT -->
 
-        <h2>🏦 Banking Services</h2>
+<div class="card">
 
-        <div class="actions">
+<h2>👤 My Account</h2>
 
-            <button onclick="deposit()">
-                💰 Deposit
-            </button>
+<p>
+Email:
+<strong id="userEmail">Loading...</strong>
+</p>
 
-            <button onclick="withdraw()">
-                💸 Withdraw
-            </button>
+<div class="account-box">
 
-            <button onclick="transfer()">
-                🔄 Transfer
-            </button>
+<p>
+<strong>Account Number:</strong>
+<span id="accountNumber">Loading...</span>
+</p>
 
-            <button onclick="transactions()">
-                📜 Transactions
-            </button>
+<p>
+<strong>Account Status:</strong>
+<span id="accountStatus">Active</span>
+</p>
 
-        </div>
+</div>
 
-    </div>
+<button
+class="logout"
+onclick="logout()">
+Logout
+</button>
+
+</div>
 
 
-    <div
-        id="serviceMessage"
-        class="message hidden">
-    </div>
+<!-- SERVICES -->
+
+<div class="card">
+
+<h2>🏦 Banking Services</h2>
+
+<div class="actions">
+
+<button onclick="deposit()">
+💰 Deposit
+</button>
+
+<button onclick="withdraw()">
+💸 Withdraw
+</button>
+
+<button onclick="transfer()">
+🔄 Transfer
+</button>
+
+<button onclick="transactions()">
+📜 Transactions
+</button>
+
+</div>
+
+</div>
 
 
-    <div class="card">
+<div id="serviceMessage" class="message hidden"></div>
 
-        <h2>📜 Recent Transactions</h2>
 
-        <div id="transactionList">
+<!-- REQUEST STATUS -->
 
-            <div class="loading">
-                Loading transactions...
-            </div>
+<div class="card">
 
-        </div>
+<h2>📋 Request Status</h2>
 
-    </div>
+<p class="small">
+Your deposit, withdrawal and transfer requests appear here.
+New requests start as <b>Pending</b> until they are reviewed.
+</p>
+
+<div id="requestList">
+
+<div class="loading">
+Loading request status...
+</div>
+
+</div>
+
+</div>
+
+
+<!-- TRANSACTIONS -->
+
+<div class="card">
+
+<h2>📜 Transaction History</h2>
+
+<div id="transactionList">
+
+<div class="loading">
+Loading transactions...
+</div>
+
+</div>
+
+</div>
 
 </div>
 
@@ -395,87 +467,74 @@ footer{
 
 
 <footer>
-    © 2026 StoryVerse Bank. All rights reserved.
+© 2026 StoryVerse Bank. All rights reserved.
 </footer>
 
-
-
-<!-- ===================================== -->
-<!-- FIREBASE -->
-<!-- ===================================== -->
 
 <script type="module">
 
 import { initializeApp }
 from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
-
 import {
-
-    getAuth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    signInWithPopup,
-    GoogleAuthProvider,
-    signOut,
-    onAuthStateChanged
-
+getAuth,
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword,
+signInWithPopup,
+GoogleAuthProvider,
+signOut,
+onAuthStateChanged
 }
 from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
-
 import {
-
-    getFirestore,
-    doc,
-    setDoc,
-    getDoc,
-    collection,
-    query,
-    where,
-    orderBy,
-    getDocs,
-    serverTimestamp,
-    addDoc
-
+getFirestore,
+doc,
+setDoc,
+getDoc,
+collection,
+query,
+where,
+getDocs,
+serverTimestamp,
+addDoc
 }
 from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-
-/* =====================================
-FIREBASE CONFIGURATION
-===================================== */
+/* ================================
+FIREBASE CONFIG
+================================ */
 
 const firebaseConfig = {
 
-    apiKey:
-    "AIzaSyBbjVL5TMW8mjtqxxo9fxn7BCEl_872vW8",
+apiKey:
+"AIzaSyBbjVL5TMW8mjtqxxo9fxn7BCEl_872vW8",
 
-    authDomain:
-    "story-verse-bank.firebaseapp.com",
+authDomain:
+"story-verse-bank.firebaseapp.com",
 
-    projectId:
-    "story-verse-bank",
+projectId:
+"story-verse-bank",
 
-    storageBucket:
-    "story-verse-bank.firebasestorage.app",
+storageBucket:
+"story-verse-bank.firebasestorage.app",
 
-    messagingSenderId:
-    "6469827233",
+messagingSenderId:
+"6469827233",
 
-    appId:
-    "1:6469827233:web:475887acf29097e3cd0ee0",
+appId:
+"1:6469827233:web:475887acf29097e3cd0ee0",
 
-    measurementId:
-    "G-ZB8VQDSW3L"
+measurementId:
+"G-ZB8VQDSW3L"
+
 };
 
 
-
-/* =====================================
-INITIALIZE FIREBASE
-===================================== */
+/* ================================
+INITIALIZE
+================================ */
 
 const app =
 initializeApp(firebaseConfig);
@@ -490,1261 +549,1418 @@ const googleProvider =
 new GoogleAuthProvider();
 
 
-
-/* =====================================
+/* ================================
 MESSAGE
-===================================== */
+================================ */
 
 function showMessage(id,text){
 
-    const element =
-    document.getElementById(id);
+const element =
+document.getElementById(id);
 
-    if(!element){
-        return;
-    }
+if(!element) return;
 
-    element.textContent = text;
+element.textContent=text;
 
-    element.classList.remove("hidden");
+element.classList.remove("hidden");
+
 }
 
 
+/* ================================
+REGISTER
+================================ */
 
-/* =====================================
-REGISTER WITH EMAIL
-===================================== */
+window.registerUser=async function(){
 
-window.registerUser = async function(){
+const email =
+document.getElementById(
+"registerEmail"
+).value.trim();
 
-    const email =
-    document
-    .getElementById("registerEmail")
-    .value
-    .trim();
+const password =
+document.getElementById(
+"registerPassword"
+).value;
 
-    const password =
-    document
-    .getElementById("registerPassword")
-    .value;
+if(!email || !password){
 
+showMessage(
+"registerMessage",
+"Please enter your email and password."
+);
 
-    if(!email || !password){
+return;
+}
 
-        showMessage(
-            "registerMessage",
-            "Please enter your email and password."
-        );
+if(password.length<6){
 
-        return;
-    }
+showMessage(
+"registerMessage",
+"Password must contain at least 6 characters."
+);
 
+return;
+}
 
-    if(password.length < 6){
+try{
 
-        showMessage(
-            "registerMessage",
-            "Password must contain at least 6 characters."
-        );
+const result =
+await createUserWithEmailAndPassword(
+auth,
+email,
+password
+);
 
-        return;
-    }
+await createCustomerRecord(
+result.user
+);
 
+showMessage(
+"registerMessage",
+"Account created successfully."
+);
 
-    try{
+}catch(error){
 
-        const userCredential =
-        await createUserWithEmailAndPassword(
-            auth,
-            email,
-            password
-        );
+console.error(error);
 
+showMessage(
+"registerMessage",
+friendlyError(error)
+);
 
-        await createCustomerRecord(
-            userCredential.user
-        );
-
-
-        showMessage(
-            "registerMessage",
-            "Account created successfully."
-        );
-
-
-    }catch(error){
-
-        console.error(error);
-
-        showMessage(
-            "registerMessage",
-            "Registration failed: " +
-            friendlyError(error)
-        );
-
-    }
+}
 
 };
 
 
-
-/* =====================================
+/* ================================
 GOOGLE REGISTER
-===================================== */
+================================ */
 
-window.googleRegister = async function(){
+window.googleRegister=async function(){
 
-    try{
+try{
 
-        const result =
-        await signInWithPopup(
-            auth,
-            googleProvider
-        );
+const result =
+await signInWithPopup(
+auth,
+googleProvider
+);
 
+await createCustomerRecord(
+result.user
+);
 
-        await createCustomerRecord(
-            result.user
-        );
+}catch(error){
 
+console.error(error);
 
-    }catch(error){
+showMessage(
+"registerMessage",
+"Google registration failed: "+
+friendlyError(error)
+);
 
-        console.error(error);
-
-        showMessage(
-            "registerMessage",
-            "Google registration failed: " +
-            friendlyError(error)
-        );
-
-    }
+}
 
 };
 
 
-
-/* =====================================
-CREATE CUSTOMER RECORD
-===================================== */
+/* ================================
+CREATE CUSTOMER
+================================ */
 
 async function createCustomerRecord(user){
 
-    const customerRef =
-    doc(
-        db,
-        "customers",
-        user.uid
-    );
+const customerRef =
+doc(
+db,
+"customers",
+user.uid
+);
 
+const existing =
+await getDoc(customerRef);
 
-    const existing =
-    await getDoc(customerRef);
+if(existing.exists()) return;
 
+const accountNumber =
+generateAccountNumber();
 
-    if(existing.exists()){
+await setDoc(
+customerRef,
+{
 
-        return;
+uid:user.uid,
 
-    }
+email:user.email || "",
 
+accountNumber:accountNumber,
 
-    const accountNumber =
-    generateAccountNumber();
+balance:0,
 
+status:"Active",
 
-    await setDoc(
-        customerRef,
-        {
+createdAt:serverTimestamp()
 
-            uid:user.uid,
-
-            email:user.email || "",
-
-            accountNumber:
-            accountNumber,
-
-            balance:0,
-
-            status:"Active",
-
-            createdAt:
-            serverTimestamp()
-
-        }
-    );
+}
+);
 
 }
 
 
-
-/* =====================================
+/* ================================
 ACCOUNT NUMBER
-===================================== */
+================================ */
 
 function generateAccountNumber(){
 
-    const random =
-    Math.floor(
-        10000000 +
-        Math.random() * 90000000
-    );
+const random =
+Math.floor(
+10000000 +
+Math.random()*90000000
+);
 
-    return "SVB" + random;
+return "SVB"+random;
 
 }
 
 
-
-/* =====================================
+/* ================================
 LOGIN
-===================================== */
+================================ */
 
-window.loginUser = async function(){
+window.loginUser=async function(){
 
-    const email =
-    document
-    .getElementById("loginEmail")
-    .value
-    .trim();
+const email =
+document.getElementById(
+"loginEmail"
+).value.trim();
 
-    const password =
-    document
-    .getElementById("loginPassword")
-    .value;
+const password =
+document.getElementById(
+"loginPassword"
+).value;
 
+if(!email || !password){
 
-    if(!email || !password){
+showMessage(
+"loginMessage",
+"Please enter your email and password."
+);
 
-        showMessage(
-            "loginMessage",
-            "Please enter your email and password."
-        );
+return;
+}
 
-        return;
-    }
+try{
 
+await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
 
-    try{
+}catch(error){
 
-        await signInWithEmailAndPassword(
-            auth,
-            email,
-            password
-        );
+console.error(error);
 
+showMessage(
+"loginMessage",
+friendlyError(error)
+);
 
-    }catch(error){
-
-        console.error(error);
-
-        showMessage(
-            "loginMessage",
-            "Login failed: " +
-            friendlyError(error)
-        );
-
-    }
+}
 
 };
 
 
-
-/* =====================================
+/* ================================
 GOOGLE LOGIN
-===================================== */
+================================ */
 
-window.googleLogin = async function(){
+window.googleLogin=async function(){
 
-    try{
+try{
 
-        const result =
-        await signInWithPopup(
-            auth,
-            googleProvider
-        );
+const result =
+await signInWithPopup(
+auth,
+googleProvider
+);
 
+await createCustomerRecord(
+result.user
+);
 
-        await createCustomerRecord(
-            result.user
-        );
+}catch(error){
 
+console.error(error);
 
-    }catch(error){
+showMessage(
+"loginMessage",
+"Google login failed: "+
+friendlyError(error)
+);
 
-        console.error(error);
-
-        showMessage(
-            "loginMessage",
-            "Google login failed: " +
-            friendlyError(error)
-        );
-
-    }
+}
 
 };
 
 
-
-/* =====================================
+/* ================================
 LOGOUT
-===================================== */
+================================ */
 
-window.logout = async function(){
+window.logout=async function(){
 
-    try{
+try{
 
-        await signOut(auth);
+await signOut(auth);
 
-    }catch(error){
+}catch(error){
 
-        alert(
-            "Logout failed."
-        );
+alert("Logout failed.");
 
-    }
+}
 
 };
 
 
-
-/* =====================================
+/* ================================
 AUTH STATE
-===================================== */
+================================ */
 
 onAuthStateChanged(
-    auth,
-    async function(user){
+auth,
+async function(user){
 
-        const authSection =
-        document.getElementById(
-            "authSection"
-        );
+const authSection =
+document.getElementById(
+"authSection"
+);
 
-        const dashboard =
-        document.getElementById(
-            "dashboard"
-        );
+const dashboard =
+document.getElementById(
+"dashboard"
+);
 
+if(user){
 
-        if(user){
+authSection.classList.add(
+"hidden"
+);
 
-            authSection
-            .classList
-            .add("hidden");
+dashboard.classList.remove(
+"hidden"
+);
 
+document.getElementById(
+"userEmail"
+).textContent =
+user.email || "Google User";
 
-            dashboard
-            .classList
-            .remove("hidden");
+await loadCustomerData(user);
 
+await loadRequests(user);
 
-            document
-            .getElementById("userEmail")
-            .textContent =
-            user.email || "Google User";
+await loadTransactions(user);
 
+}else{
 
-            await loadCustomerData(user);
+authSection.classList.remove(
+"hidden"
+);
 
-            await loadTransactions(user);
+dashboard.classList.add(
+"hidden"
+);
 
+}
 
-        }else{
-
-            authSection
-            .classList
-            .remove("hidden");
-
-
-            dashboard
-            .classList
-            .add("hidden");
-
-        }
-
-    }
+}
 );
 
 
-
-/* =====================================
-LOAD CUSTOMER DATA
-===================================== */
+/* ================================
+LOAD CUSTOMER
+================================ */
 
 async function loadCustomerData(user){
 
-    try{
+try{
 
-        const customerRef =
-        doc(
-            db,
-            "customers",
-            user.uid
-        );
+const customerRef =
+doc(
+db,
+"customers",
+user.uid
+);
 
+const snap =
+await getDoc(customerRef);
 
-        const customerSnap =
-        await getDoc(customerRef);
+if(!snap.exists()){
 
+await createCustomerRecord(user);
 
-        if(!customerSnap.exists()){
+return loadCustomerData(user);
 
-            await createCustomerRecord(user);
+}
 
-            return loadCustomerData(user);
+const data =
+snap.data();
 
-        }
+document.getElementById(
+"accountNumber"
+).textContent =
+data.accountNumber ||
+"Not assigned";
 
+document.getElementById(
+"accountStatus"
+).textContent =
+data.status ||
+"Active";
 
-        const data =
-        customerSnap.data();
+const balance =
+Number(data.balance || 0);
 
+document.getElementById(
+"balanceAmount"
+).textContent =
+"₦"+
+balance.toLocaleString(
+"en-NG",
+{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+}
+);
 
-        document
-        .getElementById("accountNumber")
-        .textContent =
-        data.accountNumber || "Not assigned";
+}catch(error){
 
+console.error(error);
 
-        document
-        .getElementById("accountStatus")
-        .textContent =
-        data.status || "Active";
+document.getElementById(
+"accountNumber"
+).textContent =
+"Unable to load";
 
-
-        const balance =
-        Number(data.balance || 0);
-
-
-        document
-        .getElementById("balanceAmount")
-        .textContent =
-        "₦" +
-        balance.toLocaleString(
-            "en-NG",
-            {
-                minimumFractionDigits:2,
-                maximumFractionDigits:2
-            }
-        );
-
-
-    }catch(error){
-
-        console.error(
-            "Could not load customer:",
-            error
-        );
-
-        document
-        .getElementById("accountNumber")
-        .textContent =
-        "Unable to load";
-
-    }
+}
 
 }
 
 
+/* ================================
+DEPOSIT FORM
+================================ */
 
-/* =====================================
-DEPOSIT REQUEST
-===================================== */
+window.deposit=function(){
 
-window.deposit = function(){
+const message =
+document.getElementById(
+"serviceMessage"
+);
 
-    const message =
-    document.getElementById(
-        "serviceMessage"
-    );
+message.classList.remove(
+"hidden"
+);
 
+message.innerHTML=`
 
-    message.classList.remove(
-        "hidden"
-    );
+<div>
 
+<h3>💰 Deposit Funds</h3>
 
-    message.innerHTML = `
+<p>
+Enter the amount you want to deposit.
+</p>
 
-        <div>
+<input
+type="number"
+id="depositAmount"
+placeholder="Amount in ₦"
+min="100">
 
-            <h3>💰 Deposit Funds</h3>
+<input
+type="text"
+id="depositReference"
+placeholder="Payment reference (optional)">
 
-            <p>
-                Enter the amount you want to deposit.
-            </p>
+<button onclick="submitDeposit()">
+Submit Deposit Request
+</button>
 
-            <input
-                type="number"
-                id="depositAmount"
-                placeholder="Amount in ₦"
-                min="100"
-            >
+<button
+onclick="closeService()"
+class="cancel">
+Cancel
+</button>
 
-            <button
-                onclick="submitDeposit()">
-                Submit Deposit Request
-            </button>
+<p class="small">
+Payment status: <b>Pending</b><br>
+Your balance will only change after payment verification and approval.
+</p>
 
-            <button
-                onclick="closeService()"
-                class="cancel">
-                Cancel
-            </button>
+</div>
 
-            <p class="small">
-                This creates a deposit request.
-                Your balance is not increased until
-                the payment is independently verified.
-            </p>
-
-        </div>
-
-    `;
+`;
 
 };
 
 
-
-/* =====================================
+/* ================================
 SUBMIT DEPOSIT
-===================================== */
+================================ */
 
-window.submitDeposit = async function(){
+window.submitDeposit=async function(){
 
-    const user =
-    auth.currentUser;
+const user =
+auth.currentUser;
 
+if(!user){
 
-    if(!user){
+alert("Please log in first.");
 
-        alert(
-            "Please log in first."
-        );
+return;
+}
 
-        return;
+const amount =
+Number(
+document.getElementById(
+"depositAmount"
+).value
+);
 
-    }
+const reference =
+document.getElementById(
+"depositReference"
+).value.trim();
 
+if(!amount || amount<100){
 
-    const amount =
-    Number(
-        document
-        .getElementById(
-            "depositAmount"
-        )
-        .value
-    );
+alert(
+"Minimum deposit request is ₦100."
+);
 
+return;
+}
 
-    if(!amount || amount < 100){
+try{
 
-        alert(
-            "Minimum deposit request is ₦100."
-        );
+await addDoc(
+collection(
+db,
+"depositRequests"
+),
+{
 
-        return;
+userId:user.uid,
 
-    }
+email:user.email || "",
 
+amount:amount,
 
-    try{
+reference:reference,
 
-        await addDoc(
-            collection(
-                db,
-                "depositRequests"
-            ),
-            {
+type:"Deposit",
 
-                userId:user.uid,
+status:"Pending",
 
-                email:user.email,
+paymentStatus:"Pending",
 
-                amount:amount,
+createdAt:
+serverTimestamp()
 
-                status:"Pending",
+}
+);
 
-                createdAt:
-                serverTimestamp()
+alert(
+"Deposit request submitted successfully. Status: Pending."
+);
 
-            }
-        );
+closeService();
 
+await loadRequests(user);
 
-        alert(
-            "Deposit request submitted successfully."
-        );
+}catch(error){
 
+console.error(error);
 
-        closeService();
+alert(
+"Unable to submit deposit request."
+);
 
-
-    }catch(error){
-
-        console.error(error);
-
-        alert(
-            "Unable to submit deposit request."
-        );
-
-    }
-
-};
-
-
-
-/* =====================================
-WITHDRAWAL
-===================================== */
-
-window.withdraw = function(){
-
-    const message =
-    document.getElementById(
-        "serviceMessage"
-    );
-
-
-    message.classList.remove(
-        "hidden"
-    );
-
-
-    message.innerHTML = `
-
-        <div>
-
-            <h3>💸 Withdrawal Request</h3>
-
-            <input
-                type="number"
-                id="withdrawAmount"
-                placeholder="Amount in ₦"
-                min="100"
-            >
-
-            <input
-                type="text"
-                id="bankName"
-                placeholder="Bank name"
-            >
-
-            <input
-                type="text"
-                id="accountNumberInput"
-                placeholder="10-digit account number"
-                maxlength="10"
-                inputmode="numeric"
-            >
-
-            <input
-                type="text"
-                id="accountName"
-                placeholder="Account name"
-            >
-
-            <button
-                onclick="submitWithdrawal()">
-                Submit Withdrawal Request
-            </button>
-
-            <button
-                onclick="closeService()"
-                class="cancel">
-                Cancel
-            </button>
-
-        </div>
-
-    `;
+}
 
 };
 
 
+/* ================================
+WITHDRAW
+================================ */
 
-/* =====================================
+window.withdraw=function(){
+
+const message =
+document.getElementById(
+"serviceMessage"
+);
+
+message.classList.remove(
+"hidden"
+);
+
+message.innerHTML=`
+
+<div>
+
+<h3>💸 Withdrawal Request</h3>
+
+<input
+type="number"
+id="withdrawAmount"
+placeholder="Amount in ₦"
+min="100">
+
+<input
+type="text"
+id="bankName"
+placeholder="Bank name">
+
+<input
+type="text"
+id="accountNumberInput"
+placeholder="10-digit account number"
+maxlength="10"
+inputmode="numeric">
+
+<input
+type="text"
+id="accountName"
+placeholder="Account name">
+
+<button onclick="submitWithdrawal()">
+Submit Withdrawal Request
+</button>
+
+<button
+onclick="closeService()"
+class="cancel">
+Cancel
+</button>
+
+<p class="small">
+Payment status: <b>Pending</b><br>
+Withdrawal will be paid only after verification and approval.
+</p>
+
+</div>
+
+`;
+
+};
+
+
+/* ================================
 SUBMIT WITHDRAWAL
-===================================== */
+================================ */
 
-window.submitWithdrawal =
-async function(){
+window.submitWithdrawal=async function(){
 
-    const user =
-    auth.currentUser;
+const user =
+auth.currentUser;
 
+if(!user){
 
-    if(!user){
+alert("Please log in first.");
 
-        alert(
-            "Please log in first."
-        );
+return;
+}
 
-        return;
+const amount =
+Number(
+document.getElementById(
+"withdrawAmount"
+).value
+);
 
-    }
+const bank =
+document.getElementById(
+"bankName"
+).value.trim();
 
+const accountNumber =
+document.getElementById(
+"accountNumberInput"
+).value.trim();
 
-    const amount =
-    Number(
-        document
-        .getElementById(
-            "withdrawAmount"
-        )
-        .value
-    );
+const accountName =
+document.getElementById(
+"accountName"
+).value.trim();
 
+if(!amount || amount<100){
 
-    const bank =
-    document
-    .getElementById(
-        "bankName"
-    )
-    .value
-    .trim();
+alert(
+"Minimum withdrawal is ₦100."
+);
 
+return;
+}
 
-    const accountNumber =
-    document
-    .getElementById(
-        "accountNumberInput"
-    )
-    .value
-    .trim();
+if(
+!bank ||
+!accountName ||
+!/^\d{10}$/.test(accountNumber)
+){
 
+alert(
+"Please enter valid bank details."
+);
 
-    const accountName =
-    document
-    .getElementById(
-        "accountName"
-    )
-    .value
-    .trim();
+return;
+}
 
+try{
 
-    if(!amount || amount < 100){
+await addDoc(
+collection(
+db,
+"withdrawalRequests"
+),
+{
 
-        alert(
-            "Minimum withdrawal request is ₦100."
-        );
+userId:user.uid,
 
-        return;
+email:user.email || "",
 
-    }
+amount:amount,
 
+bankName:bank,
 
-    if(!bank ||
-       !accountName ||
-       !/^\d{10}$/.test(accountNumber)){
+accountNumber:accountNumber,
 
-        alert(
-            "Please enter valid bank details."
-        );
+accountName:accountName,
 
-        return;
+type:"Withdrawal",
 
-    }
+status:"Pending",
 
+paymentStatus:"Pending",
 
-    try{
+createdAt:
+serverTimestamp()
 
-        await addDoc(
-            collection(
-                db,
-                "withdrawalRequests"
-            ),
-            {
+}
+);
 
-                userId:user.uid,
+alert(
+"Withdrawal request submitted successfully. Status: Pending."
+);
 
-                email:user.email,
+closeService();
 
-                amount:amount,
+await loadRequests(user);
 
-                bankName:bank,
+}catch(error){
 
-                accountNumber:
-                accountNumber,
+console.error(error);
 
-                accountName:
-                accountName,
+alert(
+"Unable to submit withdrawal request."
+);
 
-                status:"Pending",
-
-                createdAt:
-                serverTimestamp()
-
-            }
-        );
-
-
-        alert(
-            "Withdrawal request submitted successfully."
-        );
-
-
-        closeService();
-
-
-    }catch(error){
-
-        console.error(error);
-
-        alert(
-            "Unable to submit withdrawal request."
-        );
-
-    }
+}
 
 };
 
 
-
-/* =====================================
+/* ================================
 TRANSFER
-===================================== */
+================================ */
 
-window.transfer = function(){
+window.transfer=function(){
 
-    const message =
-    document.getElementById(
-        "serviceMessage"
-    );
+const message =
+document.getElementById(
+"serviceMessage"
+);
 
+message.classList.remove(
+"hidden"
+);
 
-    message.classList.remove(
-        "hidden"
-    );
+message.innerHTML=`
 
+<div>
 
-    message.innerHTML = `
+<h3>🔄 Transfer Request</h3>
 
-        <div>
+<input
+type="text"
+id="recipientAccount"
+placeholder="Recipient account number">
 
-            <h3>🔄 Transfer Request</h3>
+<input
+type="number"
+id="transferAmount"
+placeholder="Amount in ₦"
+min="100">
 
-            <input
-                type="text"
-                id="recipientAccount"
-                placeholder="Recipient account number"
-            >
+<input
+type="text"
+id="transferNote"
+placeholder="Transfer note (optional)">
 
-            <input
-                type="number"
-                id="transferAmount"
-                placeholder="Amount in ₦"
-                min="100"
-            >
+<button onclick="submitTransfer()">
+Submit Transfer Request
+</button>
 
-            <input
-                type="text"
-                id="transferNote"
-                placeholder="Transfer note (optional)"
-            >
+<button
+onclick="closeService()"
+class="cancel">
+Cancel
+</button>
 
-            <button
-                onclick="submitTransfer()">
-                Submit Transfer Request
-            </button>
+<p class="small">
+Payment status: <b>Pending</b><br>
+Transfers require verification before money is moved.
+</p>
 
-            <button
-                onclick="closeService()"
-                class="cancel">
-                Cancel
-            </button>
+</div>
 
-        </div>
-
-    `;
+`;
 
 };
 
 
-
-/* =====================================
+/* ================================
 SUBMIT TRANSFER
-===================================== */
+================================ */
 
-window.submitTransfer =
-async function(){
+window.submitTransfer=async function(){
 
-    const user =
-    auth.currentUser;
+const user =
+auth.currentUser;
 
+if(!user){
 
-    if(!user){
+alert("Please log in first.");
 
-        alert(
-            "Please log in first."
-        );
+return;
+}
 
-        return;
+const recipient =
+document.getElementById(
+"recipientAccount"
+).value.trim();
 
-    }
+const amount =
+Number(
+document.getElementById(
+"transferAmount"
+).value
+);
 
+const note =
+document.getElementById(
+"transferNote"
+).value.trim();
 
-    const recipient =
-    document
-    .getElementById(
-        "recipientAccount"
-    )
-    .value
-    .trim();
+if(!recipient){
 
+alert(
+"Enter the recipient account number."
+);
 
-    const amount =
-    Number(
-        document
-        .getElementById(
-            "transferAmount"
-        )
-        .value
-    );
+return;
+}
 
+if(!amount || amount<100){
 
-    const note =
-    document
-    .getElementById(
-        "transferNote"
-    )
-    .value
-    .trim();
+alert(
+"Minimum transfer is ₦100."
+);
 
+return;
+}
 
-    if(!recipient){
+try{
 
-        alert(
-            "Enter the recipient account number."
-        );
+await addDoc(
+collection(
+db,
+"transferRequests"
+),
+{
 
-        return;
+senderId:user.uid,
 
-    }
+senderEmail:user.email || "",
 
+recipientAccount:recipient,
 
-    if(!amount || amount < 100){
+amount:amount,
 
-        alert(
-            "Minimum transfer request is ₦100."
-        );
+note:note,
 
-        return;
+type:"Transfer",
 
-    }
+status:"Pending",
 
+paymentStatus:"Pending",
 
-    try{
+createdAt:
+serverTimestamp()
 
-        await addDoc(
-            collection(
-                db,
-                "transferRequests"
-            ),
-            {
+}
+);
 
-                senderId:user.uid,
+alert(
+"Transfer request submitted successfully. Status: Pending."
+);
 
-                senderEmail:
-                user.email,
+closeService();
 
-                recipientAccount:
-                recipient,
+await loadRequests(user);
 
-                amount:amount,
+}catch(error){
 
-                note:note,
+console.error(error);
 
-                status:"Pending",
+alert(
+"Unable to submit transfer request."
+);
 
-                createdAt:
-                serverTimestamp()
-
-            }
-        );
-
-
-        alert(
-            "Transfer request submitted successfully."
-        );
-
-
-        closeService();
-
-
-    }catch(error){
-
-        console.error(error);
-
-        alert(
-            "Unable to submit transfer request."
-        );
-
-    }
+}
 
 };
 
 
+/* ================================
+LOAD ALL REQUEST STATUS
+================================ */
 
-/* =====================================
+async function loadRequests(user){
+
+const list =
+document.getElementById(
+"requestList"
+);
+
+list.innerHTML=
+`
+<div class="loading">
+Loading request status...
+</div>
+`;
+
+try{
+
+const depositQuery =
+query(
+collection(db,"depositRequests"),
+where("userId","==",user.uid)
+);
+
+const withdrawalQuery =
+query(
+collection(db,"withdrawalRequests"),
+where("userId","==",user.uid)
+);
+
+const transferQuery =
+query(
+collection(db,"transferRequests"),
+where("senderId","==",user.uid)
+);
+
+const [
+depositSnap,
+withdrawalSnap,
+transferSnap
+] =
+await Promise.all([
+getDocs(depositQuery),
+getDocs(withdrawalQuery),
+getDocs(transferQuery)
+]);
+
+let requests=[];
+
+depositSnap.forEach(
+docSnap=>{
+
+requests.push({
+id:docSnap.id,
+category:"Deposit",
+data:docSnap.data()
+});
+
+}
+);
+
+withdrawalSnap.forEach(
+docSnap=>{
+
+requests.push({
+id:docSnap.id,
+category:"Withdrawal",
+data:docSnap.data()
+});
+
+}
+);
+
+transferSnap.forEach(
+docSnap=>{
+
+requests.push({
+id:docSnap.id,
+category:"Transfer",
+data:docSnap.data()
+});
+
+}
+);
+
+
+/* SORT NEWEST FIRST */
+
+requests.sort(
+(a,b)=>{
+
+const aTime =
+a.data.createdAt?.toMillis?.() || 0;
+
+const bTime =
+b.data.createdAt?.toMillis?.() || 0;
+
+return bTime-aTime;
+
+}
+);
+
+
+if(requests.length===0){
+
+list.innerHTML=
+`
+<div class="loading">
+No requests yet.
+</div>
+`;
+
+return;
+}
+
+
+list.innerHTML="";
+
+
+requests.forEach(
+request=>{
+
+const data =
+request.data;
+
+const status =
+data.status || "Pending";
+
+const paymentStatus =
+data.paymentStatus ||
+"Pending";
+
+const amount =
+Number(data.amount || 0);
+
+const div =
+document.createElement("div");
+
+div.className="request";
+
+div.innerHTML=`
+
+<div class="request-title">
+${request.category}
+</div>
+
+<div class="request-row">
+<span>Amount</span>
+<strong>
+₦${amount.toLocaleString(
+"en-NG",
+{
+minimumFractionDigits:2
+}
+)}
+</strong>
+</div>
+
+<div class="request-row">
+<span>Request Status</span>
+<span>
+${statusBadge(status)}
+</span>
+</div>
+
+<div class="request-row">
+<span>Payment Status</span>
+<span>
+${statusBadge(paymentStatus)}
+</span>
+</div>
+
+`;
+
+if(
+request.category==="Deposit" &&
+data.reference
+){
+
+div.innerHTML+=`
+<div class="request-row">
+<span>Reference</span>
+<span>
+${escapeHtml(data.reference)}
+</span>
+</div>
+`;
+
+}
+
+if(
+request.category==="Transfer" &&
+data.recipientAccount
+){
+
+div.innerHTML+=`
+<div class="request-row">
+<span>Recipient</span>
+<span>
+${escapeHtml(data.recipientAccount)}
+</span>
+</div>
+`;
+
+}
+
+list.appendChild(div);
+
+}
+);
+
+
+}catch(error){
+
+console.error(
+"Request loading error:",
+error
+);
+
+list.innerHTML=
+`
+<div class="loading">
+Unable to load request status.
+</div>
+`;
+
+}
+
+}
+
+
+/* ================================
+STATUS BADGE
+================================ */
+
+function statusBadge(status){
+
+const clean =
+String(status)
+.toLowerCase();
+
+let className =
+"status-pending";
+
+if(clean==="approved"){
+className="status-approved";
+}
+
+else if(clean==="rejected"){
+className="status-rejected";
+}
+
+else if(clean==="processing"){
+className="status-processing";
+}
+
+return `
+<span class="status ${className}">
+${escapeHtml(status)}
+</span>
+`;
+
+}
+
+
+/* ================================
 TRANSACTIONS
-===================================== */
+================================ */
 
-window.transactions =
-async function(){
+window.transactions=async function(){
 
-    const user =
-    auth.currentUser;
+const user =
+auth.currentUser;
 
+if(!user) return;
 
-    if(!user){
+await loadTransactions(user);
 
-        return;
-
-    }
-
-
-    await loadTransactions(user);
-
-
-    document
-    .getElementById(
-        "transactionList"
-    )
-    .scrollIntoView({
-        behavior:"smooth"
-    });
+document
+.getElementById(
+"transactionList"
+)
+.scrollIntoView({
+behavior:"smooth"
+});
 
 };
 
 
-
-/* =====================================
+/* ================================
 LOAD TRANSACTIONS
-===================================== */
+================================ */
 
 async function loadTransactions(user){
 
-    const list =
-    document.getElementById(
-        "transactionList"
-    );
+const list =
+document.getElementById(
+"transactionList"
+);
 
+list.innerHTML=
+`
+<div class="loading">
+Loading transactions...
+</div>
+`;
 
-    list.innerHTML =
-    `<div class="loading">
-        Loading transactions...
-    </div>`;
+try{
 
+const q =
+query(
+collection(db,"transactions"),
+where(
+"userId",
+"==",
+user.uid
+)
+);
 
-    try{
+const snapshot =
+await getDocs(q);
 
-        const q =
-        query(
-            collection(
-                db,
-                "transactions"
-            ),
-            where(
-                "userId",
-                "==",
-                user.uid
-            ),
-            orderBy(
-                "createdAt",
-                "desc"
-            )
-        );
+if(snapshot.empty){
 
+list.innerHTML=
+`
+<div class="loading">
+No transactions yet.
+</div>
+`;
 
-        const snapshot =
-        await getDocs(q);
+return;
+}
 
+let transactions=[];
 
-        if(snapshot.empty){
+snapshot.forEach(
+docSnap=>{
 
-            list.innerHTML =
-            `<div class="loading">
-                No transactions yet.
-            </div>`;
+transactions.push(
+docSnap.data()
+);
 
-            return;
+}
+);
 
-        }
+transactions.sort(
+(a,b)=>{
 
+const aTime =
+a.createdAt?.toMillis?.() || 0;
 
-        list.innerHTML = "";
+const bTime =
+b.createdAt?.toMillis?.() || 0;
 
+return bTime-aTime;
 
-        snapshot.forEach(
-            function(documentSnapshot){
+}
+);
 
-                const data =
-                documentSnapshot.data();
+list.innerHTML="";
 
+transactions.forEach(
+data=>{
 
-                const amount =
-                Number(
-                    data.amount || 0
-                );
+const amount =
+Number(data.amount || 0);
 
+const type =
+data.type || "Transaction";
 
-                const type =
-                data.type || "Transaction";
+const status =
+data.status || "Pending";
 
+const paymentStatus =
+data.paymentStatus ||
+status;
 
-                const status =
-                data.status || "Pending";
+const div =
+document.createElement(
+"div"
+);
 
+div.className="transaction";
 
-                const div =
-                document.createElement(
-                    "div"
-                );
+div.innerHTML=`
 
+<div class="transaction-top">
 
-                div.className =
-                "transaction";
+<strong>
+${escapeHtml(type)}
+</strong>
 
+<span>
+${statusBadge(status)}
+</span>
 
-                div.innerHTML = `
+</div>
 
-                    <div class="transaction-top">
+<div>
+Amount:
+<strong>
+₦${amount.toLocaleString(
+"en-NG",
+{
+minimumFractionDigits:2
+}
+)}
+</strong>
+</div>
 
-                        <strong>
-                            ${escapeHtml(type)}
-                        </strong>
+<div style="margin-top:7px">
+Payment:
+${statusBadge(paymentStatus)}
+</div>
 
-                        <span class="pending">
-                            ${escapeHtml(status)}
-                        </span>
+`;
 
-                    </div>
+list.appendChild(div);
 
-                    <div>
-                        ₦${amount.toLocaleString(
-                            "en-NG",
-                            {
-                                minimumFractionDigits:2
-                            }
-                        )}
-                    </div>
+}
+);
 
-                `;
+}catch(error){
 
+console.error(error);
 
-                list.appendChild(div);
+list.innerHTML=
+`
+<div class="loading">
+Transaction history is not available yet.
+</div>
+`;
 
-            }
-        );
-
-
-    }catch(error){
-
-        console.error(error);
-
-        list.innerHTML =
-        `<div class="loading">
-            Transaction history is not available yet.
-        </div>`;
-
-    }
+}
 
 }
 
 
-
-/* =====================================
+/* ================================
 CLOSE SERVICE
-===================================== */
+================================ */
 
-window.closeService =
-function(){
+window.closeService=function(){
 
-    const message =
-    document.getElementById(
-        "serviceMessage"
-    );
+const message =
+document.getElementById(
+"serviceMessage"
+);
 
+message.classList.add(
+"hidden"
+);
 
-    message.classList.add(
-        "hidden"
-    );
-
-
-    message.innerHTML = "";
+message.innerHTML="";
 
 };
 
 
-
-/* =====================================
-ERROR MESSAGES
-===================================== */
+/* ================================
+ERROR
+================================ */
 
 function friendlyError(error){
 
-    const code =
-    error.code || "";
+const code =
+error.code || "";
 
+if(code.includes(
+"auth/email-already-in-use"
+)){
+return "This email is already registered.";
+}
 
-    if(code.includes(
-        "auth/email-already-in-use"
-    )){
-        return "This email is already registered.";
-    }
+if(code.includes(
+"auth/invalid-email"
+)){
+return "Please enter a valid email address.";
+}
 
+if(code.includes(
+"auth/weak-password"
+)){
+return "Password is too weak.";
+}
 
-    if(code.includes(
-        "auth/invalid-email"
-    )){
-        return "Please enter a valid email address.";
-    }
+if(code.includes(
+"auth/invalid-credential"
+)){
+return "Incorrect email or password.";
+}
 
+if(code.includes(
+"auth/popup-closed-by-user"
+)){
+return "Google sign-in was cancelled.";
+}
 
-    if(code.includes(
-        "auth/weak-password"
-    )){
-        return "Password is too weak.";
-    }
-
-
-    if(code.includes(
-        "auth/invalid-credential"
-    )){
-        return "Incorrect email or password.";
-    }
-
-
-    if(code.includes(
-        "auth/popup-closed-by-user"
-    )){
-        return "Google sign-in was cancelled.";
-    }
-
-
-    return "Please try again.";
+return "Please try again.";
 
 }
 
 
-
-/* =====================================
+/* ================================
 HTML SAFETY
-===================================== */
+================================ */
 
 function escapeHtml(value){
 
-    return String(value)
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
+return String(value)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
 
 }
 
 </script>
 
 </body>
-  </html>
+</html>
