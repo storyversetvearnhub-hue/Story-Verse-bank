@@ -7,6 +7,7 @@
 <title>StoryVerse Bank</title>
 
 <style>
+
 *{
 box-sizing:border-box;
 margin:0;
@@ -266,6 +267,62 @@ font-size:13px;
 line-height:1.6;
 }
 
+.support-button{
+background:#16834a;
+}
+
+.tutorial-button{
+background:#6a1b9a;
+}
+
+.tutorial{
+line-height:1.7;
+font-size:14px;
+}
+
+.tutorial h3{
+margin-top:15px;
+margin-bottom:5px;
+}
+
+.tutorial p{
+margin-bottom:8px;
+}
+
+.tutorial ol{
+padding-left:22px;
+}
+
+.support-box{
+background:#eef7f1;
+border:1px solid #b9dec5;
+padding:15px;
+border-radius:12px;
+line-height:1.7;
+}
+
+.email-link{
+display:block;
+background:#16834a;
+color:white;
+padding:13px;
+border-radius:8px;
+text-align:center;
+text-decoration:none;
+margin-top:10px;
+font-weight:bold;
+}
+
+.reference-box{
+background:#eef3f9;
+border:1px solid #d5dfeb;
+padding:12px;
+border-radius:10px;
+margin-top:12px;
+font-size:13px;
+line-height:1.6;
+}
+
 @media(max-width:450px){
 
 .actions{
@@ -284,20 +341,29 @@ display:block;
 display:block;
 margin-bottom:3px;
 }
+
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
+
 <h1>🏦 StoryVerse Bank</h1>
+
 <p>Simple • Convenient • Connected</p>
+
 </header>
+
 
 <div class="container">
 
-<!-- AUTH -->
+
+<!-- =========================
+AUTH
+========================= -->
 
 <div id="authSection">
 
@@ -319,13 +385,21 @@ placeholder="Password">
 Login
 </button>
 
-<button class="google" onclick="googleLogin()">
+<button
+class="google"
+onclick="googleLogin()">
+
 🔵 Continue with Google
+
 </button>
 
-<div id="loginMessage" class="message hidden"></div>
+<div
+id="loginMessage"
+class="message hidden">
+</div>
 
 </div>
+
 
 <div class="card">
 
@@ -345,20 +419,34 @@ placeholder="Password (minimum 6 characters)">
 Create Account
 </button>
 
-<button class="google" onclick="googleRegister()">
+<button
+class="google"
+onclick="googleRegister()">
+
 🔵 Register with Google
+
 </button>
 
-<div id="registerMessage" class="message hidden"></div>
-
+<div
+id="registerMessage"
+class="message hidden">
 </div>
 
 </div>
 
+</div>
 
-<!-- DASHBOARD -->
 
-<div id="dashboard" class="hidden">
+<!-- =========================
+DASHBOARD
+========================= -->
+
+<div
+id="dashboard"
+class="hidden">
+
+
+<!-- BALANCE -->
 
 <div class="balance">
 
@@ -379,33 +467,63 @@ Create Account
 
 <p>
 Email:
-<strong id="userEmail">Loading...</strong>
+<strong id="userEmail">
+Loading...
+</strong>
 </p>
+
 
 <div class="account-box">
 
 <p>
+
 <strong>Account Number:</strong>
-<span id="accountNumber">Loading...</span>
+
+<span id="accountNumber">
+Loading...
+</span>
+
 </p>
 
+
 <p>
+
+<strong>Customer Reference:</strong>
+
+<span id="customerReference">
+Loading...
+</span>
+
+</p>
+
+
+<p>
+
 <strong>Account Status:</strong>
-<span id="accountStatus">Active</span>
+
+<span id="accountStatus">
+Active
+</span>
+
 </p>
 
 </div>
 
+
 <button
 class="logout"
 onclick="logout()">
+
 Logout
+
 </button>
 
 </div>
 
 
-<!-- SERVICES -->
+<!-- =========================
+SERVICES
+========================= -->
 
 <div class="card">
 
@@ -434,19 +552,30 @@ Logout
 </div>
 
 
-<div id="serviceMessage" class="message hidden"></div>
+<div
+id="serviceMessage"
+class="message hidden">
+</div>
 
 
-<!-- REQUEST STATUS -->
+<!-- =========================
+REQUEST STATUS
+========================= -->
 
 <div class="card">
 
 <h2>📋 Request Status</h2>
 
 <p class="small">
+
 Your deposit, withdrawal and transfer requests appear here.
-New requests start as <b>Pending</b> until they are reviewed.
+
+New requests start as
+<b>Pending</b>
+until they are reviewed.
+
 </p>
+
 
 <div id="requestList">
 
@@ -459,7 +588,242 @@ Loading request status...
 </div>
 
 
-<!-- TRANSACTIONS -->
+<!-- =========================
+CUSTOMER SERVICE
+========================= -->
+
+<div class="card">
+
+<h2>📞 Customer Service</h2>
+
+<div class="support-box">
+
+<p>
+Need help with your account, deposit, withdrawal or transfer?
+Our customer service team can assist you.
+</p>
+
+<p>
+<strong>Support Email:</strong><br>
+
+storyversetvearnhub@gmail.com
+
+</p>
+
+<a
+class="email-link"
+href="mailto:storyversetvearnhub@gmail.com?subject=StoryVerse%20Bank%20Customer%20Support">
+
+✉️ Contact Customer Service
+
+</a>
+
+</div>
+
+<p class="small">
+
+When contacting support, include your account number and a clear
+description of the problem. Never send your password.
+
+</p>
+
+</div>
+
+
+<!-- =========================
+TUTORIAL
+========================= -->
+
+<div class="card">
+
+<h2>📚 How To Use StoryVerse Bank</h2>
+
+<button
+class="tutorial-button"
+onclick="toggleTutorial()">
+
+📖 Open Tutorial
+
+</button>
+
+
+<div
+id="tutorialContent"
+class="tutorial hidden">
+
+
+<h3>1️⃣ Create Your Account</h3>
+
+<ol>
+
+<li>Enter your email address.</li>
+
+<li>Create a password of at least 6 characters.</li>
+
+<li>Tap <b>Create Account</b>.</li>
+
+<li>Your StoryVerse Bank account number will be generated automatically.</li>
+
+</ol>
+
+
+<h3>2️⃣ Login</h3>
+
+<p>
+
+Enter your registered email and password, then tap
+<b>Login</b>.
+
+You can also use Google Login if Google authentication is enabled
+correctly in Firebase.
+
+</p>
+
+
+<h3>3️⃣ Check Your Account Number</h3>
+
+<p>
+
+After login, open <b>My Account</b>.
+
+Your automatically generated StoryVerse Bank account number is
+your customer reference.
+
+</p>
+
+
+<h3>4️⃣ Make a Deposit</h3>
+
+<ol>
+
+<li>Tap <b>Deposit</b>.</li>
+
+<li>The deposit amount is ₦2,000.</li>
+
+<li>Tap <b>Pay ₦2,000 with OPay</b>.</li>
+
+<li>Complete the payment.</li>
+
+<li>Submit your deposit request.</li>
+
+<li>Your request will initially show <b>Pending</b>.</li>
+
+<li>After verification and approval, it can show <b>Approved</b>.</li>
+
+</ol>
+
+
+<h3>5️⃣ Check Deposit Status</h3>
+
+<p>
+
+Go to <b>Request Status</b>.
+
+You may see:
+
+</p>
+
+<ul>
+
+<li>🟡 <b>Pending</b> — waiting for verification.</li>
+
+<li>🟢 <b>Approved</b> — request has been approved.</li>
+
+<li>🔴 <b>Rejected</b> — request was rejected.</li>
+
+<li>🔵 <b>Processing</b> — request is being processed.</li>
+
+</ul>
+
+
+<h3>6️⃣ Make a Withdrawal</h3>
+
+<ol>
+
+<li>Tap <b>Withdraw</b>.</li>
+
+<li>Enter the amount.</li>
+
+<li>Enter your bank name.</li>
+
+<li>Enter your 10-digit account number.</li>
+
+<li>Enter the account name.</li>
+
+<li>Submit the request.</li>
+
+</ol>
+
+<p>
+
+The withdrawal will show as <b>Pending</b> until it is reviewed.
+
+</p>
+
+
+<h3>7️⃣ Make a Transfer</h3>
+
+<ol>
+
+<li>Tap <b>Transfer</b>.</li>
+
+<li>Enter the recipient's StoryVerse Bank account number.</li>
+
+<li>Enter the transfer amount.</li>
+
+<li>Add a transfer note if necessary.</li>
+
+<li>Submit the transfer request.</li>
+
+</ol>
+
+
+<h3>8️⃣ Check Transaction History</h3>
+
+<p>
+
+Tap <b>Transactions</b> to see transactions that have been recorded
+for your account.
+
+</p>
+
+
+<h3>9️⃣ Contact Customer Service</h3>
+
+<p>
+
+If you have a problem, contact:
+
+</p>
+
+<p>
+
+<strong>
+storyversetvearnhub@gmail.com
+</strong>
+
+</p>
+
+
+<h3>🔐 Security Reminder</h3>
+
+<p>
+
+Never give anyone your password, Firebase login details, OTP or
+other private authentication information.
+
+Customer service should not ask you for your password.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+TRANSACTIONS
+========================= -->
 
 <div class="card">
 
@@ -475,52 +839,88 @@ Loading transactions...
 
 </div>
 
+
 </div>
 
 </div>
 
 
 <footer>
+
 © 2026 StoryVerse Bank. All rights reserved.
+
 </footer>
+
 
 
 <script type="module">
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+/* ================================
+FIREBASE IMPORTS
+================================ */
 
 import {
+initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+import {
+
 getAuth,
+
 createUserWithEmailAndPassword,
+
 signInWithEmailAndPassword,
+
 signInWithPopup,
+
 GoogleAuthProvider,
+
 signOut,
+
 onAuthStateChanged
+
 }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
 
 import {
+
 getFirestore,
+
 doc,
+
 setDoc,
+
 getDoc,
+
 collection,
+
 query,
+
 where,
+
 getDocs,
+
 serverTimestamp,
+
 addDoc
+
 }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
 
 
 /* ================================
 FIREBASE CONFIG
 ================================ */
 
-const firebaseConfig = {
+const firebaseConfig={
 
 apiKey:
 "AIzaSyBbjVL5TMW8mjtqxxo9fxn7BCEl_872vW8",
@@ -546,10 +946,6 @@ measurementId:
 };
 
 
-/* ================================
-INITIALIZE
-================================ */
-
 const app =
 initializeApp(firebaseConfig);
 
@@ -563,6 +959,7 @@ const googleProvider =
 new GoogleAuthProvider();
 
 
+
 /* ================================
 MESSAGE
 ================================ */
@@ -572,13 +969,16 @@ function showMessage(id,text){
 const element =
 document.getElementById(id);
 
-if(!element) return;
+if(!element)return;
 
 element.textContent=text;
 
-element.classList.remove("hidden");
+element.classList.remove(
+"hidden"
+);
 
 }
+
 
 
 /* ================================
@@ -597,6 +997,7 @@ document.getElementById(
 "registerPassword"
 ).value;
 
+
 if(!email || !password){
 
 showMessage(
@@ -605,7 +1006,9 @@ showMessage(
 );
 
 return;
+
 }
+
 
 if(password.length<6){
 
@@ -615,7 +1018,9 @@ showMessage(
 );
 
 return;
+
 }
+
 
 try{
 
@@ -647,6 +1052,7 @@ friendlyError(error)
 }
 
 };
+
 
 
 /* ================================
@@ -682,6 +1088,7 @@ friendlyError(error)
 };
 
 
+
 /* ================================
 CREATE CUSTOMER
 ================================ */
@@ -698,10 +1105,12 @@ user.uid
 const existing =
 await getDoc(customerRef);
 
-if(existing.exists()) return;
+if(existing.exists())return;
+
 
 const accountNumber =
 generateAccountNumber();
+
 
 await setDoc(
 customerRef,
@@ -717,12 +1126,15 @@ balance:0,
 
 status:"Active",
 
-createdAt:serverTimestamp()
+createdAt:
+serverTimestamp()
 
 }
+
 );
 
 }
+
 
 
 /* ================================
@@ -733,13 +1145,14 @@ function generateAccountNumber(){
 
 const random =
 Math.floor(
-10000000 +
+10000000+
 Math.random()*90000000
 );
 
 return "SVB"+random;
 
 }
+
 
 
 /* ================================
@@ -758,6 +1171,7 @@ document.getElementById(
 "loginPassword"
 ).value;
 
+
 if(!email || !password){
 
 showMessage(
@@ -766,7 +1180,9 @@ showMessage(
 );
 
 return;
+
 }
+
 
 try{
 
@@ -788,6 +1204,7 @@ friendlyError(error)
 }
 
 };
+
 
 
 /* ================================
@@ -823,6 +1240,7 @@ friendlyError(error)
 };
 
 
+
 /* ================================
 LOGOUT
 ================================ */
@@ -840,6 +1258,7 @@ alert("Logout failed.");
 }
 
 };
+
 
 
 /* ================================
@@ -860,6 +1279,7 @@ document.getElementById(
 "dashboard"
 );
 
+
 if(user){
 
 authSection.classList.add(
@@ -870,16 +1290,20 @@ dashboard.classList.remove(
 "hidden"
 );
 
+
 document.getElementById(
 "userEmail"
 ).textContent =
-user.email || "Google User";
+user.email ||
+"Google User";
+
 
 await loadCustomerData(user);
 
 await loadRequests(user);
 
 await loadTransactions(user);
+
 
 }else{
 
@@ -895,6 +1319,7 @@ dashboard.classList.add(
 
 }
 );
+
 
 
 /* ================================
@@ -915,6 +1340,7 @@ user.uid
 const snap =
 await getDoc(customerRef);
 
+
 if(!snap.exists()){
 
 await createCustomerRecord(user);
@@ -923,14 +1349,27 @@ return loadCustomerData(user);
 
 }
 
+
 const data =
 snap.data();
+
+
+const account =
+data.accountNumber ||
+"Not assigned";
+
 
 document.getElementById(
 "accountNumber"
 ).textContent =
-data.accountNumber ||
-"Not assigned";
+account;
+
+
+document.getElementById(
+"customerReference"
+).textContent =
+account;
+
 
 document.getElementById(
 "accountStatus"
@@ -938,8 +1377,12 @@ document.getElementById(
 data.status ||
 "Active";
 
+
 const balance =
-Number(data.balance || 0);
+Number(
+data.balance || 0
+);
+
 
 document.getElementById(
 "balanceAmount"
@@ -952,6 +1395,7 @@ minimumFractionDigits:2,
 maximumFractionDigits:2
 }
 );
+
 
 }catch(error){
 
@@ -967,8 +1411,9 @@ document.getElementById(
 }
 
 
+
 /* =================================================
-DEPOSIT WITH OPAY
+DEPOSIT
 ================================================= */
 
 window.deposit=function(){
@@ -982,6 +1427,7 @@ message.classList.remove(
 "hidden"
 );
 
+
 message.innerHTML=`
 
 <div>
@@ -990,62 +1436,93 @@ message.innerHTML=`
 
 <p>
 Each deposit is <b>₦2,000</b>.
-You can make another ₦2,000 deposit whenever you want.
 </p>
 
 <input
 type="number"
 id="depositAmount"
 value="2000"
-min="2000"
-max="2000"
 readonly>
+
+
+<div class="reference-box">
+
+<b>Your Customer Reference:</b><br>
+
+<span id="depositCustomerReference">
+Loading...
+</span>
+
+<br><br>
+
+Use your StoryVerse Bank account number when identifying
+your deposit request.
+
+</div>
+
 
 <div class="deposit-info">
 
 <b>Deposit Amount: ₦2,000</b><br>
 
 Minimum deposit: ₦2,000<br>
+
 Maximum per deposit: ₦2,000<br>
+
 You may make multiple separate deposits.
 
 </div>
 
+
 <button
 class="opay-button"
 onclick="openOpayPayment()">
+
 💳 Pay ₦2,000 with OPay
+
 </button>
+
 
 <input
 type="text"
 id="depositReference"
-placeholder="Enter OPay payment reference">
+placeholder="Enter payment reference if provided">
+
 
 <button
 onclick="submitDeposit()">
+
 ✅ Submit Deposit Request
+
 </button>
+
 
 <button
 onclick="closeService()"
 class="cancel">
+
 Cancel
+
 </button>
+
 
 <p class="small">
 
-<b>Payment Status: Pending</b><br><br>
+<b>Payment Status: Pending</b>
 
-1. Confirm the ₦2,000 deposit amount.<br>
-2. Tap <b>Pay ₦2,000 with OPay</b>.<br>
-3. Complete the payment on OPay.<br>
-4. Copy your OPay payment reference.<br>
-5. Enter the reference above.<br>
-6. Submit the deposit request.<br><br>
+<br><br>
 
-Your balance will only be updated after the payment
-has been verified and approved.
+1. Confirm the ₦2,000 amount.<br>
+
+2. Tap Pay ₦2,000 with OPay.<br>
+
+3. Complete the payment.<br>
+
+4. Submit your deposit request.<br>
+
+5. Your request will appear as Pending.<br>
+
+6. After verification, the request can be changed to Approved.
 
 </p>
 
@@ -1053,35 +1530,44 @@ has been verified and approved.
 
 `;
 
-};
+
+const user =
+auth.currentUser;
 
 
-/* =================================================
-OPEN OPAY PAYMENT PAGE
-================================================= */
+if(user){
 
-window.openOpayPayment=function(){
+const customerRef =
+await getDoc(
+doc(
+db,
+"customers",
+user.uid
+)
+);
 
-const amount =
-Number(
+
+if(customerRef.exists()){
+
 document.getElementById(
-"depositAmount"
-).value
-);
-
-if(amount !== 2000){
-
-alert(
-"Each deposit must be exactly ₦2,000."
-);
-
-return;
+"depositCustomerReference"
+).textContent =
+customerRef.data().accountNumber ||
+"Not available";
 
 }
 
-/*
-Your OPay payment link.
-*/
+}
+
+};
+
+
+
+/* =================================================
+OPAY
+================================================= */
+
+window.openOpayPayment=function(){
 
 const opayLink =
 "https://opay.ng/s/33tEw";
@@ -1094,6 +1580,7 @@ opayLink,
 };
 
 
+
 /* =================================================
 SUBMIT DEPOSIT
 ================================================= */
@@ -1103,15 +1590,15 @@ window.submitDeposit=async function(){
 const user =
 auth.currentUser;
 
+
 if(!user){
 
-alert(
-"Please log in first."
-);
+alert("Please log in first.");
 
 return;
 
 }
+
 
 const amount =
 Number(
@@ -1120,18 +1607,14 @@ document.getElementById(
 ).value
 );
 
-const reference =
+
+const paymentReference =
 document.getElementById(
 "depositReference"
 ).value.trim();
 
 
-/*
-IMPORTANT:
-Every individual deposit must be exactly ₦2,000.
-*/
-
-if(amount !== 2000){
+if(amount!==2000){
 
 alert(
 "Each deposit must be exactly ₦2,000."
@@ -1141,15 +1624,36 @@ return;
 
 }
 
-if(!reference){
+
+/*
+The customer's StoryVerse Bank account
+number is automatically attached to the request.
+*/
+
+const customerSnap =
+await getDoc(
+doc(
+db,
+"customers",
+user.uid
+)
+);
+
+
+if(!customerSnap.exists()){
 
 alert(
-"Please enter your OPay payment reference."
+"Customer account record was not found."
 );
 
 return;
 
 }
+
+
+const customerData =
+customerSnap.data();
+
 
 try{
 
@@ -1164,9 +1668,13 @@ userId:user.uid,
 
 email:user.email || "",
 
+customerReference:
+customerData.accountNumber || "",
+
 amount:2000,
 
-reference:reference,
+paymentReference:
+paymentReference || "",
 
 type:"Deposit",
 
@@ -1182,16 +1690,19 @@ serverTimestamp()
 }
 );
 
+
 alert(
-"Deposit request submitted successfully.\n\n" +
-"Amount: ₦2,000\n" +
-"Payment Status: Pending\n\n" +
-"Your payment will be verified before your balance is updated."
+"Deposit request submitted successfully.\n\n"+
+"Amount: ₦2,000\n"+
+"Status: Pending\n\n"+
+"Your request will be reviewed before your balance is updated."
 );
+
 
 closeService();
 
 await loadRequests(user);
+
 
 }catch(error){
 
@@ -1206,9 +1717,10 @@ alert(
 };
 
 
-/* ================================
+
+/* =================================================
 WITHDRAW
-================================ */
+================================================= */
 
 window.withdraw=function(){
 
@@ -1221,11 +1733,13 @@ message.classList.remove(
 "hidden"
 );
 
+
 message.innerHTML=`
 
 <div>
 
 <h3>💸 Withdrawal Request</h3>
+
 
 <input
 type="number"
@@ -1233,10 +1747,12 @@ id="withdrawAmount"
 placeholder="Amount in ₦"
 min="100">
 
+
 <input
 type="text"
 id="bankName"
 placeholder="Bank name">
+
 
 <input
 type="text"
@@ -1245,24 +1761,39 @@ placeholder="10-digit account number"
 maxlength="10"
 inputmode="numeric">
 
+
 <input
 type="text"
 id="accountName"
 placeholder="Account name">
 
-<button onclick="submitWithdrawal()">
+
+<button
+onclick="submitWithdrawal()">
+
 Submit Withdrawal Request
+
 </button>
+
 
 <button
 onclick="closeService()"
 class="cancel">
+
 Cancel
+
 </button>
 
+
 <p class="small">
-Payment status: <b>Pending</b><br>
+
+Payment status:
+<b>Pending</b>
+
+<br>
+
 Withdrawal will be paid only after verification and approval.
+
 </p>
 
 </div>
@@ -1272,14 +1803,16 @@ Withdrawal will be paid only after verification and approval.
 };
 
 
-/* ================================
+
+/* =================================================
 SUBMIT WITHDRAWAL
-================================ */
+================================================= */
 
 window.submitWithdrawal=async function(){
 
 const user =
 auth.currentUser;
+
 
 if(!user){
 
@@ -1291,6 +1824,7 @@ return;
 
 }
 
+
 const amount =
 Number(
 document.getElementById(
@@ -1298,20 +1832,24 @@ document.getElementById(
 ).value
 );
 
+
 const bank =
 document.getElementById(
 "bankName"
 ).value.trim();
+
 
 const accountNumber =
 document.getElementById(
 "accountNumberInput"
 ).value.trim();
 
+
 const accountName =
 document.getElementById(
 "accountName"
 ).value.trim();
+
 
 if(!amount || amount<100){
 
@@ -1322,6 +1860,7 @@ alert(
 return;
 
 }
+
 
 if(
 !bank ||
@@ -1336,6 +1875,7 @@ alert(
 return;
 
 }
+
 
 try{
 
@@ -1370,13 +1910,16 @@ serverTimestamp()
 }
 );
 
+
 alert(
-"Withdrawal request submitted successfully. Status: Pending."
+"Withdrawal request submitted successfully.\nStatus: Pending."
 );
+
 
 closeService();
 
 await loadRequests(user);
+
 
 }catch(error){
 
@@ -1391,9 +1934,10 @@ alert(
 };
 
 
-/* ================================
+
+/* =================================================
 TRANSFER
-================================ */
+================================================= */
 
 window.transfer=function(){
 
@@ -1406,16 +1950,19 @@ message.classList.remove(
 "hidden"
 );
 
+
 message.innerHTML=`
 
 <div>
 
 <h3>🔄 Transfer Request</h3>
 
+
 <input
 type="text"
 id="recipientAccount"
 placeholder="Recipient account number">
+
 
 <input
 type="number"
@@ -1423,24 +1970,39 @@ id="transferAmount"
 placeholder="Amount in ₦"
 min="100">
 
+
 <input
 type="text"
 id="transferNote"
 placeholder="Transfer note (optional)">
 
-<button onclick="submitTransfer()">
+
+<button
+onclick="submitTransfer()">
+
 Submit Transfer Request
+
 </button>
+
 
 <button
 onclick="closeService()"
 class="cancel">
+
 Cancel
+
 </button>
 
+
 <p class="small">
-Payment status: <b>Pending</b><br>
+
+Payment status:
+<b>Pending</b>
+
+<br>
+
 Transfers require verification before money is moved.
+
 </p>
 
 </div>
@@ -1450,14 +2012,16 @@ Transfers require verification before money is moved.
 };
 
 
-/* ================================
+
+/* =================================================
 SUBMIT TRANSFER
-================================ */
+================================================= */
 
 window.submitTransfer=async function(){
 
 const user =
 auth.currentUser;
+
 
 if(!user){
 
@@ -1469,10 +2033,12 @@ return;
 
 }
 
+
 const recipient =
 document.getElementById(
 "recipientAccount"
 ).value.trim();
+
 
 const amount =
 Number(
@@ -1481,10 +2047,12 @@ document.getElementById(
 ).value
 );
 
+
 const note =
 document.getElementById(
 "transferNote"
 ).value.trim();
+
 
 if(!recipient){
 
@@ -1496,6 +2064,7 @@ return;
 
 }
 
+
 if(!amount || amount<100){
 
 alert(
@@ -1505,6 +2074,7 @@ alert(
 return;
 
 }
+
 
 try{
 
@@ -1537,13 +2107,16 @@ serverTimestamp()
 }
 );
 
+
 alert(
-"Transfer request submitted successfully. Status: Pending."
+"Transfer request submitted successfully.\nStatus: Pending."
 );
+
 
 closeService();
 
 await loadRequests(user);
+
 
 }catch(error){
 
@@ -1558,9 +2131,10 @@ alert(
 };
 
 
-/* ================================
-LOAD ALL REQUEST STATUS
-================================ */
+
+/* =================================================
+LOAD REQUESTS
+================================================= */
 
 async function loadRequests(user){
 
@@ -1569,12 +2143,14 @@ document.getElementById(
 "requestList"
 );
 
+
 list.innerHTML=
 `
 <div class="loading">
 Loading request status...
 </div>
 `;
+
 
 try{
 
@@ -1591,6 +2167,7 @@ user.uid
 )
 );
 
+
 const withdrawalQuery =
 query(
 collection(
@@ -1603,6 +2180,7 @@ where(
 user.uid
 )
 );
+
 
 const transferQuery =
 query(
@@ -1617,21 +2195,25 @@ user.uid
 )
 );
 
+
 const [
 depositSnap,
 withdrawalSnap,
 transferSnap
-] =
+]=
 await Promise.all([
+
 getDocs(depositQuery),
+
 getDocs(withdrawalQuery),
+
 getDocs(transferQuery)
+
 ]);
+
 
 let requests=[];
 
-
-/* DEPOSITS */
 
 depositSnap.forEach(
 docSnap=>{
@@ -1650,8 +2232,6 @@ data:docSnap.data()
 );
 
 
-/* WITHDRAWALS */
-
 withdrawalSnap.forEach(
 docSnap=>{
 
@@ -1669,8 +2249,6 @@ data:docSnap.data()
 );
 
 
-/* TRANSFERS */
-
 transferSnap.forEach(
 docSnap=>{
 
@@ -1687,8 +2265,6 @@ data:docSnap.data()
 }
 );
 
-
-/* SORT NEWEST FIRST */
 
 requests.sort(
 (a,b)=>{
@@ -1728,42 +2304,60 @@ request=>{
 const data =
 request.data;
 
+
 const status =
-data.status || "Pending";
+data.status ||
+"Pending";
+
 
 const paymentStatus =
 data.paymentStatus ||
 "Pending";
 
+
 const amount =
-Number(data.amount || 0);
+Number(
+data.amount || 0
+);
+
 
 const div =
 document.createElement(
 "div"
 );
 
+
 div.className="request";
+
 
 div.innerHTML=`
 
 <div class="request-title">
+
 ${request.category}
+
 </div>
 
+
 <div class="request-row">
-<span>Amount</span>
+
+<span>
+Amount
+</span>
 
 <strong>
+
 ₦${amount.toLocaleString(
 "en-NG",
 {
 minimumFractionDigits:2
 }
 )}
+
 </strong>
 
 </div>
+
 
 <div class="request-row">
 
@@ -1772,10 +2366,13 @@ Request Status
 </span>
 
 <span>
+
 ${statusBadge(status)}
+
 </span>
 
 </div>
+
 
 <div class="request-row">
 
@@ -1784,7 +2381,9 @@ Payment Status
 </span>
 
 <span>
+
 ${statusBadge(paymentStatus)}
+
 </span>
 
 </div>
@@ -1792,11 +2391,11 @@ ${statusBadge(paymentStatus)}
 `;
 
 
-/* SHOW REFERENCE FOR DEPOSIT */
+/* CUSTOMER REFERENCE */
 
 if(
 request.category==="Deposit" &&
-data.reference
+data.customerReference
 ){
 
 div.innerHTML+=`
@@ -1804,11 +2403,15 @@ div.innerHTML+=`
 <div class="request-row">
 
 <span>
-Reference
+Customer Reference
 </span>
 
 <span>
-${escapeHtml(data.reference)}
+
+${escapeHtml(
+data.customerReference
+)}
+
 </span>
 
 </div>
@@ -1818,7 +2421,37 @@ ${escapeHtml(data.reference)}
 }
 
 
-/* SHOW PAYMENT METHOD */
+/* PAYMENT REFERENCE */
+
+if(
+request.category==="Deposit" &&
+data.paymentReference
+){
+
+div.innerHTML+=`
+
+<div class="request-row">
+
+<span>
+Payment Reference
+</span>
+
+<span>
+
+${escapeHtml(
+data.paymentReference
+)}
+
+</span>
+
+</div>
+
+`;
+
+}
+
+
+/* PAYMENT METHOD */
 
 if(
 request.category==="Deposit" &&
@@ -1834,7 +2467,11 @@ Payment Method
 </span>
 
 <span>
-${escapeHtml(data.paymentMethod)}
+
+${escapeHtml(
+data.paymentMethod
+)}
+
 </span>
 
 </div>
@@ -1844,7 +2481,7 @@ ${escapeHtml(data.paymentMethod)}
 }
 
 
-/* SHOW RECIPIENT */
+/* RECIPIENT */
 
 if(
 request.category==="Transfer" &&
@@ -1860,9 +2497,11 @@ Recipient
 </span>
 
 <span>
+
 ${escapeHtml(
 data.recipientAccount
 )}
+
 </span>
 
 </div>
@@ -1871,9 +2510,11 @@ data.recipientAccount
 
 }
 
+
 list.appendChild(div);
 
 }
+
 );
 
 
@@ -1884,10 +2525,13 @@ console.error(
 error
 );
 
+
 list.innerHTML=
 `
 <div class="loading">
+
 Unable to load request status.
+
 </div>
 `;
 
@@ -1896,9 +2540,10 @@ Unable to load request status.
 }
 
 
-/* ================================
+
+/* =================================================
 STATUS BADGE
-================================ */
+================================================= */
 
 function statusBadge(status){
 
@@ -1906,8 +2551,10 @@ const clean =
 String(status)
 .toLowerCase();
 
+
 let className =
 "status-pending";
+
 
 if(clean==="approved"){
 
@@ -1916,6 +2563,7 @@ className =
 
 }
 
+
 else if(clean==="rejected"){
 
 className =
@@ -1923,12 +2571,14 @@ className =
 
 }
 
+
 else if(clean==="processing"){
 
 className =
 "status-processing";
 
 }
+
 
 return `
 
@@ -1943,33 +2593,39 @@ ${escapeHtml(status)}
 }
 
 
-/* ================================
+
+/* =================================================
 TRANSACTIONS
-================================ */
+================================================= */
 
 window.transactions=async function(){
 
 const user =
 auth.currentUser;
 
-if(!user) return;
+if(!user)return;
+
 
 await loadTransactions(user);
+
 
 document
 .getElementById(
 "transactionList"
 )
 .scrollIntoView({
+
 behavior:"smooth"
+
 });
 
 };
 
 
-/* ================================
+
+/* =================================================
 LOAD TRANSACTIONS
-================================ */
+================================================= */
 
 async function loadTransactions(user){
 
@@ -1978,12 +2634,14 @@ document.getElementById(
 "transactionList"
 );
 
+
 list.innerHTML=
 `
 <div class="loading">
 Loading transactions...
 </div>
 `;
+
 
 try{
 
@@ -2000,8 +2658,10 @@ user.uid
 )
 );
 
+
 const snapshot =
 await getDocs(q);
+
 
 if(snapshot.empty){
 
@@ -2016,7 +2676,9 @@ return;
 
 }
 
+
 let transactions=[];
+
 
 snapshot.forEach(
 docSnap=>{
@@ -2027,6 +2689,7 @@ docSnap.data()
 
 }
 );
+
 
 transactions.sort(
 (a,b)=>{
@@ -2042,6 +2705,7 @@ return bTime-aTime;
 }
 );
 
+
 list.innerHTML="";
 
 
@@ -2049,55 +2713,71 @@ transactions.forEach(
 data=>{
 
 const amount =
-Number(data.amount || 0);
+Number(
+data.amount || 0
+);
+
 
 const type =
 data.type ||
 "Transaction";
 
+
 const status =
 data.status ||
 "Pending";
 
+
 const paymentStatus =
 data.paymentStatus ||
 status;
+
 
 const div =
 document.createElement(
 "div"
 );
 
+
 div.className="transaction";
+
 
 div.innerHTML=`
 
 <div class="transaction-top">
 
 <strong>
+
 ${escapeHtml(type)}
+
 </strong>
 
 <span>
+
 ${statusBadge(status)}
+
 </span>
 
 </div>
+
 
 <div>
 
 Amount:
 
 <strong>
+
 ₦${amount.toLocaleString(
 "en-NG",
 {
 minimumFractionDigits:2
 }
 )}
+
 </strong>
 
 </div>
+
 
 <div style="margin-top:7px">
 
@@ -2109,19 +2789,25 @@ ${statusBadge(paymentStatus)}
 
 `;
 
+
 list.appendChild(div);
 
 }
+
 );
+
 
 }catch(error){
 
 console.error(error);
 
+
 list.innerHTML=
 `
 <div class="loading">
+
 Transaction history is not available yet.
+
 </div>
 `;
 
@@ -2130,9 +2816,30 @@ Transaction history is not available yet.
 }
 
 
-/* ================================
+
+/* =================================================
+TUTORIAL
+================================================= */
+
+window.toggleTutorial=function(){
+
+const tutorial =
+document.getElementById(
+"tutorialContent"
+);
+
+
+tutorial.classList.toggle(
+"hidden"
+);
+
+};
+
+
+
+/* =================================================
 CLOSE SERVICE
-================================ */
+================================================= */
 
 window.closeService=function(){
 
@@ -2141,23 +2848,27 @@ document.getElementById(
 "serviceMessage"
 );
 
+
 message.classList.add(
 "hidden"
 );
+
 
 message.innerHTML="";
 
 };
 
 
-/* ================================
+
+/* =================================================
 ERROR
-================================ */
+================================================= */
 
 function friendlyError(error){
 
 const code =
 error.code || "";
+
 
 if(
 code.includes(
@@ -2169,6 +2880,7 @@ return "This email is already registered.";
 
 }
 
+
 if(
 code.includes(
 "auth/invalid-email"
@@ -2178,6 +2890,7 @@ code.includes(
 return "Please enter a valid email address.";
 
 }
+
 
 if(
 code.includes(
@@ -2189,6 +2902,7 @@ return "Password is too weak.";
 
 }
 
+
 if(
 code.includes(
 "auth/invalid-credential"
@@ -2198,6 +2912,7 @@ code.includes(
 return "Incorrect email or password.";
 
 }
+
 
 if(
 code.includes(
@@ -2209,14 +2924,16 @@ return "Google sign-in was cancelled.";
 
 }
 
+
 return "Please try again.";
 
 }
 
 
-/* ================================
+
+/* =================================================
 HTML SAFETY
-================================ */
+================================================= */
 
 function escapeHtml(value){
 
