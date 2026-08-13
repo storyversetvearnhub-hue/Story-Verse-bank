@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>StoryVerse Bank</title>
 
 <style>
+
+/* ================================
+GLOBAL
+================================ */
 
 *{
 box-sizing:border-box;
@@ -56,6 +63,10 @@ color:#123b73;
 margin-bottom:12px;
 }
 
+/* ================================
+INPUTS
+================================ */
+
 input{
 width:100%;
 padding:14px;
@@ -63,7 +74,16 @@ margin:7px 0;
 border:1px solid #ccc;
 border-radius:8px;
 font-size:15px;
+outline:none;
 }
+
+input:focus{
+border-color:#123b73;
+}
+
+/* ================================
+BUTTONS
+================================ */
 
 button{
 width:100%;
@@ -85,6 +105,28 @@ opacity:.9;
 display:none !important;
 }
 
+.google{
+background:#fff;
+color:#333;
+border:1px solid #ccc;
+}
+
+.cancel{
+background:#777;
+}
+
+.logout{
+background:#c62828;
+}
+
+.opay-button{
+background:#00a859;
+}
+
+/* ================================
+BALANCE
+================================ */
+
 .balance{
 background:#123b73;
 color:white;
@@ -102,6 +144,10 @@ margin-bottom:8px;
 font-size:30px;
 }
 
+/* ================================
+ACCOUNT
+================================ */
+
 .account-box{
 background:#eef3f9;
 padding:15px;
@@ -114,6 +160,10 @@ margin:7px 0;
 word-break:break-word;
 }
 
+/* ================================
+ACTIONS
+================================ */
+
 .actions{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -124,6 +174,10 @@ gap:10px;
 margin:0;
 }
 
+/* ================================
+MESSAGES
+================================ */
+
 .message{
 margin-top:15px;
 padding:15px;
@@ -131,20 +185,6 @@ border-radius:10px;
 background:#eef3f9;
 font-size:14px;
 line-height:1.5;
-}
-
-.google{
-background:#fff;
-color:#333;
-border:1px solid #ccc;
-}
-
-.cancel{
-background:#777;
-}
-
-.logout{
-background:#c62828;
 }
 
 .small{
@@ -155,12 +195,9 @@ margin-top:10px;
 line-height:1.5;
 }
 
-footer{
-text-align:center;
-padding:25px;
-color:#777;
-font-size:13px;
-}
+/* ================================
+REQUESTS
+================================ */
 
 .loading{
 text-align:center;
@@ -199,6 +236,10 @@ font-size:14px;
 color:#666;
 }
 
+/* ================================
+STATUS
+================================ */
+
 .status{
 display:inline-block;
 padding:5px 10px;
@@ -227,6 +268,10 @@ background:#e1edff;
 color:#1558a6;
 }
 
+/* ================================
+TRANSACTIONS
+================================ */
+
 .transaction{
 border-bottom:1px solid #eee;
 padding:14px 0;
@@ -243,85 +288,47 @@ gap:10px;
 margin-bottom:5px;
 }
 
-.credit{
-color:#16834a;
-font-weight:bold;
-}
-
-.debit{
-color:#c62828;
-font-weight:bold;
-}
-
-.opay-button{
-background:#00a859;
-}
+/* ================================
+DEPOSIT
+================================ */
 
 .deposit-info{
 background:#fff8e6;
 border:1px solid #f0d98a;
-padding:12px;
+padding:15px;
 border-radius:10px;
 margin-top:12px;
-font-size:13px;
-line-height:1.6;
-}
-
-.support-button{
-background:#16834a;
-}
-
-.tutorial-button{
-background:#6a1b9a;
-}
-
-.tutorial{
-line-height:1.7;
 font-size:14px;
+line-height:1.8;
 }
 
-.tutorial h3{
-margin-top:15px;
-margin-bottom:5px;
-}
-
-.tutorial p{
-margin-bottom:8px;
-}
-
-.tutorial ol{
-padding-left:22px;
-}
-
-.support-box{
+.deposit-account{
 background:#eef7f1;
 border:1px solid #b9dec5;
-padding:15px;
+padding:18px;
 border-radius:12px;
-line-height:1.7;
+margin-top:15px;
+line-height:1.9;
 }
 
-.email-link{
-display:block;
-background:#16834a;
-color:white;
-padding:13px;
-border-radius:8px;
+.deposit-account strong{
+color:#123b73;
+}
+
+/* ================================
+FOOTER
+================================ */
+
+footer{
 text-align:center;
-text-decoration:none;
-margin-top:10px;
-font-weight:bold;
+padding:25px;
+color:#777;
+font-size:13px;
 }
 
-.reference-box{
-background:#eef3f9;
-border:1px solid #d5dfeb;
-padding:12px;
-border-radius:10px;
-margin-top:12px;
-font-size:13px;
-line-height:1.6;
-}
+/* ================================
+MOBILE
+================================ */
 
 @media(max-width:450px){
 
@@ -345,15 +352,23 @@ margin-bottom:3px;
 }
 
 </style>
+
 </head>
 
 <body>
+
+
+<!-- ================================
+HEADER
+================================ -->
 
 <header>
 
 <h1>🏦 StoryVerse Bank</h1>
 
-<p>Simple • Convenient • Connected</p>
+<p>
+Simple • Convenient • Connected
+</p>
 
 </header>
 
@@ -361,28 +376,38 @@ margin-bottom:3px;
 <div class="container">
 
 
-<!-- =========================
-AUTH
-========================= -->
+<!-- =====================================================
+AUTH SECTION
+===================================================== -->
 
 <div id="authSection">
 
+
+<!-- LOGIN -->
+
 <div class="card">
 
-<h2>🔐 Customer Login</h2>
+<h2>
+🔐 Customer Login
+</h2>
 
 <input
 type="email"
 id="loginEmail"
-placeholder="Email address">
+placeholder="Email address"
+autocomplete="email">
 
 <input
 type="password"
 id="loginPassword"
-placeholder="Password">
+placeholder="Password"
+autocomplete="current-password">
 
-<button onclick="loginUser()">
+<button
+onclick="loginUser()">
+
 Login
+
 </button>
 
 <button
@@ -401,22 +426,31 @@ class="message hidden">
 </div>
 
 
+<!-- REGISTER -->
+
 <div class="card">
 
-<h2>📝 Create Account</h2>
+<h2>
+📝 Create Account
+</h2>
 
 <input
 type="email"
 id="registerEmail"
-placeholder="Email address">
+placeholder="Email address"
+autocomplete="email">
 
 <input
 type="password"
 id="registerPassword"
-placeholder="Password (minimum 6 characters)">
+placeholder="Password (minimum 6 characters)"
+autocomplete="new-password">
 
-<button onclick="registerUser()">
+<button
+onclick="registerUser()">
+
 Create Account
+
 </button>
 
 <button
@@ -437,9 +471,9 @@ class="message hidden">
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
 DASHBOARD
-========================= -->
+===================================================== -->
 
 <div
 id="dashboard"
@@ -450,7 +484,9 @@ class="hidden">
 
 <div class="balance">
 
-<p>Available Balance</p>
+<p>
+Available Balance
+</p>
 
 <strong id="balanceAmount">
 ₦0.00
@@ -459,17 +495,24 @@ class="hidden">
 </div>
 
 
-<!-- ACCOUNT -->
+<!-- =====================================================
+MY ACCOUNT
+===================================================== -->
 
 <div class="card">
 
-<h2>👤 My Account</h2>
+<h2>
+👤 My Account
+</h2>
 
 <p>
+
 Email:
+
 <strong id="userEmail">
 Loading...
 </strong>
+
 </p>
 
 
@@ -477,7 +520,9 @@ Loading...
 
 <p>
 
-<strong>Account Number:</strong>
+<strong>
+Account Number:
+</strong>
 
 <span id="accountNumber">
 Loading...
@@ -488,18 +533,9 @@ Loading...
 
 <p>
 
-<strong>Customer Reference:</strong>
-
-<span id="customerReference">
-Loading...
-</span>
-
-</p>
-
-
-<p>
-
-<strong>Account Status:</strong>
+<strong>
+Account Status:
+</strong>
 
 <span id="accountStatus">
 Active
@@ -521,30 +557,47 @@ Logout
 </div>
 
 
-<!-- =========================
-SERVICES
-========================= -->
+<!-- =====================================================
+BANKING SERVICES
+===================================================== -->
 
 <div class="card">
 
-<h2>🏦 Banking Services</h2>
+<h2>
+🏦 Banking Services
+</h2>
 
 <div class="actions">
 
-<button onclick="deposit()">
+<button
+onclick="deposit()">
+
 💰 Deposit
+
 </button>
 
-<button onclick="withdraw()">
+
+<button
+onclick="withdraw()">
+
 💸 Withdraw
+
 </button>
 
-<button onclick="transfer()">
+
+<button
+onclick="transfer()">
+
 🔄 Transfer
+
 </button>
 
-<button onclick="transactions()">
+
+<button
+onclick="transactions()">
+
 📜 Transactions
+
 </button>
 
 </div>
@@ -558,17 +611,20 @@ class="message hidden">
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
 REQUEST STATUS
-========================= -->
+===================================================== -->
 
 <div class="card">
 
-<h2>📋 Request Status</h2>
+<h2>
+📋 Request Status
+</h2>
 
 <p class="small">
 
-Your deposit, withdrawal and transfer requests appear here.
+Your deposit, withdrawal and transfer requests
+appear here.
 
 New requests start as
 <b>Pending</b>
@@ -580,259 +636,32 @@ until they are reviewed.
 <div id="requestList">
 
 <div class="loading">
+
 Loading request status...
-</div>
 
 </div>
 
 </div>
 
+</div>
 
-<!-- =========================
-CUSTOMER SERVICE
-========================= -->
+
+<!-- =====================================================
+TRANSACTION HISTORY
+===================================================== -->
 
 <div class="card">
 
-<h2>📞 Customer Service</h2>
-
-<div class="support-box">
-
-<p>
-Need help with your account, deposit, withdrawal or transfer?
-Our customer service team can assist you.
-</p>
-
-<p>
-<strong>Support Email:</strong><br>
-
-storyversetvearnhub@gmail.com
-
-</p>
-
-<a
-class="email-link"
-href="mailto:storyversetvearnhub@gmail.com?subject=StoryVerse%20Bank%20Customer%20Support">
-
-✉️ Contact Customer Service
-
-</a>
-
-</div>
-
-<p class="small">
-
-When contacting support, include your account number and a clear
-description of the problem. Never send your password.
-
-</p>
-
-</div>
-
-
-<!-- =========================
-TUTORIAL
-========================= -->
-
-<div class="card">
-
-<h2>📚 How To Use StoryVerse Bank</h2>
-
-<button
-class="tutorial-button"
-onclick="toggleTutorial()">
-
-📖 Open Tutorial
-
-</button>
-
-
-<div
-id="tutorialContent"
-class="tutorial hidden">
-
-
-<h3>1️⃣ Create Your Account</h3>
-
-<ol>
-
-<li>Enter your email address.</li>
-
-<li>Create a password of at least 6 characters.</li>
-
-<li>Tap <b>Create Account</b>.</li>
-
-<li>Your StoryVerse Bank account number will be generated automatically.</li>
-
-</ol>
-
-
-<h3>2️⃣ Login</h3>
-
-<p>
-
-Enter your registered email and password, then tap
-<b>Login</b>.
-
-You can also use Google Login if Google authentication is enabled
-correctly in Firebase.
-
-</p>
-
-
-<h3>3️⃣ Check Your Account Number</h3>
-
-<p>
-
-After login, open <b>My Account</b>.
-
-Your automatically generated StoryVerse Bank account number is
-your customer reference.
-
-</p>
-
-
-<h3>4️⃣ Make a Deposit</h3>
-
-<ol>
-
-<li>Tap <b>Deposit</b>.</li>
-
-<li>The deposit amount is ₦2,000.</li>
-
-<li>Tap <b>Pay ₦2,000 with OPay</b>.</li>
-
-<li>Complete the payment.</li>
-
-<li>Submit your deposit request.</li>
-
-<li>Your request will initially show <b>Pending</b>.</li>
-
-<li>After verification and approval, it can show <b>Approved</b>.</li>
-
-</ol>
-
-
-<h3>5️⃣ Check Deposit Status</h3>
-
-<p>
-
-Go to <b>Request Status</b>.
-
-You may see:
-
-</p>
-
-<ul>
-
-<li>🟡 <b>Pending</b> — waiting for verification.</li>
-
-<li>🟢 <b>Approved</b> — request has been approved.</li>
-
-<li>🔴 <b>Rejected</b> — request was rejected.</li>
-
-<li>🔵 <b>Processing</b> — request is being processed.</li>
-
-</ul>
-
-
-<h3>6️⃣ Make a Withdrawal</h3>
-
-<ol>
-
-<li>Tap <b>Withdraw</b>.</li>
-
-<li>Enter the amount.</li>
-
-<li>Enter your bank name.</li>
-
-<li>Enter your 10-digit account number.</li>
-
-<li>Enter the account name.</li>
-
-<li>Submit the request.</li>
-
-</ol>
-
-<p>
-
-The withdrawal will show as <b>Pending</b> until it is reviewed.
-
-</p>
-
-
-<h3>7️⃣ Make a Transfer</h3>
-
-<ol>
-
-<li>Tap <b>Transfer</b>.</li>
-
-<li>Enter the recipient's StoryVerse Bank account number.</li>
-
-<li>Enter the transfer amount.</li>
-
-<li>Add a transfer note if necessary.</li>
-
-<li>Submit the transfer request.</li>
-
-</ol>
-
-
-<h3>8️⃣ Check Transaction History</h3>
-
-<p>
-
-Tap <b>Transactions</b> to see transactions that have been recorded
-for your account.
-
-</p>
-
-
-<h3>9️⃣ Contact Customer Service</h3>
-
-<p>
-
-If you have a problem, contact:
-
-</p>
-
-<p>
-
-<strong>
-storyversetvearnhub@gmail.com
-</strong>
-
-</p>
-
-
-<h3>🔐 Security Reminder</h3>
-
-<p>
-
-Never give anyone your password, Firebase login details, OTP or
-other private authentication information.
-
-Customer service should not ask you for your password.
-
-</p>
-
-</div>
-
-</div>
-
-
-<!-- =========================
-TRANSACTIONS
-========================= -->
-
-<div class="card">
-
-<h2>📜 Transaction History</h2>
+<h2>
+📜 Transaction History
+</h2>
 
 <div id="transactionList">
 
 <div class="loading">
+
 Loading transactions...
+
 </div>
 
 </div>
@@ -847,7 +676,8 @@ Loading transactions...
 
 <footer>
 
-© 2026 StoryVerse Bank. All rights reserved.
+© 2026 StoryVerse Bank.
+All rights reserved.
 
 </footer>
 
@@ -856,9 +686,9 @@ Loading transactions...
 <script type="module">
 
 
-/* ================================
+/* =====================================================
 FIREBASE IMPORTS
-================================ */
+===================================================== */
 
 import {
 initializeApp
@@ -916,11 +746,11 @@ from
 
 
 
-/* ================================
+/* =====================================================
 FIREBASE CONFIG
-================================ */
+===================================================== */
 
-const firebaseConfig={
+const firebaseConfig = {
 
 apiKey:
 "AIzaSyBbjVL5TMW8mjtqxxo9fxn7BCEl_872vW8",
@@ -946,6 +776,11 @@ measurementId:
 };
 
 
+
+/* =====================================================
+INITIALIZE FIREBASE
+===================================================== */
+
 const app =
 initializeApp(firebaseConfig);
 
@@ -960,18 +795,23 @@ new GoogleAuthProvider();
 
 
 
-/* ================================
+/* =====================================================
 MESSAGE
-================================ */
+===================================================== */
 
 function showMessage(id,text){
 
 const element =
 document.getElementById(id);
 
-if(!element)return;
+if(!element){
 
-element.textContent=text;
+return;
+
+}
+
+element.textContent =
+text;
 
 element.classList.remove(
 "hidden"
@@ -981,11 +821,12 @@ element.classList.remove(
 
 
 
-/* ================================
+/* =====================================================
 REGISTER
-================================ */
+===================================================== */
 
-window.registerUser=async function(){
+window.registerUser =
+async function(){
 
 const email =
 document.getElementById(
@@ -1010,7 +851,7 @@ return;
 }
 
 
-if(password.length<6){
+if(password.length < 6){
 
 showMessage(
 "registerMessage",
@@ -1031,14 +872,17 @@ email,
 password
 );
 
+
 await createCustomerRecord(
 result.user
 );
+
 
 showMessage(
 "registerMessage",
 "Account created successfully."
 );
+
 
 }catch(error){
 
@@ -1055,11 +899,12 @@ friendlyError(error)
 
 
 
-/* ================================
+/* =====================================================
 GOOGLE REGISTER
-================================ */
+===================================================== */
 
-window.googleRegister=async function(){
+window.googleRegister =
+async function(){
 
 try{
 
@@ -1069,9 +914,11 @@ auth,
 googleProvider
 );
 
+
 await createCustomerRecord(
 result.user
 );
+
 
 }catch(error){
 
@@ -1079,7 +926,7 @@ console.error(error);
 
 showMessage(
 "registerMessage",
-"Google registration failed: "+
+"Google registration failed: " +
 friendlyError(error)
 );
 
@@ -1089,9 +936,9 @@ friendlyError(error)
 
 
 
-/* ================================
-CREATE CUSTOMER
-================================ */
+/* =====================================================
+CREATE CUSTOMER RECORD
+===================================================== */
 
 async function createCustomerRecord(user){
 
@@ -1102,10 +949,18 @@ db,
 user.uid
 );
 
-const existing =
-await getDoc(customerRef);
 
-if(existing.exists())return;
+const existing =
+await getDoc(
+customerRef
+);
+
+
+if(existing.exists()){
+
+return;
+
+}
 
 
 const accountNumber =
@@ -1116,50 +971,56 @@ await setDoc(
 customerRef,
 {
 
-uid:user.uid,
+uid:
+user.uid,
 
-email:user.email || "",
+email:
+user.email || "",
 
-accountNumber:accountNumber,
+accountNumber:
+accountNumber,
 
-balance:0,
+balance:
+0,
 
-status:"Active",
+status:
+"Active",
 
 createdAt:
 serverTimestamp()
 
 }
-
 );
 
 }
 
 
 
-/* ================================
-ACCOUNT NUMBER
-================================ */
+/* =====================================================
+GENERATE ACCOUNT NUMBER
+===================================================== */
 
 function generateAccountNumber(){
 
 const random =
 Math.floor(
-10000000+
-Math.random()*90000000
+10000000 +
+Math.random() * 90000000
 );
 
-return "SVB"+random;
+
+return "SVB" + random;
 
 }
 
 
 
-/* ================================
+/* =====================================================
 LOGIN
-================================ */
+===================================================== */
 
-window.loginUser=async function(){
+window.loginUser =
+async function(){
 
 const email =
 document.getElementById(
@@ -1192,6 +1053,7 @@ email,
 password
 );
 
+
 }catch(error){
 
 console.error(error);
@@ -1207,11 +1069,12 @@ friendlyError(error)
 
 
 
-/* ================================
+/* =====================================================
 GOOGLE LOGIN
-================================ */
+===================================================== */
 
-window.googleLogin=async function(){
+window.googleLogin =
+async function(){
 
 try{
 
@@ -1221,9 +1084,11 @@ auth,
 googleProvider
 );
 
+
 await createCustomerRecord(
 result.user
 );
+
 
 }catch(error){
 
@@ -1231,7 +1096,7 @@ console.error(error);
 
 showMessage(
 "loginMessage",
-"Google login failed: "+
+"Google login failed: " +
 friendlyError(error)
 );
 
@@ -1241,11 +1106,12 @@ friendlyError(error)
 
 
 
-/* ================================
+/* =====================================================
 LOGOUT
-================================ */
+===================================================== */
 
-window.logout=async function(){
+window.logout =
+async function(){
 
 try{
 
@@ -1253,7 +1119,11 @@ await signOut(auth);
 
 }catch(error){
 
-alert("Logout failed.");
+console.error(error);
+
+alert(
+"Logout failed."
+);
 
 }
 
@@ -1261,9 +1131,9 @@ alert("Logout failed.");
 
 
 
-/* ================================
+/* =====================================================
 AUTH STATE
-================================ */
+===================================================== */
 
 onAuthStateChanged(
 auth,
@@ -1298,11 +1168,19 @@ user.email ||
 "Google User";
 
 
-await loadCustomerData(user);
+await loadCustomerData(
+user
+);
 
-await loadRequests(user);
 
-await loadTransactions(user);
+await loadRequests(
+user
+);
+
+
+await loadTransactions(
+user
+);
 
 
 }else{
@@ -1322,9 +1200,9 @@ dashboard.classList.add(
 
 
 
-/* ================================
+/* =====================================================
 LOAD CUSTOMER
-================================ */
+===================================================== */
 
 async function loadCustomerData(user){
 
@@ -1337,15 +1215,22 @@ db,
 user.uid
 );
 
+
 const snap =
-await getDoc(customerRef);
+await getDoc(
+customerRef
+);
 
 
 if(!snap.exists()){
 
-await createCustomerRecord(user);
+await createCustomerRecord(
+user
+);
 
-return loadCustomerData(user);
+return loadCustomerData(
+user
+);
 
 }
 
@@ -1354,21 +1239,11 @@ const data =
 snap.data();
 
 
-const account =
-data.accountNumber ||
-"Not assigned";
-
-
 document.getElementById(
 "accountNumber"
 ).textContent =
-account;
-
-
-document.getElementById(
-"customerReference"
-).textContent =
-account;
+data.accountNumber ||
+"Not assigned";
 
 
 document.getElementById(
@@ -1387,7 +1262,7 @@ data.balance || 0
 document.getElementById(
 "balanceAmount"
 ).textContent =
-"₦"+
+"₦" +
 balance.toLocaleString(
 "en-NG",
 {
@@ -1401,6 +1276,7 @@ maximumFractionDigits:2
 
 console.error(error);
 
+
 document.getElementById(
 "accountNumber"
 ).textContent =
@@ -1412,85 +1288,113 @@ document.getElementById(
 
 
 
-/* =================================================
+/* =====================================================
 DEPOSIT
-================================================= */
+===================================================== */
 
-window.deposit=function(){
+window.deposit =
+function(){
 
 const message =
 document.getElementById(
 "serviceMessage"
 );
 
+
 message.classList.remove(
 "hidden"
 );
 
 
-message.innerHTML=`
+message.innerHTML = `
 
 <div>
 
-<h3>💰 Deposit Funds</h3>
+<h3>
+💰 Deposit Funds
+</h3>
+
 
 <p>
-Each deposit is <b>₦2,000</b>.
+
+Enter the amount you want to deposit
+and transfer the money to the account
+details below.
+
 </p>
 
+
 <input
+
 type="number"
+
 id="depositAmount"
-value="2000"
-readonly>
+
+placeholder="Enter deposit amount (₦)"
+
+min="1"
+
+step="0.01"
+
+>
 
 
-<div class="reference-box">
+<div class="deposit-account">
 
-<b>Your Customer Reference:</b><br>
-
-<span id="depositCustomerReference">
-Loading...
-</span>
+<b>
+💳 Deposit Account Details
+</b>
 
 <br><br>
 
-Use your StoryVerse Bank account number when identifying
+
+<strong>
+Account Number:
+</strong>
+
+<br>
+
+6587578800
+
+
+<br><br>
+
+
+<strong>
+Bank:
+</strong>
+
+<br>
+
+OPay
+
+
+<br><br>
+
+
+Please transfer the amount you entered
+to this account before submitting
 your deposit request.
 
 </div>
 
 
-<div class="deposit-info">
-
-<b>Deposit Amount: ₦2,000</b><br>
-
-Minimum deposit: ₦2,000<br>
-
-Maximum per deposit: ₦2,000<br>
-
-You may make multiple separate deposits.
-
-</div>
-
-
-<button
-class="opay-button"
-onclick="openOpayPayment()">
-
-💳 Pay ₦2,000 with OPay
-
-</button>
-
-
 <input
+
 type="text"
+
 id="depositReference"
-placeholder="Enter payment reference if provided">
+
+placeholder="Enter payment reference (optional)"
+
+>
 
 
 <button
-onclick="submitDeposit()">
+
+onclick="submitDeposit()"
+
+>
 
 ✅ Submit Deposit Request
 
@@ -1498,8 +1402,12 @@ onclick="submitDeposit()">
 
 
 <button
+
 onclick="closeService()"
-class="cancel">
+
+class="cancel"
+
+>
 
 Cancel
 
@@ -1508,21 +1416,18 @@ Cancel
 
 <p class="small">
 
-<b>Payment Status: Pending</b>
+<b>
+Payment Status: Pending
+</b>
 
 <br><br>
 
-1. Confirm the ₦2,000 amount.<br>
+Your deposit request will be reviewed
+by the administrator.
 
-2. Tap Pay ₦2,000 with OPay.<br>
-
-3. Complete the payment.<br>
-
-4. Submit your deposit request.<br>
-
-5. Your request will appear as Pending.<br>
-
-6. After verification, the request can be changed to Approved.
+Your balance will only be updated
+after the payment has been verified
+and the request has been approved.
 
 </p>
 
@@ -1530,62 +1435,16 @@ Cancel
 
 `;
 
-
-const user =
-auth.currentUser;
-
-
-if(user){
-
-const customerRef =
-await getDoc(
-doc(
-db,
-"customers",
-user.uid
-)
-);
-
-
-if(customerRef.exists()){
-
-document.getElementById(
-"depositCustomerReference"
-).textContent =
-customerRef.data().accountNumber ||
-"Not available";
-
-}
-
-}
-
 };
 
 
 
-/* =================================================
-OPAY
-================================================= */
-
-window.openOpayPayment=function(){
-
-const opayLink =
-"https://opay.ng/s/33tEw";
-
-window.open(
-opayLink,
-"_blank"
-);
-
-};
-
-
-
-/* =================================================
+/* =====================================================
 SUBMIT DEPOSIT
-================================================= */
+===================================================== */
 
-window.submitDeposit=async function(){
+window.submitDeposit =
+async function(){
 
 const user =
 auth.currentUser;
@@ -1593,7 +1452,9 @@ auth.currentUser;
 
 if(!user){
 
-alert("Please log in first.");
+alert(
+"Please log in first."
+);
 
 return;
 
@@ -1608,16 +1469,16 @@ document.getElementById(
 );
 
 
-const paymentReference =
+const reference =
 document.getElementById(
 "depositReference"
 ).value.trim();
 
 
-if(amount!==2000){
+if(!amount || amount <= 0){
 
 alert(
-"Each deposit must be exactly ₦2,000."
+"Please enter a valid deposit amount."
 );
 
 return;
@@ -1625,10 +1486,7 @@ return;
 }
 
 
-/*
-The customer's StoryVerse Bank account
-number is automatically attached to the request.
-*/
+try{
 
 const customerSnap =
 await getDoc(
@@ -1655,61 +1513,93 @@ const customerData =
 customerSnap.data();
 
 
-try{
-
 await addDoc(
+
 collection(
 db,
 "depositRequests"
 ),
+
 {
 
-userId:user.uid,
+userId:
+user.uid,
 
-email:user.email || "",
+email:
+user.email || "",
 
 customerReference:
 customerData.accountNumber || "",
 
-amount:2000,
+amount:
+amount,
 
-paymentReference:
-paymentReference || "",
+reference:
+reference,
 
-type:"Deposit",
+paymentMethod:
+"OPay",
 
-status:"Pending",
+bankName:
+"OPay",
 
-paymentStatus:"Pending",
+accountNumber:
+"6587578800",
 
-paymentMethod:"OPay",
+type:
+"Deposit",
+
+status:
+"Pending",
+
+paymentStatus:
+"Pending",
 
 createdAt:
 serverTimestamp()
 
 }
+
 );
 
 
 alert(
-"Deposit request submitted successfully.\n\n"+
-"Amount: ₦2,000\n"+
-"Status: Pending\n\n"+
-"Your request will be reviewed before your balance is updated."
+
+"Deposit request submitted successfully.\n\n" +
+
+"Amount: ₦" +
+
+amount.toLocaleString(
+"en-NG"
+) +
+
+"\n" +
+
+"Payment Status: Pending\n\n" +
+
+"Your deposit will be verified before your balance is updated."
+
 );
 
 
 closeService();
 
-await loadRequests(user);
+
+await loadRequests(
+user
+);
 
 
 }catch(error){
 
-console.error(error);
+console.error(
+"Deposit error:",
+error
+);
+
 
 alert(
-"Unable to submit deposit request."
+"Unable to submit deposit request. Please try again."
 );
 
 }
@@ -1718,58 +1608,88 @@ alert(
 
 
 
-/* =================================================
+/* =====================================================
 WITHDRAW
-================================================= */
+===================================================== */
 
-window.withdraw=function(){
+window.withdraw =
+function(){
 
 const message =
 document.getElementById(
 "serviceMessage"
 );
 
+
 message.classList.remove(
 "hidden"
 );
 
 
-message.innerHTML=`
+message.innerHTML = `
 
 <div>
 
-<h3>💸 Withdrawal Request</h3>
+<h3>
+💸 Withdrawal Request
+</h3>
 
 
 <input
+
 type="number"
+
 id="withdrawAmount"
+
 placeholder="Amount in ₦"
-min="100">
+
+min="100"
+
+>
 
 
 <input
+
 type="text"
+
 id="bankName"
-placeholder="Bank name">
+
+placeholder="Bank name"
+
+>
 
 
 <input
+
 type="text"
+
 id="accountNumberInput"
+
 placeholder="10-digit account number"
+
 maxlength="10"
-inputmode="numeric">
+
+inputmode="numeric"
+
+>
 
 
 <input
+
 type="text"
+
 id="accountName"
-placeholder="Account name">
+
+placeholder="Account name"
+
+>
 
 
 <button
-onclick="submitWithdrawal()">
+
+onclick="submitWithdrawal()"
+
+>
 
 Submit Withdrawal Request
 
@@ -1777,8 +1697,12 @@ Submit Withdrawal Request
 
 
 <button
+
 onclick="closeService()"
-class="cancel">
+
+class="cancel"
+
+>
 
 Cancel
 
@@ -1788,11 +1712,15 @@ Cancel
 <p class="small">
 
 Payment status:
-<b>Pending</b>
+
+<b>
+Pending
+</b>
 
 <br>
 
-Withdrawal will be paid only after verification and approval.
+Withdrawal will be paid only after
+verification and approval.
 
 </p>
 
@@ -1804,11 +1732,12 @@ Withdrawal will be paid only after verification and approval.
 
 
 
-/* =================================================
+/* =====================================================
 SUBMIT WITHDRAWAL
-================================================= */
+===================================================== */
 
-window.submitWithdrawal=async function(){
+window.submitWithdrawal =
+async function(){
 
 const user =
 auth.currentUser;
@@ -1851,7 +1780,7 @@ document.getElementById(
 ).value.trim();
 
 
-if(!amount || amount<100){
+if(!amount || amount < 100){
 
 alert(
 "Minimum withdrawal is ₦100."
@@ -1865,7 +1794,9 @@ return;
 if(
 !bank ||
 !accountName ||
-!/^\d{10}$/.test(accountNumber)
+!/^\d{10}$/.test(
+accountNumber
+)
 ){
 
 alert(
@@ -1880,34 +1811,46 @@ return;
 try{
 
 await addDoc(
+
 collection(
 db,
 "withdrawalRequests"
 ),
+
 {
 
-userId:user.uid,
+userId:
+user.uid,
 
-email:user.email || "",
+email:
+user.email || "",
 
-amount:amount,
+amount:
+amount,
 
-bankName:bank,
+bankName:
+bank,
 
-accountNumber:accountNumber,
+accountNumber:
+accountNumber,
 
-accountName:accountName,
+accountName:
+accountName,
 
-type:"Withdrawal",
+type:
+"Withdrawal",
 
-status:"Pending",
+status:
+"Pending",
 
-paymentStatus:"Pending",
+paymentStatus:
+"Pending",
 
 createdAt:
 serverTimestamp()
 
 }
+
 );
 
 
@@ -1918,12 +1861,16 @@ alert(
 
 closeService();
 
-await loadRequests(user);
+
+await loadRequests(
+user
+);
 
 
 }catch(error){
 
 console.error(error);
+
 
 alert(
 "Unable to submit withdrawal request."
@@ -1935,50 +1882,73 @@ alert(
 
 
 
-/* =================================================
+/* =====================================================
 TRANSFER
-================================================= */
+===================================================== */
 
-window.transfer=function(){
+window.transfer =
+function(){
 
 const message =
 document.getElementById(
 "serviceMessage"
 );
 
+
 message.classList.remove(
 "hidden"
 );
 
 
-message.innerHTML=`
+message.innerHTML = `
 
 <div>
 
-<h3>🔄 Transfer Request</h3>
+<h3>
+🔄 Transfer Request
+</h3>
 
 
 <input
+
 type="text"
+
 id="recipientAccount"
-placeholder="Recipient account number">
+
+placeholder="Recipient account number"
+
+>
 
 
 <input
+
 type="number"
+
 id="transferAmount"
+
 placeholder="Amount in ₦"
-min="100">
+
+min="100"
+
+>
 
 
 <input
+
 type="text"
+
 id="transferNote"
-placeholder="Transfer note (optional)">
+
+placeholder="Transfer note (optional)"
+
+>
 
 
 <button
-onclick="submitTransfer()">
+
+onclick="submitTransfer()"
+
+>
 
 Submit Transfer Request
 
@@ -1986,8 +1956,12 @@ Submit Transfer Request
 
 
 <button
+
 onclick="closeService()"
-class="cancel">
+
+class="cancel"
+
+>
 
 Cancel
 
@@ -1997,11 +1971,15 @@ Cancel
 <p class="small">
 
 Payment status:
-<b>Pending</b>
+
+<b>
+Pending
+</b>
 
 <br>
 
-Transfers require verification before money is moved.
+Transfers require verification
+before money is moved.
 
 </p>
 
@@ -2013,11 +1991,12 @@ Transfers require verification before money is moved.
 
 
 
-/* =================================================
+/* =====================================================
 SUBMIT TRANSFER
-================================================= */
+===================================================== */
 
-window.submitTransfer=async function(){
+window.submitTransfer =
+async function(){
 
 const user =
 auth.currentUser;
@@ -2065,7 +2044,7 @@ return;
 }
 
 
-if(!amount || amount<100){
+if(!amount || amount < 100){
 
 alert(
 "Minimum transfer is ₦100."
@@ -2079,32 +2058,43 @@ return;
 try{
 
 await addDoc(
+
 collection(
 db,
 "transferRequests"
 ),
+
 {
 
-senderId:user.uid,
+senderId:
+user.uid,
 
-senderEmail:user.email || "",
+senderEmail:
+user.email || "",
 
-recipientAccount:recipient,
+recipientAccount:
+recipient,
 
-amount:amount,
+amount:
+amount,
 
-note:note,
+note:
+note,
 
-type:"Transfer",
+type:
+"Transfer",
 
-status:"Pending",
+status:
+"Pending",
 
-paymentStatus:"Pending",
+paymentStatus:
+"Pending",
 
 createdAt:
 serverTimestamp()
 
 }
+
 );
 
 
@@ -2115,12 +2105,16 @@ alert(
 
 closeService();
 
-await loadRequests(user);
+
+await loadRequests(
+user
+);
 
 
 }catch(error){
 
 console.error(error);
+
 
 alert(
 "Unable to submit transfer request."
@@ -2132,9 +2126,9 @@ alert(
 
 
 
-/* =================================================
+/* =====================================================
 LOAD REQUESTS
-================================================= */
+===================================================== */
 
 async function loadRequests(user){
 
@@ -2144,11 +2138,14 @@ document.getElementById(
 );
 
 
-list.innerHTML=
-`
+list.innerHTML = `
+
 <div class="loading">
+
 Loading request status...
+
 </div>
+
 `;
 
 
@@ -2156,109 +2153,144 @@ try{
 
 const depositQuery =
 query(
+
 collection(
 db,
 "depositRequests"
 ),
+
 where(
 "userId",
 "==",
 user.uid
 )
+
 );
 
 
 const withdrawalQuery =
 query(
+
 collection(
 db,
 "withdrawalRequests"
 ),
+
 where(
 "userId",
 "==",
 user.uid
 )
+
 );
 
 
 const transferQuery =
 query(
+
 collection(
 db,
 "transferRequests"
 ),
+
 where(
 "senderId",
 "==",
 user.uid
 )
+
 );
 
 
 const [
+
 depositSnap,
+
 withdrawalSnap,
+
 transferSnap
-]=
+
+] =
+
 await Promise.all([
 
-getDocs(depositQuery),
+getDocs(
+depositQuery
+),
 
-getDocs(withdrawalQuery),
+getDocs(
+withdrawalQuery
+),
 
-getDocs(transferQuery)
+getDocs(
+transferQuery
+)
 
 ]);
 
 
-let requests=[];
+let requests = [];
 
+
+/* DEPOSITS */
 
 depositSnap.forEach(
-docSnap=>{
+docSnap => {
 
 requests.push({
 
-id:docSnap.id,
+id:
+docSnap.id,
 
-category:"Deposit",
+category:
+"Deposit",
 
-data:docSnap.data()
+data:
+docSnap.data()
 
 });
 
 }
 );
 
+
+/* WITHDRAWALS */
 
 withdrawalSnap.forEach(
-docSnap=>{
+docSnap => {
 
 requests.push({
 
-id:docSnap.id,
+id:
+docSnap.id,
 
-category:"Withdrawal",
+category:
+"Withdrawal",
 
-data:docSnap.data()
+data:
+docSnap.data()
 
 });
 
 }
 );
 
+
+/* TRANSFERS */
 
 transferSnap.forEach(
-docSnap=>{
+docSnap => {
 
 requests.push({
 
-id:docSnap.id,
+id:
+docSnap.id,
 
-category:"Transfer",
+category:
+"Transfer",
 
-data:docSnap.data()
+data:
+docSnap.data()
 
 });
 
@@ -2266,8 +2298,10 @@ data:docSnap.data()
 );
 
 
+/* SORT */
+
 requests.sort(
-(a,b)=>{
+(a,b) => {
 
 const aTime =
 a.data.createdAt?.toMillis?.() || 0;
@@ -2275,19 +2309,22 @@ a.data.createdAt?.toMillis?.() || 0;
 const bTime =
 b.data.createdAt?.toMillis?.() || 0;
 
-return bTime-aTime;
+return bTime - aTime;
 
 }
 );
 
 
-if(requests.length===0){
+if(requests.length === 0){
 
-list.innerHTML=
-`
+list.innerHTML = `
+
 <div class="loading">
+
 No requests yet.
+
 </div>
+
 `;
 
 return;
@@ -2295,11 +2332,11 @@ return;
 }
 
 
-list.innerHTML="";
+list.innerHTML = "";
 
 
 requests.forEach(
-request=>{
+request => {
 
 const data =
 request.data;
@@ -2327,10 +2364,11 @@ document.createElement(
 );
 
 
-div.className="request";
+div.className =
+"request";
 
 
-div.innerHTML=`
+div.innerHTML = `
 
 <div class="request-title">
 
@@ -2367,7 +2405,9 @@ Request Status
 
 <span>
 
-${statusBadge(status)}
+${statusBadge(
+status
+)}
 
 </span>
 
@@ -2382,34 +2422,8 @@ Payment Status
 
 <span>
 
-${statusBadge(paymentStatus)}
-
-</span>
-
-</div>
-
-`;
-
-
-/* CUSTOMER REFERENCE */
-
-if(
-request.category==="Deposit" &&
-data.customerReference
-){
-
-div.innerHTML+=`
-
-<div class="request-row">
-
-<span>
-Customer Reference
-</span>
-
-<span>
-
-${escapeHtml(
-data.customerReference
+${statusBadge(
+paymentStatus
 )}
 
 </span>
@@ -2418,17 +2432,19 @@ data.customerReference
 
 `;
 
-}
 
-
-/* PAYMENT REFERENCE */
+/* DEPOSIT REFERENCE */
 
 if(
-request.category==="Deposit" &&
-data.paymentReference
+
+request.category === "Deposit"
+
+&&
+data.reference
+
 ){
 
-div.innerHTML+=`
+div.innerHTML += `
 
 <div class="request-row">
 
@@ -2439,7 +2455,7 @@ Payment Reference
 <span>
 
 ${escapeHtml(
-data.paymentReference
+data.reference
 )}
 
 </span>
@@ -2451,27 +2467,24 @@ data.paymentReference
 }
 
 
-/* PAYMENT METHOD */
+/* DEPOSIT BANK */
 
 if(
-request.category==="Deposit" &&
-data.paymentMethod
+
+request.category === "Deposit"
+
 ){
 
-div.innerHTML+=`
+div.innerHTML += `
 
 <div class="request-row">
 
 <span>
-Payment Method
+Payment Bank
 </span>
 
 <span>
-
-${escapeHtml(
-data.paymentMethod
-)}
-
+OPay
 </span>
 
 </div>
@@ -2484,11 +2497,15 @@ data.paymentMethod
 /* RECIPIENT */
 
 if(
-request.category==="Transfer" &&
+
+request.category === "Transfer"
+
+&&
 data.recipientAccount
+
 ){
 
-div.innerHTML+=`
+div.innerHTML += `
 
 <div class="request-row">
 
@@ -2511,7 +2528,9 @@ data.recipientAccount
 }
 
 
-list.appendChild(div);
+list.appendChild(
+div
+);
 
 }
 
@@ -2526,13 +2545,14 @@ error
 );
 
 
-list.innerHTML=
-`
+list.innerHTML = `
+
 <div class="loading">
 
 Unable to load request status.
 
 </div>
+
 `;
 
 }
@@ -2541,22 +2561,25 @@ Unable to load request status.
 
 
 
-/* =================================================
+/* =====================================================
 STATUS BADGE
-================================================= */
+===================================================== */
 
 function statusBadge(status){
 
 const clean =
-String(status)
-.toLowerCase();
+String(
+status
+).toLowerCase();
 
 
 let className =
 "status-pending";
 
 
-if(clean==="approved"){
+if(
+clean === "approved"
+){
 
 className =
 "status-approved";
@@ -2564,7 +2587,9 @@ className =
 }
 
 
-else if(clean==="rejected"){
+else if(
+clean === "rejected"
+){
 
 className =
 "status-rejected";
@@ -2572,7 +2597,9 @@ className =
 }
 
 
-else if(clean==="processing"){
+else if(
+clean === "processing"
+){
 
 className =
 "status-processing";
@@ -2584,7 +2611,9 @@ return `
 
 <span class="status ${className}">
 
-${escapeHtml(status)}
+${escapeHtml(
+status
+)}
 
 </span>
 
@@ -2594,19 +2623,27 @@ ${escapeHtml(status)}
 
 
 
-/* =================================================
-TRANSACTIONS
-================================================= */
+/* =====================================================
+TRANSACTIONS BUTTON
+===================================================== */
 
-window.transactions=async function(){
+window.transactions =
+async function(){
 
 const user =
 auth.currentUser;
 
-if(!user)return;
+
+if(!user){
+
+return;
+
+}
 
 
-await loadTransactions(user);
+await loadTransactions(
+user
+);
 
 
 document
@@ -2615,7 +2652,8 @@ document
 )
 .scrollIntoView({
 
-behavior:"smooth"
+behavior:
+"smooth"
 
 });
 
@@ -2623,9 +2661,9 @@ behavior:"smooth"
 
 
 
-/* =================================================
+/* =====================================================
 LOAD TRANSACTIONS
-================================================= */
+===================================================== */
 
 async function loadTransactions(user){
 
@@ -2635,11 +2673,14 @@ document.getElementById(
 );
 
 
-list.innerHTML=
-`
+list.innerHTML = `
+
 <div class="loading">
+
 Loading transactions...
+
 </div>
+
 `;
 
 
@@ -2647,29 +2688,37 @@ try{
 
 const q =
 query(
+
 collection(
 db,
 "transactions"
 ),
+
 where(
 "userId",
 "==",
 user.uid
 )
+
 );
 
 
 const snapshot =
-await getDocs(q);
+await getDocs(
+q
+);
 
 
 if(snapshot.empty){
 
-list.innerHTML=
-`
+list.innerHTML = `
+
 <div class="loading">
+
 No transactions yet.
+
 </div>
+
 `;
 
 return;
@@ -2677,11 +2726,11 @@ return;
 }
 
 
-let transactions=[];
+let transactions = [];
 
 
 snapshot.forEach(
-docSnap=>{
+docSnap => {
 
 transactions.push(
 docSnap.data()
@@ -2692,7 +2741,7 @@ docSnap.data()
 
 
 transactions.sort(
-(a,b)=>{
+(a,b) => {
 
 const aTime =
 a.createdAt?.toMillis?.() || 0;
@@ -2700,17 +2749,17 @@ a.createdAt?.toMillis?.() || 0;
 const bTime =
 b.createdAt?.toMillis?.() || 0;
 
-return bTime-aTime;
+return bTime - aTime;
 
 }
 );
 
 
-list.innerHTML="";
+list.innerHTML = "";
 
 
 transactions.forEach(
-data=>{
+data => {
 
 const amount =
 Number(
@@ -2739,22 +2788,27 @@ document.createElement(
 );
 
 
-div.className="transaction";
+div.className =
+"transaction";
 
 
-div.innerHTML=`
+div.innerHTML = `
 
 <div class="transaction-top">
 
 <strong>
 
-${escapeHtml(type)}
+${escapeHtml(
+type
+)}
 
 </strong>
 
 <span>
 
-${statusBadge(status)}
+${statusBadge(
+status
+)}
 
 </span>
 
@@ -2783,14 +2837,18 @@ minimumFractionDigits:2
 
 Payment:
 
-${statusBadge(paymentStatus)}
+${statusBadge(
+paymentStatus
+)}
 
 </div>
 
 `;
 
 
-list.appendChild(div);
+list.appendChild(
+div
+);
 
 }
 
@@ -2799,16 +2857,20 @@ list.appendChild(div);
 
 }catch(error){
 
-console.error(error);
+console.error(
+"Transaction error:",
+error
+);
 
 
-list.innerHTML=
-`
+list.innerHTML = `
+
 <div class="loading">
 
 Transaction history is not available yet.
 
 </div>
+
 `;
 
 }
@@ -2817,31 +2879,12 @@ Transaction history is not available yet.
 
 
 
-/* =================================================
-TUTORIAL
-================================================= */
-
-window.toggleTutorial=function(){
-
-const tutorial =
-document.getElementById(
-"tutorialContent"
-);
-
-
-tutorial.classList.toggle(
-"hidden"
-);
-
-};
-
-
-
-/* =================================================
+/* =====================================================
 CLOSE SERVICE
-================================================= */
+===================================================== */
 
-window.closeService=function(){
+window.closeService =
+function(){
 
 const message =
 document.getElementById(
@@ -2854,15 +2897,15 @@ message.classList.add(
 );
 
 
-message.innerHTML="";
+message.innerHTML = "";
 
 };
 
 
 
-/* =================================================
-ERROR
-================================================= */
+/* =====================================================
+FRIENDLY FIREBASE ERRORS
+===================================================== */
 
 function friendlyError(error){
 
@@ -2898,7 +2941,7 @@ code.includes(
 )
 ){
 
-return "Password is too weak.";
+return "Password is too weak. Use at least 6 characters.";
 
 }
 
@@ -2916,6 +2959,28 @@ return "Incorrect email or password.";
 
 if(
 code.includes(
+"auth/user-not-found"
+)
+){
+
+return "No account was found with this email.";
+
+}
+
+
+if(
+code.includes(
+"auth/wrong-password"
+)
+){
+
+return "Incorrect password.";
+
+}
+
+
+if(
+code.includes(
 "auth/popup-closed-by-user"
 )
 ){
@@ -2925,19 +2990,68 @@ return "Google sign-in was cancelled.";
 }
 
 
-return "Please try again.";
+if(
+code.includes(
+"auth/operation-not-allowed"
+)
+){
+
+return "This sign-in method is not enabled in Firebase Authentication.";
+
+}
+
+
+if(
+code.includes(
+"auth/unauthorized-domain"
+)
+){
+
+return "This website domain is not authorized in Firebase Authentication.";
+
+}
+
+
+if(
+code.includes(
+"auth/network-request-failed"
+)
+){
+
+return "Network error. Check your internet connection.";
+
+}
+
+
+if(
+code.includes(
+"permission-denied"
+)
+){
+
+return "Firebase permission denied. Check your Firestore security rules.";
+
+}
+
+
+return (
+error.message ||
+"Please try again."
+);
 
 }
 
 
 
-/* =================================================
+/* =====================================================
 HTML SAFETY
-================================================= */
+===================================================== */
 
 function escapeHtml(value){
 
-return String(value)
+return String(
+value
+)
 
 .replace(
 /&/g,
@@ -2969,4 +3083,4 @@ return String(value)
 </script>
 
 </body>
-</html>
+  </html>
