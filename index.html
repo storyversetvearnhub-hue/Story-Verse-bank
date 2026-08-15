@@ -11,10 +11,6 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
-/* ================================
-GLOBAL
-================================ */
-
 *{
 box-sizing:border-box;
 margin:0;
@@ -63,10 +59,6 @@ color:#123b73;
 margin-bottom:12px;
 }
 
-/* ================================
-INPUTS
-================================ */
-
 input{
 width:100%;
 padding:14px;
@@ -80,10 +72,6 @@ outline:none;
 input:focus{
 border-color:#123b73;
 }
-
-/* ================================
-BUTTONS
-================================ */
 
 button{
 width:100%;
@@ -119,14 +107,6 @@ background:#777;
 background:#c62828;
 }
 
-.opay-button{
-background:#00a859;
-}
-
-/* ================================
-BALANCE
-================================ */
-
 .balance{
 background:#123b73;
 color:white;
@@ -144,10 +124,6 @@ margin-bottom:8px;
 font-size:30px;
 }
 
-/* ================================
-ACCOUNT
-================================ */
-
 .account-box{
 background:#eef3f9;
 padding:15px;
@@ -160,10 +136,6 @@ margin:7px 0;
 word-break:break-word;
 }
 
-/* ================================
-ACTIONS
-================================ */
-
 .actions{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -173,10 +145,6 @@ gap:10px;
 .actions button{
 margin:0;
 }
-
-/* ================================
-MESSAGES
-================================ */
 
 .message{
 margin-top:15px;
@@ -195,50 +163,24 @@ margin-top:10px;
 line-height:1.5;
 }
 
-/* ================================
-REQUESTS
-================================ */
-
 .loading{
 text-align:center;
 padding:20px;
 color:#666;
 }
 
-.request{
-border:1px solid #e5e5e5;
+.deposit-account{
+background:#eef7f1;
+border:1px solid #b9dec5;
+padding:18px;
 border-radius:12px;
-padding:15px;
-margin-bottom:12px;
-background:#fafafa;
+margin-top:15px;
+line-height:1.9;
 }
 
-.request:last-child{
-margin-bottom:0;
-}
-
-.request-title{
-font-weight:bold;
+.deposit-account strong{
 color:#123b73;
-font-size:16px;
-margin-bottom:8px;
 }
-
-.request-row{
-display:flex;
-justify-content:space-between;
-gap:10px;
-padding:5px 0;
-font-size:14px;
-}
-
-.request-row span:first-child{
-color:#666;
-}
-
-/* ================================
-STATUS
-================================ */
 
 .status{
 display:inline-block;
@@ -268,56 +210,58 @@ background:#e1edff;
 color:#1558a6;
 }
 
-/* ================================
-TRANSACTIONS
-================================ */
-
 .transaction{
-border-bottom:1px solid #eee;
-padding:14px 0;
+border:1px solid #e5e5e5;
+border-radius:12px;
+padding:15px;
+margin-bottom:12px;
+background:#fafafa;
 }
 
 .transaction:last-child{
-border-bottom:none;
+margin-bottom:0;
 }
 
 .transaction-top{
 display:flex;
 justify-content:space-between;
+align-items:center;
 gap:10px;
-margin-bottom:5px;
+margin-bottom:10px;
 }
 
-/* ================================
-DEPOSIT
-================================ */
-
-.deposit-info{
-background:#fff8e6;
-border:1px solid #f0d98a;
-padding:15px;
-border-radius:10px;
-margin-top:12px;
-font-size:14px;
-line-height:1.8;
-}
-
-.deposit-account{
-background:#eef7f1;
-border:1px solid #b9dec5;
-padding:18px;
-border-radius:12px;
-margin-top:15px;
-line-height:1.9;
-}
-
-.deposit-account strong{
+.transaction-type{
+font-weight:bold;
 color:#123b73;
+font-size:16px;
 }
 
-/* ================================
-FOOTER
-================================ */
+.transaction-row{
+display:flex;
+justify-content:space-between;
+gap:10px;
+padding:5px 0;
+font-size:14px;
+}
+
+.transaction-row span:first-child{
+color:#666;
+}
+
+.deposit-label{
+color:#16834a;
+font-weight:bold;
+}
+
+.withdraw-label{
+color:#c62828;
+font-weight:bold;
+}
+
+.transfer-label{
+color:#1558a6;
+font-weight:bold;
+}
 
 footer{
 text-align:center;
@@ -325,10 +269,6 @@ padding:25px;
 color:#777;
 font-size:13px;
 }
-
-/* ================================
-MOBILE
-================================ */
 
 @media(max-width:450px){
 
@@ -340,11 +280,11 @@ header h1{
 font-size:23px;
 }
 
-.request-row{
+.transaction-row{
 display:block;
 }
 
-.request-row span{
+.transaction-row span{
 display:block;
 margin-bottom:3px;
 }
@@ -357,11 +297,6 @@ margin-bottom:3px;
 
 <body>
 
-
-<!-- ================================
-HEADER
-================================ -->
-
 <header>
 
 <h1>🏦 StoryVerse Bank</h1>
@@ -372,18 +307,13 @@ Simple • Convenient • Connected
 
 </header>
 
-
 <div class="container">
 
-
 <!-- =====================================================
-AUTH SECTION
+AUTH
 ===================================================== -->
 
 <div id="authSection">
-
-
-<!-- LOGIN -->
 
 <div class="card">
 
@@ -425,8 +355,6 @@ class="message hidden">
 
 </div>
 
-
-<!-- REGISTER -->
 
 <div class="card">
 
@@ -480,8 +408,6 @@ id="dashboard"
 class="hidden">
 
 
-<!-- BALANCE -->
-
 <div class="balance">
 
 <p>
@@ -495,9 +421,7 @@ Available Balance
 </div>
 
 
-<!-- =====================================================
-MY ACCOUNT
-===================================================== -->
+<!-- ACCOUNT -->
 
 <div class="card">
 
@@ -515,7 +439,6 @@ Loading...
 
 </p>
 
-
 <div class="account-box">
 
 <p>
@@ -529,7 +452,6 @@ Loading...
 </span>
 
 </p>
-
 
 <p>
 
@@ -545,7 +467,6 @@ Active
 
 </div>
 
-
 <button
 class="logout"
 onclick="logout()">
@@ -557,9 +478,7 @@ Logout
 </div>
 
 
-<!-- =====================================================
-BANKING SERVICES
-===================================================== -->
+<!-- SERVICES -->
 
 <div class="card">
 
@@ -576,7 +495,6 @@ onclick="deposit()">
 
 </button>
 
-
 <button
 onclick="withdraw()">
 
@@ -584,14 +502,12 @@ onclick="withdraw()">
 
 </button>
 
-
 <button
 onclick="transfer()">
 
 🔄 Transfer
 
 </button>
-
 
 <button
 onclick="transactions()">
@@ -612,42 +528,7 @@ class="message hidden">
 
 
 <!-- =====================================================
-REQUEST STATUS
-===================================================== -->
-
-<div class="card">
-
-<h2>
-📋 Request Status
-</h2>
-
-<p class="small">
-
-Your deposit, withdrawal and transfer requests
-appear here.
-
-New requests start as
-<b>Pending</b>
-until they are reviewed.
-
-</p>
-
-
-<div id="requestList">
-
-<div class="loading">
-
-Loading request status...
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-TRANSACTION HISTORY
+ONE COMBINED TRANSACTION HISTORY
 ===================================================== -->
 
 <div class="card">
@@ -656,11 +537,18 @@ TRANSACTION HISTORY
 📜 Transaction History
 </h2>
 
+<p class="small">
+
+Your deposits, withdrawals, transfers and approved
+transactions are all displayed here.
+
+</p>
+
 <div id="transactionList">
 
 <div class="loading">
 
-Loading transactions...
+Loading transaction history...
 
 </div>
 
@@ -682,9 +570,7 @@ All rights reserved.
 </footer>
 
 
-
 <script type="module">
-
 
 /* =====================================================
 FIREBASE IMPORTS
@@ -745,7 +631,6 @@ from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-
 /* =====================================================
 FIREBASE CONFIG
 ===================================================== */
@@ -776,9 +661,8 @@ measurementId:
 };
 
 
-
 /* =====================================================
-INITIALIZE FIREBASE
+INITIALIZE
 ===================================================== */
 
 const app =
@@ -794,7 +678,6 @@ const googleProvider =
 new GoogleAuthProvider();
 
 
-
 /* =====================================================
 MESSAGE
 ===================================================== */
@@ -805,9 +688,7 @@ const element =
 document.getElementById(id);
 
 if(!element){
-
 return;
-
 }
 
 element.textContent =
@@ -818,7 +699,6 @@ element.classList.remove(
 );
 
 }
-
 
 
 /* =====================================================
@@ -898,7 +778,6 @@ friendlyError(error)
 };
 
 
-
 /* =====================================================
 GOOGLE REGISTER
 ===================================================== */
@@ -935,9 +814,8 @@ friendlyError(error)
 };
 
 
-
 /* =====================================================
-CREATE CUSTOMER RECORD
+CREATE CUSTOMER
 ===================================================== */
 
 async function createCustomerRecord(user){
@@ -957,9 +835,7 @@ customerRef
 
 
 if(existing.exists()){
-
 return;
-
 }
 
 
@@ -990,14 +866,14 @@ createdAt:
 serverTimestamp()
 
 }
+
 );
 
 }
 
 
-
 /* =====================================================
-GENERATE ACCOUNT NUMBER
+ACCOUNT NUMBER
 ===================================================== */
 
 function generateAccountNumber(){
@@ -1008,11 +884,9 @@ Math.floor(
 Math.random() * 90000000
 );
 
-
 return "SVB" + random;
 
 }
-
 
 
 /* =====================================================
@@ -1068,7 +942,6 @@ friendlyError(error)
 };
 
 
-
 /* =====================================================
 GOOGLE LOGIN
 ===================================================== */
@@ -1105,7 +978,6 @@ friendlyError(error)
 };
 
 
-
 /* =====================================================
 LOGOUT
 ===================================================== */
@@ -1128,7 +1000,6 @@ alert(
 }
 
 };
-
 
 
 /* =====================================================
@@ -1173,11 +1044,6 @@ user
 );
 
 
-await loadRequests(
-user
-);
-
-
 await loadTransactions(
 user
 );
@@ -1197,7 +1063,6 @@ dashboard.classList.add(
 
 }
 );
-
 
 
 /* =====================================================
@@ -1276,7 +1141,6 @@ maximumFractionDigits:2
 
 console.error(error);
 
-
 document.getElementById(
 "accountNumber"
 ).textContent =
@@ -1285,7 +1149,6 @@ document.getElementById(
 }
 
 }
-
 
 
 /* =====================================================
@@ -1314,13 +1177,9 @@ message.innerHTML = `
 💰 Deposit Funds
 </h3>
 
-
 <p>
-
-Enter the amount you want to deposit
-and transfer the money to the account
-details below.
-
+Enter the amount you want to deposit.
+There is no fixed ₦2,000 limit.
 </p>
 
 
@@ -1371,10 +1230,8 @@ OPay
 
 <br><br>
 
-
-Please transfer the amount you entered
-to this account before submitting
-your deposit request.
+Transfer the amount you entered
+to this OPay account.
 
 </div>
 
@@ -1385,16 +1242,14 @@ type="text"
 
 id="depositReference"
 
-placeholder="Enter payment reference (optional)"
+placeholder="Payment reference (optional)"
 
 >
 
 
 <button
 
-onclick="submitDeposit()"
-
->
+onclick="submitDeposit()">
 
 ✅ Submit Deposit Request
 
@@ -1405,9 +1260,7 @@ onclick="submitDeposit()"
 
 onclick="closeService()"
 
-class="cancel"
-
->
+class="cancel">
 
 Cancel
 
@@ -1423,11 +1276,7 @@ Payment Status: Pending
 <br><br>
 
 Your deposit request will be reviewed
-by the administrator.
-
-Your balance will only be updated
-after the payment has been verified
-and the request has been approved.
+before your balance is updated.
 
 </p>
 
@@ -1436,7 +1285,6 @@ and the request has been approved.
 `;
 
 };
-
 
 
 /* =====================================================
@@ -1573,9 +1421,9 @@ amount.toLocaleString(
 "en-NG"
 ) +
 
-"\n" +
+"\n\n" +
 
-"Payment Status: Pending\n\n" +
+"Status: Pending\n\n" +
 
 "Your deposit will be verified before your balance is updated."
 
@@ -1585,7 +1433,7 @@ amount.toLocaleString(
 closeService();
 
 
-await loadRequests(
+await loadTransactions(
 user
 );
 
@@ -1597,7 +1445,6 @@ console.error(
 error
 );
 
-
 alert(
 "Unable to submit deposit request. Please try again."
 );
@@ -1605,7 +1452,6 @@ alert(
 }
 
 };
-
 
 
 /* =====================================================
@@ -1687,9 +1533,7 @@ placeholder="Account name"
 
 <button
 
-onclick="submitWithdrawal()"
-
->
+onclick="submitWithdrawal()">
 
 Submit Withdrawal Request
 
@@ -1700,9 +1544,7 @@ Submit Withdrawal Request
 
 onclick="closeService()"
 
-class="cancel"
-
->
+class="cancel">
 
 Cancel
 
@@ -1712,12 +1554,9 @@ Cancel
 <p class="small">
 
 Payment status:
+<b>Pending</b>
 
-<b>
-Pending
-</b>
-
-<br>
+<br><br>
 
 Withdrawal will be paid only after
 verification and approval.
@@ -1729,7 +1568,6 @@ verification and approval.
 `;
 
 };
-
 
 
 /* =====================================================
@@ -1855,14 +1693,14 @@ serverTimestamp()
 
 
 alert(
-"Withdrawal request submitted successfully.\nStatus: Pending."
+"Withdrawal request submitted successfully.\n\nStatus: Pending."
 );
 
 
 closeService();
 
 
-await loadRequests(
+await loadTransactions(
 user
 );
 
@@ -1871,7 +1709,6 @@ user
 
 console.error(error);
 
-
 alert(
 "Unable to submit withdrawal request."
 );
@@ -1879,7 +1716,6 @@ alert(
 }
 
 };
-
 
 
 /* =====================================================
@@ -1946,9 +1782,7 @@ placeholder="Transfer note (optional)"
 
 <button
 
-onclick="submitTransfer()"
-
->
+onclick="submitTransfer()">
 
 Submit Transfer Request
 
@@ -1959,9 +1793,7 @@ Submit Transfer Request
 
 onclick="closeService()"
 
-class="cancel"
-
->
+class="cancel">
 
 Cancel
 
@@ -1971,12 +1803,9 @@ Cancel
 <p class="small">
 
 Payment status:
+<b>Pending</b>
 
-<b>
-Pending
-</b>
-
-<br>
+<br><br>
 
 Transfers require verification
 before money is moved.
@@ -1988,7 +1817,6 @@ before money is moved.
 `;
 
 };
-
 
 
 /* =====================================================
@@ -2099,14 +1927,14 @@ serverTimestamp()
 
 
 alert(
-"Transfer request submitted successfully.\nStatus: Pending."
+"Transfer request submitted successfully.\n\nStatus: Pending."
 );
 
 
 closeService();
 
 
-await loadRequests(
+await loadTransactions(
 user
 );
 
@@ -2114,7 +1942,6 @@ user
 }catch(error){
 
 console.error(error);
-
 
 alert(
 "Unable to submit transfer request."
@@ -2125,16 +1952,50 @@ alert(
 };
 
 
-
 /* =====================================================
-LOAD REQUESTS
+COMBINED TRANSACTION HISTORY
 ===================================================== */
 
-async function loadRequests(user){
+window.transactions =
+async function(){
+
+const user =
+auth.currentUser;
+
+
+if(!user){
+return;
+}
+
+
+await loadTransactions(
+user
+);
+
+
+document
+.getElementById(
+"transactionList"
+)
+.scrollIntoView({
+
+behavior:
+"smooth"
+
+});
+
+};
+
+
+/* =====================================================
+LOAD ALL TRANSACTIONS + REQUESTS
+===================================================== */
+
+async function loadTransactions(user){
 
 const list =
 document.getElementById(
-"requestList"
+"transactionList"
 );
 
 
@@ -2142,7 +2003,7 @@ list.innerHTML = `
 
 <div class="loading">
 
-Loading request status...
+Loading transaction history...
 
 </div>
 
@@ -2150,6 +2011,10 @@ Loading request status...
 
 
 try{
+
+/* -----------------------------------------------
+DEPOSIT REQUESTS
+----------------------------------------------- */
 
 const depositQuery =
 query(
@@ -2168,6 +2033,10 @@ user.uid
 );
 
 
+/* -----------------------------------------------
+WITHDRAWAL REQUESTS
+----------------------------------------------- */
+
 const withdrawalQuery =
 query(
 
@@ -2184,6 +2053,10 @@ user.uid
 
 );
 
+
+/* -----------------------------------------------
+TRANSFER REQUESTS
+----------------------------------------------- */
 
 const transferQuery =
 query(
@@ -2202,17 +2075,42 @@ user.uid
 );
 
 
+/* -----------------------------------------------
+NORMAL TRANSACTIONS
+----------------------------------------------- */
+
+const transactionQuery =
+query(
+
+collection(
+db,
+"transactions"
+),
+
+where(
+"userId",
+"==",
+user.uid
+)
+
+);
+
+
+/* -----------------------------------------------
+GET EVERYTHING
+----------------------------------------------- */
+
 const [
 
 depositSnap,
 
 withdrawalSnap,
 
-transferSnap
+transferSnap,
 
-] =
+transactionSnap
 
-await Promise.all([
+] = await Promise.all([
 
 getDocs(
 depositQuery
@@ -2224,20 +2122,30 @@ withdrawalQuery
 
 getDocs(
 transferQuery
+),
+
+getDocs(
+transactionQuery
 )
 
 ]);
 
 
-let requests = [];
+let allTransactions = [];
 
 
-/* DEPOSITS */
+/* =================================================
+ADD DEPOSITS
+================================================= */
 
 depositSnap.forEach(
 docSnap => {
 
-requests.push({
+const data =
+docSnap.data();
+
+
+allTransactions.push({
 
 id:
 docSnap.id,
@@ -2245,8 +2153,35 @@ docSnap.id,
 category:
 "Deposit",
 
+type:
+"💰 Deposit",
+
+amount:
+Number(
+data.amount || 0
+),
+
+status:
+data.status ||
+"Pending",
+
+paymentStatus:
+data.paymentStatus ||
+"Pending",
+
+reference:
+data.reference ||
+"",
+
+paymentMethod:
+data.paymentMethod ||
+"OPay",
+
+createdAt:
+data.createdAt,
+
 data:
-docSnap.data()
+data
 
 });
 
@@ -2254,12 +2189,18 @@ docSnap.data()
 );
 
 
-/* WITHDRAWALS */
+/* =================================================
+ADD WITHDRAWALS
+================================================= */
 
 withdrawalSnap.forEach(
 docSnap => {
 
-requests.push({
+const data =
+docSnap.data();
+
+
+allTransactions.push({
 
 id:
 docSnap.id,
@@ -2267,8 +2208,34 @@ docSnap.id,
 category:
 "Withdrawal",
 
+type:
+"💸 Withdrawal",
+
+amount:
+Number(
+data.amount || 0
+),
+
+status:
+data.status ||
+"Pending",
+
+paymentStatus:
+data.paymentStatus ||
+"Pending",
+
+reference:
+"",
+
+paymentMethod:
+data.bankName ||
+"Bank",
+
+createdAt:
+data.createdAt,
+
 data:
-docSnap.data()
+data
 
 });
 
@@ -2276,12 +2243,18 @@ docSnap.data()
 );
 
 
-/* TRANSFERS */
+/* =================================================
+ADD TRANSFERS
+================================================= */
 
 transferSnap.forEach(
 docSnap => {
 
-requests.push({
+const data =
+docSnap.data();
+
+
+allTransactions.push({
 
 id:
 docSnap.id,
@@ -2289,8 +2262,37 @@ docSnap.id,
 category:
 "Transfer",
 
+type:
+"🔄 Transfer",
+
+amount:
+Number(
+data.amount || 0
+),
+
+status:
+data.status ||
+"Pending",
+
+paymentStatus:
+data.paymentStatus ||
+"Pending",
+
+reference:
+"",
+
+paymentMethod:
+"StoryVerse Bank",
+
+recipient:
+data.recipientAccount ||
+"",
+
+createdAt:
+data.createdAt,
+
 data:
-docSnap.data()
+data
 
 });
 
@@ -2298,16 +2300,75 @@ docSnap.data()
 );
 
 
-/* SORT */
+/* =================================================
+ADD NORMAL TRANSACTIONS
+================================================= */
 
-requests.sort(
+transactionSnap.forEach(
+docSnap => {
+
+const data =
+docSnap.data();
+
+
+allTransactions.push({
+
+id:
+docSnap.id,
+
+category:
+"Transaction",
+
+type:
+data.type ||
+"Transaction",
+
+amount:
+Number(
+data.amount || 0
+),
+
+status:
+data.status ||
+"Pending",
+
+paymentStatus:
+data.paymentStatus ||
+data.status ||
+"Pending",
+
+reference:
+data.reference ||
+"",
+
+paymentMethod:
+data.paymentMethod ||
+"",
+
+createdAt:
+data.createdAt,
+
+data:
+data
+
+});
+
+}
+);
+
+
+/* =================================================
+SORT NEWEST FIRST
+================================================= */
+
+allTransactions.sort(
 (a,b) => {
 
 const aTime =
-a.data.createdAt?.toMillis?.() || 0;
+a.createdAt?.toMillis?.() || 0;
 
 const bTime =
-b.data.createdAt?.toMillis?.() || 0;
+b.createdAt?.toMillis?.() || 0;
 
 return bTime - aTime;
 
@@ -2315,13 +2376,17 @@ return bTime - aTime;
 );
 
 
-if(requests.length === 0){
+/* =================================================
+NO TRANSACTIONS
+================================================= */
+
+if(allTransactions.length === 0){
 
 list.innerHTML = `
 
 <div class="loading">
 
-No requests yet.
+No transactions yet.
 
 </div>
 
@@ -2335,28 +2400,12 @@ return;
 list.innerHTML = "";
 
 
-requests.forEach(
-request => {
+/* =================================================
+DISPLAY EVERYTHING
+================================================= */
 
-const data =
-request.data;
-
-
-const status =
-data.status ||
-"Pending";
-
-
-const paymentStatus =
-data.paymentStatus ||
-"Pending";
-
-
-const amount =
-Number(
-data.amount || 0
-);
-
+allTransactions.forEach(
+transaction => {
 
 const div =
 document.createElement(
@@ -2365,19 +2414,65 @@ document.createElement(
 
 
 div.className =
-"request";
+"transaction";
+
+
+let typeClass = "";
+
+
+if(
+transaction.category === "Deposit"
+){
+
+typeClass =
+"deposit-label";
+
+}
+
+else if(
+transaction.category === "Withdrawal"
+){
+
+typeClass =
+"withdraw-label";
+
+}
+
+else if(
+transaction.category === "Transfer"
+){
+
+typeClass =
+"transfer-label";
+
+}
 
 
 div.innerHTML = `
 
-<div class="request-title">
+<div class="transaction-top">
 
-${request.category}
+<div
+class="transaction-type ${typeClass}">
+
+${escapeHtml(
+transaction.type
+)}
+
+</div>
+
+<div>
+
+${statusBadge(
+transaction.status
+)}
+
+</div>
 
 </div>
 
 
-<div class="request-row">
+<div class="transaction-row">
 
 <span>
 Amount
@@ -2385,10 +2480,11 @@ Amount
 
 <strong>
 
-₦${amount.toLocaleString(
+₦${transaction.amount.toLocaleString(
 "en-NG",
 {
-minimumFractionDigits:2
+minimumFractionDigits:2,
+maximumFractionDigits:2
 }
 )}
 
@@ -2397,7 +2493,7 @@ minimumFractionDigits:2
 </div>
 
 
-<div class="request-row">
+<div class="transaction-row">
 
 <span>
 Request Status
@@ -2406,7 +2502,7 @@ Request Status
 <span>
 
 ${statusBadge(
-status
+transaction.status
 )}
 
 </span>
@@ -2414,7 +2510,7 @@ status
 </div>
 
 
-<div class="request-row">
+<div class="transaction-row">
 
 <span>
 Payment Status
@@ -2423,7 +2519,7 @@ Payment Status
 <span>
 
 ${statusBadge(
-paymentStatus
+transaction.paymentStatus
 )}
 
 </span>
@@ -2433,54 +2529,20 @@ paymentStatus
 `;
 
 
-/* DEPOSIT REFERENCE */
+/* =================================================
+DEPOSIT DETAILS
+================================================= */
 
 if(
-
-request.category === "Deposit"
-
-&&
-data.reference
-
+transaction.category === "Deposit"
 ){
 
 div.innerHTML += `
 
-<div class="request-row">
+<div class="transaction-row">
 
 <span>
-Payment Reference
-</span>
-
-<span>
-
-${escapeHtml(
-data.reference
-)}
-
-</span>
-
-</div>
-
-`;
-
-}
-
-
-/* DEPOSIT BANK */
-
-if(
-
-request.category === "Deposit"
-
-){
-
-div.innerHTML += `
-
-<div class="request-row">
-
-<span>
-Payment Bank
+Bank
 </span>
 
 <span>
@@ -2489,25 +2551,157 @@ OPay
 
 </div>
 
+
+<div class="transaction-row">
+
+<span>
+Account
+</span>
+
+<span>
+6587578800
+</span>
+
+</div>
+
 `;
 
 }
 
 
-/* RECIPIENT */
+/* =================================================
+REFERENCE
+================================================= */
 
 if(
-
-request.category === "Transfer"
-
-&&
-data.recipientAccount
-
+transaction.reference
 ){
 
 div.innerHTML += `
 
-<div class="request-row">
+<div class="transaction-row">
+
+<span>
+Payment Reference
+</span>
+
+<span>
+
+${escapeHtml(
+transaction.reference
+)}
+
+</span>
+
+</div>
+
+`;
+
+}
+
+
+/* =================================================
+WITHDRAWAL DETAILS
+================================================= */
+
+if(
+transaction.category === "Withdrawal"
+){
+
+const data =
+transaction.data;
+
+
+if(data.bankName){
+
+div.innerHTML += `
+
+<div class="transaction-row">
+
+<span>
+Bank
+</span>
+
+<span>
+
+${escapeHtml(
+data.bankName
+)}
+
+</span>
+
+</div>
+
+`;
+
+}
+
+
+if(data.accountNumber){
+
+div.innerHTML += `
+
+<div class="transaction-row">
+
+<span>
+Account Number
+</span>
+
+<span>
+
+${escapeHtml(
+data.accountNumber
+)}
+
+</span>
+
+</div>
+
+`;
+
+}
+
+
+if(data.accountName){
+
+div.innerHTML += `
+
+<div class="transaction-row">
+
+<span>
+Account Name
+</span>
+
+<span>
+
+${escapeHtml(
+data.accountName
+)}
+
+</span>
+
+</div>
+
+`;
+
+}
+
+}
+
+
+/* =================================================
+TRANSFER DETAILS
+================================================= */
+
+if(
+transaction.category === "Transfer"
+){
+
+if(transaction.recipient){
+
+div.innerHTML += `
+
+<div class="transaction-row">
 
 <span>
 Recipient
@@ -2516,7 +2710,65 @@ Recipient
 <span>
 
 ${escapeHtml(
-data.recipientAccount
+transaction.recipient
+)}
+
+</span>
+
+</div>
+
+`;
+
+}
+
+
+if(transaction.data.note){
+
+div.innerHTML += `
+
+<div class="transaction-row">
+
+<span>
+Note
+</span>
+
+<span>
+
+${escapeHtml(
+transaction.data.note
+)}
+
+</span>
+
+</div>
+
+`;
+
+}
+
+}
+
+
+/* =================================================
+PAYMENT METHOD
+================================================= */
+
+if(
+transaction.paymentMethod
+){
+
+div.innerHTML += `
+
+<div class="transaction-row">
+
+<span>
+Payment Method
+</span>
+
+<span>
+
+${escapeHtml(
+transaction.paymentMethod
 )}
 
 </span>
@@ -2533,14 +2785,13 @@ div
 );
 
 }
-
 );
 
 
 }catch(error){
 
 console.error(
-"Request loading error:",
+"Transaction history error:",
 error
 );
 
@@ -2549,7 +2800,12 @@ list.innerHTML = `
 
 <div class="loading">
 
-Unable to load request status.
+Unable to load transaction history.
+
+<br><br>
+
+Please check your Firebase
+Firestore security rules.
 
 </div>
 
@@ -2558,7 +2814,6 @@ Unable to load request status.
 }
 
 }
-
 
 
 /* =====================================================
@@ -2586,7 +2841,6 @@ className =
 
 }
 
-
 else if(
 clean === "rejected"
 ){
@@ -2595,7 +2849,6 @@ className =
 "status-rejected";
 
 }
-
 
 else if(
 clean === "processing"
@@ -2609,7 +2862,8 @@ className =
 
 return `
 
-<span class="status ${className}">
+<span
+class="status ${className}">
 
 ${escapeHtml(
 status
@@ -2620,263 +2874,6 @@ status
 `;
 
 }
-
-
-
-/* =====================================================
-TRANSACTIONS BUTTON
-===================================================== */
-
-window.transactions =
-async function(){
-
-const user =
-auth.currentUser;
-
-
-if(!user){
-
-return;
-
-}
-
-
-await loadTransactions(
-user
-);
-
-
-document
-.getElementById(
-"transactionList"
-)
-.scrollIntoView({
-
-behavior:
-"smooth"
-
-});
-
-};
-
-
-
-/* =====================================================
-LOAD TRANSACTIONS
-===================================================== */
-
-async function loadTransactions(user){
-
-const list =
-document.getElementById(
-"transactionList"
-);
-
-
-list.innerHTML = `
-
-<div class="loading">
-
-Loading transactions...
-
-</div>
-
-`;
-
-
-try{
-
-const q =
-query(
-
-collection(
-db,
-"transactions"
-),
-
-where(
-"userId",
-"==",
-user.uid
-)
-
-);
-
-
-const snapshot =
-await getDocs(
-q
-);
-
-
-if(snapshot.empty){
-
-list.innerHTML = `
-
-<div class="loading">
-
-No transactions yet.
-
-</div>
-
-`;
-
-return;
-
-}
-
-
-let transactions = [];
-
-
-snapshot.forEach(
-docSnap => {
-
-transactions.push(
-docSnap.data()
-);
-
-}
-);
-
-
-transactions.sort(
-(a,b) => {
-
-const aTime =
-a.createdAt?.toMillis?.() || 0;
-
-const bTime =
-b.createdAt?.toMillis?.() || 0;
-
-return bTime - aTime;
-
-}
-);
-
-
-list.innerHTML = "";
-
-
-transactions.forEach(
-data => {
-
-const amount =
-Number(
-data.amount || 0
-);
-
-
-const type =
-data.type ||
-"Transaction";
-
-
-const status =
-data.status ||
-"Pending";
-
-
-const paymentStatus =
-data.paymentStatus ||
-status;
-
-
-const div =
-document.createElement(
-"div"
-);
-
-
-div.className =
-"transaction";
-
-
-div.innerHTML = `
-
-<div class="transaction-top">
-
-<strong>
-
-${escapeHtml(
-type
-)}
-
-</strong>
-
-<span>
-
-${statusBadge(
-status
-)}
-
-</span>
-
-</div>
-
-
-<div>
-
-Amount:
-
-<strong>
-
-₦${amount.toLocaleString(
-"en-NG",
-{
-minimumFractionDigits:2
-}
-)}
-
-</strong>
-
-</div>
-
-
-<div style="margin-top:7px">
-
-Payment:
-
-${statusBadge(
-paymentStatus
-)}
-
-</div>
-
-`;
-
-
-list.appendChild(
-div
-);
-
-}
-
-);
-
-
-}catch(error){
-
-console.error(
-"Transaction error:",
-error
-);
-
-
-list.innerHTML = `
-
-<div class="loading">
-
-Transaction history is not available yet.
-
-</div>
-
-`;
-
-}
-
-}
-
 
 
 /* =====================================================
@@ -2900,7 +2897,6 @@ message.classList.add(
 message.innerHTML = "";
 
 };
-
 
 
 /* =====================================================
@@ -3040,7 +3036,6 @@ error.message ||
 );
 
 }
-
 
 
 /* =====================================================
